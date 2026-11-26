@@ -1,0 +1,273 @@
+/* ============================================================
+   LỚP GIAO DIỆN NÂNG CẤP — nạp CUỐI cùng
+   Chỉ tinh chỉnh thị giác (viền, ánh sáng, nhịp khoảng cách),
+   không đổi bố cục gốc. Mọi hiệu ứng đều tôn trọng reduced-motion.
+   ============================================================ */
+
+:root {
+  --up-line: rgba(148, 163, 184, 0.16);
+  --up-line-strong: rgba(148, 163, 184, 0.3);
+  --up-glow: rgba(124, 155, 255, 0.28);
+  --up-gold: #ffd166;
+  --up-radius: 16px;
+}
+
+/* ---------------- THANH BÊN ---------------- */
+.sidebar {
+  background:
+    radial-gradient(120% 55% at 0% 0%, rgba(124, 155, 255, 0.16), transparent 62%),
+    radial-gradient(90% 40% at 0% 100%, rgba(255, 209, 102, 0.07), transparent 70%),
+    linear-gradient(180deg, rgba(13, 21, 37, 0.99), rgba(5, 9, 17, 1));
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.03), 18px 0 46px -40px rgba(0, 0, 0, 1);
+}
+.brand__orb {
+  position: relative;
+  animation: upOrbFloat 6s ease-in-out infinite;
+}
+.brand__orb::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 209, 102, 0.28);
+  opacity: 0.7;
+}
+.brand__text strong { text-shadow: 0 0 18px rgba(255, 255, 255, 0.18); }
+
+.nav-item {
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.18s, box-shadow 0.2s;
+}
+.nav-item:hover {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+  border-color: rgba(148, 163, 184, 0.14);
+}
+.nav-item.is-active {
+  background: linear-gradient(90deg, rgba(124, 155, 255, 0.26), rgba(139, 92, 246, 0.1) 58%, transparent);
+  box-shadow: inset 3px 0 0 #8fa8ff, 0 10px 24px -20px rgba(124, 155, 255, 0.9);
+}
+.nav-item.is-active .nav-item__icon { filter: drop-shadow(0 0 8px rgba(255, 209, 102, 0.55)); }
+.nav-item:focus-visible { outline: 2px solid rgba(124, 155, 255, 0.7); outline-offset: 2px; }
+.sidebar__foot { background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02)); }
+
+/* ---------------- THANH TRÊN ---------------- */
+.topbar {
+  background:
+    linear-gradient(180deg, rgba(9, 15, 27, 0.9), rgba(7, 12, 22, 0.72));
+  border-bottom-color: rgba(148, 163, 184, 0.14);
+  box-shadow: 0 14px 30px -28px rgba(0, 0, 0, 0.9);
+}
+.topbar::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 155, 255, 0.45) 22%, rgba(255, 209, 102, 0.35) 62%, transparent);
+  pointer-events: none;
+}
+.resource {
+  border-color: rgba(148, 163, 184, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.resource:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 209, 102, 0.36);
+  background: linear-gradient(180deg, rgba(255, 209, 102, 0.1), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 8px 20px -16px rgba(255, 209, 102, 0.8);
+}
+.trainer-chip__xp { letter-spacing: 0.01em; }
+
+/* ---------------- TIÊU ĐỀ TRANG ---------------- */
+.page-head {
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, rgba(148, 163, 184, 0.22), transparent 72%) 1;
+}
+.page-head h1 { color: var(--text); }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .page-head h1 {
+    background: linear-gradient(120deg, #ffffff 8%, #dfe7ff 44%, #ffd166 96%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(124, 155, 255, 0.14);
+  }
+}
+.page-head .eyebrow { letter-spacing: 0.2em; }
+
+/* ---------------- PANEL ---------------- */
+.panel {
+  border-color: var(--up-line);
+  background:
+    linear-gradient(180deg, rgba(28, 42, 66, 0.7), rgba(9, 15, 26, 0.94)),
+    radial-gradient(120% 90% at 100% 0%, rgba(124, 155, 255, 0.08), transparent 58%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 22px 44px -38px rgba(0, 0, 0, 0.95);
+}
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, rgba(124, 155, 255, 0.4) 30%, rgba(255, 209, 102, 0.3) 68%, transparent);
+  pointer-events: none;
+}
+.panel__title { letter-spacing: 0.01em; }
+.panel__title .panel__title-icon { filter: drop-shadow(0 0 8px rgba(255, 209, 102, 0.4)); }
+.panel__divider { background: linear-gradient(90deg, var(--line), transparent); }
+
+/* ---------------- NÚT ---------------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(148, 163, 184, 0.24);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
+  transition: transform 0.18s, filter 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 32%, rgba(255, 255, 255, 0.16) 48%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 0.55s var(--ease, ease);
+  pointer-events: none;
+}
+.btn:hover::after { transform: translateX(120%); }
+.btn--primary {
+  border-color: rgba(124, 155, 255, 0.5);
+  box-shadow: 0 12px 26px -20px rgba(124, 155, 255, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+.btn--gold {
+  border-color: rgba(255, 209, 102, 0.5);
+  box-shadow: 0 12px 26px -20px rgba(255, 209, 102, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.btn--danger { border-color: rgba(248, 113, 113, 0.45); }
+/* Nút thách đấu / giải đấu / chợ HLV: chữ trắng trên nền đậm, đọc rõ trên mọi thiết bị. */
+.btn.btn--challenge,
+.btn.research-go {
+  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+  background-image: linear-gradient(135deg, #1e3a8a, #6d28d9);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 12px 26px -16px rgba(124, 155, 255, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.btn.btn--challenge:hover,
+.btn.research-go:hover {
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  background-image: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  color: #fff;
+}
+/* Chợ vật phẩm Huấn luyện viên dùng .btn--gold: đậm nền để chữ trắng tương phản. */
+.btn.btn--gold {
+  background: linear-gradient(135deg, #b45309, #92400e);
+  background-image: linear-gradient(135deg, #b45309, #92400e);
+  color: #fff;
+  border-color: rgba(255, 237, 178, 0.35);
+}
+.btn.btn--gold:hover {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  background-image: linear-gradient(135deg, #d97706, #b45309);
+  color: #fff;
+}
+.btn:focus-visible,
+.filter-chip:focus-visible,
+.icon-btn:focus-visible {
+  outline: 2px solid rgba(124, 155, 255, 0.8);
+  outline-offset: 2px;
+}
+.btn:disabled, .btn[disabled] {
+  filter: saturate(0.55) brightness(0.82);
+  box-shadow: none;
+  transform: none;
+}
+.btn:disabled::after, .btn[disabled]::after { display: none; }
+
+/* ---------------- VIÊN THUỐC / NHÃN ---------------- */
+.pill, .badge {
+  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.pill--gold, .badge--gold {
+  border-color: rgba(255, 209, 102, 0.36);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 18px -16px rgba(255, 209, 102, 0.8);
+}
+.filter-chip {
+  transition: transform 0.16s, border-color 0.2s, background 0.2s, color 0.2s;
+}
+.filter-chip:hover { transform: translateY(-1px); border-color: rgba(148, 163, 184, 0.34); }
+.filter-chip.is-active {
+  border-color: rgba(124, 155, 255, 0.5);
+  box-shadow: 0 8px 18px -16px rgba(124, 155, 255, 0.9);
+}
+
+/* ---------------- BIỂU MẪU ---------------- */
+.input, .select, textarea.input {
+  border-color: rgba(148, 163, 184, 0.2);
+  background: linear-gradient(180deg, rgba(7, 12, 22, 0.8), rgba(5, 9, 17, 0.9));
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.input:hover, .select:hover, textarea.input:hover { border-color: rgba(148, 163, 184, 0.34); }
+.input:focus, .select:focus, textarea.input:focus {
+  border-color: rgba(124, 155, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(124, 155, 255, 0.16), 0 10px 24px -22px rgba(124, 155, 255, 0.9);
+}
+.check-inline input:focus-visible { outline: 2px solid rgba(255, 209, 102, 0.7); outline-offset: 2px; }
+
+/* ---------------- THẺ ---------------- */
+.dex-card, .poke-card, .equip-card, .region-card, .shop-card, .item-card {
+  border-radius: var(--up-radius);
+}
+.dex-card:hover, .equip-card:hover, .shop-card:hover, .item-card:hover {
+  border-color: rgba(148, 163, 184, 0.34);
+}
+.dex-card.is-caught { box-shadow: inset 0 0 0 1px rgba(74, 222, 128, 0.08), 0 12px 26px -24px rgba(74, 222, 128, 0.7); }
+.dex-card.is-seen { box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.08), 0 12px 26px -24px rgba(56, 189, 248, 0.7); }
+.region-card:not(:disabled):hover { box-shadow: 0 22px 40px -30px var(--r1, #6d8cff), 0 0 0 1px color-mix(in srgb, var(--r1, #6d8cff) 30%, transparent); }
+
+/* ---------------- BẢNG / DANH SÁCH ---------------- */
+.data-table tbody tr, .market-row, .list-row {
+  transition: background 0.18s, border-color 0.18s;
+}
+.data-table tbody tr:hover, .market-row:hover, .list-row:hover {
+  background: rgba(124, 155, 255, 0.06);
+}
+
+/* ---------------- THANH CUỘN ---------------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 155, 255, 0.34) transparent;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(124, 155, 255, 0.45), rgba(139, 92, 246, 0.35)) padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(124, 155, 255, 0.7), rgba(255, 209, 102, 0.45)) padding-box; }
+
+/* ---------------- TIỆN ÍCH ---------------- */
+.gold, .eyebrow { text-shadow: 0 0 16px rgba(255, 209, 102, 0.22); }
+hr { border-color: var(--up-line); }
+::selection { background: rgba(124, 155, 255, 0.4); color: #fff; }
+
+@keyframes upOrbFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@media (max-width: 720px) {
+  .page-head h1 { background: none; color: var(--text); -webkit-text-fill-color: currentColor; }
+  .btn::after { display: none; }
+  .topbar::after { opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand__orb { animation: none; }
+  .btn::after { display: none; }
+  .resource:hover, .filter-chip:hover { transform: none; }
+}

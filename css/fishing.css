@@ -1,0 +1,495 @@
+/* ============================================================
+   CÂU CÁ: điểm câu, mặt nước, phao, vòng kim, kết quả
+   ============================================================ */
+.fish-page { display: flex; flex-direction: column; gap: 14px; }
+.fish-home { display: flex; flex-direction: column; gap: 16px; }
+.fish-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 322px;
+  gap: 16px;
+  align-items: start;
+}
+.fish-side { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+
+/* ---------------- ĐIỂM CÂU ---------------- */
+.spot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(222px, 1fr));
+  gap: 9px;
+}
+.spot-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background:
+    radial-gradient(110% 80% at 100% 0%, rgba(56, 189, 248, 0.14), transparent 62%),
+    linear-gradient(170deg, rgba(26, 44, 68, 0.68), rgba(8, 15, 26, 0.9));
+  transition: border-color 0.2s, transform 0.2s var(--ease);
+}
+.spot-card:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, 0.35); }
+.spot-card.is-locked { opacity: 0.52; filter: grayscale(0.6); }
+.spot-card.is-locked:hover { transform: none; border-color: var(--line); }
+.spot-card::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 38px;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(56, 189, 248, 0.22), transparent 70%);
+  pointer-events: none;
+}
+.spot-card__head { display: flex; align-items: center; gap: 8px; }
+.spot-card__emoji {
+  width: 38px; height: 38px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  font-size: 1.25rem;
+  background: rgba(8, 15, 26, 0.6);
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.spot-card__name, .spot-card strong { font-size: 0.82rem; font-weight: 800; line-height: 1.25; }
+.spot-card__pool { display: flex; flex-wrap: wrap; gap: 1px; margin-left: auto; justify-content: flex-end; }
+.spot-card__pool .sprite-box { width: 26px; height: 26px; }
+.spot-card__pool .sprite-emoji { font-size: 14px !important; }
+.spot-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 0.6rem;
+  color: #9fc2dd;
+  font-variant-numeric: tabular-nums;
+}
+.spot-card .btn { position: relative; z-index: 1; }
+.spot-card__desc { font-size: 0.66rem; color: var(--text-2); line-height: 1.45; }
+
+/* ---------------- MỒI ---------------- */
+.fish-baits .bait-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 7px; }
+.bait-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text);
+  font-size: 0.66rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.16s;
+}
+.bait-chip:hover { transform: translateY(-1px); background: rgba(255, 255, 255, 0.07); }
+.bait-chip.is-active {
+  border-color: rgba(125, 211, 252, 0.55);
+  background: rgba(56, 189, 248, 0.12);
+  box-shadow: 0 0 16px -8px rgba(56, 189, 248, 0.9);
+}
+.bait-chip small { color: var(--text-3); font-size: 0.58rem; }
+
+/* ---------------- BỂ CÁ ---------------- */
+.aquarium-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.aqua-mon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 3px 5px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: rgba(56, 189, 248, 0.05);
+}
+.aqua-mon small { font-size: 0.52rem; color: var(--text-2); }
+
+/* ---------------- KHUNG CÂU ĐANG HOẠT ĐỘNG ---------------- */
+.fish-active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeUp 0.3s var(--ease);
+}
+.fish-active__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.fish-active__title {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fish-active__title > span { font-size: 1.35rem; }
+.fish-active__title > div { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.fish-active__title strong { font-size: 0.9rem; }
+.fish-active__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(8, 15, 26, 0.55);
+}
+.fish-active__foot p { flex: 1; min-width: 160px; }
+
+.fish-water {
+  position: relative;
+  min-height: clamp(400px, 56vh, 560px);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--line-2);
+  border-radius: 26px;
+  background: #06121e;
+  box-shadow: var(--shadow-lg);
+}
+.fish-water__sky {
+  position: absolute;
+  inset: 0 0 42% 0;
+  background:
+    radial-gradient(80% 90% at 78% -10%, color-mix(in srgb, var(--wx, #7dd3fc) 34%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--sky-1, #16466f), var(--sky-2, #0a2036));
+}
+.fish-water__sky::after {
+  content: '';
+  position: absolute;
+  right: 12%;
+  top: 16%;
+  width: 74px; height: 74px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #fffbe8, color-mix(in srgb, var(--wx, #fde68a) 78%, #fbbf24));
+  box-shadow: 0 0 70px 18px color-mix(in srgb, var(--wx, #7dd3fc) 34%, transparent);
+  opacity: 0.85;
+}
+.fish-water__surface {
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  top: 42%;
+  height: 12%;
+  background:
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--wx, #7dd3fc) 42%, transparent), transparent 62%),
+    linear-gradient(180deg, rgba(125, 211, 252, 0.35), rgba(14, 116, 144, 0.1));
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  filter: blur(0.4px);
+}
+.fish-water__deep {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  top: 50%;
+  background:
+    radial-gradient(120% 90% at 50% -20%, color-mix(in srgb, var(--wx, #38bdf8) 26%, transparent), transparent 60%),
+    linear-gradient(180deg, #0b3a52 0%, #062033 55%, #03101b 100%);
+}
+.fish-water__deep::before,
+.fish-water__deep::after {
+  content: '';
+  position: absolute;
+  left: -10%; right: -10%;
+  height: 30px;
+  border-radius: 50%;
+  border-top: 1px solid rgba(186, 230, 253, 0.2);
+  filter: blur(0.5px);
+}
+.fish-water__deep::before { top: 8%; animation: waveDrift 7s ease-in-out infinite alternate; }
+.fish-water__deep::after { top: 26%; opacity: 0.6; animation: waveDrift 9s ease-in-out -3s infinite alternate-reverse; }
+@keyframes waveDrift {
+  from { transform: translateX(-3%) scaleY(1); }
+  to { transform: translateX(3%) scaleY(1.15); }
+}
+.fish-water > .particles { top: 0; bottom: 55%; }
+
+.fish-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  padding: 22px 18px;
+}
+
+/* Chờ cá */
+.fish-wait, .fish-bite, .fish-reel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(420px, 100%);
+  text-align: center;
+}
+.fish-wait h2, .fish-bite h2, .fish-reel h2 { font-size: 1.2rem; }
+.fish-wait > p, .fish-bite > p { max-width: 36ch; font-size: 0.78rem; color: #cbe6f7; }
+.fish-float {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+}
+.fish-float__bob {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  animation: floatBob 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.45));
+}
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-9px) rotate(5deg); }
+}
+.fish-ripple {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  width: 70px;
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 2px solid rgba(186, 230, 253, 0.55);
+  animation: ripplePulse 2.4s ease-out infinite;
+}
+.fish-ripple::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(186, 230, 253, 0.3);
+  animation: ripplePulse 2.4s ease-out 0.7s infinite;
+}
+@keyframes ripplePulse {
+  0% { transform: translateX(-50%) scale(0.6); opacity: 0.9; }
+  100% { transform: translateX(-50%) scale(1.5); opacity: 0; }
+}
+.fish-action { min-width: 150px; }
+.fish-action--big { min-width: 200px; min-height: 54px; font-size: 1rem; }
+
+/* Cá cắn câu */
+.fish-bite { animation: biteShake 0.5s ease-in-out; }
+.fish-bite__icon {
+  font-size: 3rem;
+  color: var(--gold);
+  text-shadow: 0 0 26px rgba(255, 209, 102, 0.8);
+  animation: bitePulse 0.55s ease-in-out infinite alternate;
+}
+@keyframes biteShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-9px); }
+  40% { transform: translateX(9px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+@keyframes bitePulse {
+  from { transform: scale(0.92) rotate(-5deg); }
+  to { transform: scale(1.12) rotate(5deg); }
+}
+.bite-timer {
+  width: min(260px, 100%);
+  height: 9px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(8, 15, 26, 0.6);
+  border: 1px solid rgba(255, 209, 102, 0.35);
+}
+.bite-timer span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #fbbf24, #f87171);
+  transition: width 0.1s linear;
+}
+
+/* Kéo cá */
+.fish-reel { gap: 10px; }
+.reel-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 12px;
+  border-radius: 11px;
+  border: 1px solid rgba(186, 230, 253, 0.24);
+  background: rgba(4, 12, 22, 0.55);
+  font-size: 0.8rem;
+  font-weight: 750;
+  color: #e0f2fe;
+  font-variant-numeric: tabular-nums;
+  backdrop-filter: blur(6px);
+}
+.reel-meter {
+  position: relative;
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid rgba(186, 230, 253, 0.28);
+  background:
+    linear-gradient(180deg, rgba(4, 12, 22, 0.72), rgba(4, 12, 22, 0.5)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 5%);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+.reel-zone {
+  position: absolute;
+  top: 0; bottom: 0;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(74, 222, 128, 0.55), rgba(34, 197, 94, 0.32));
+  border-left: 1px solid rgba(134, 239, 172, 0.8);
+  border-right: 1px solid rgba(134, 239, 172, 0.8);
+  box-shadow: 0 0 20px -4px rgba(74, 222, 128, 0.8);
+  transition: left 0.12s linear;
+}
+.reel-zone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(115deg, transparent 0 9px, rgba(187, 247, 208, 0.28) 9px 11px, transparent 11px 18px);
+  background-size: 200% 100%;
+  animation: reelZoneFlow 1.3s linear infinite;
+  pointer-events: none;
+}
+@keyframes reelZoneFlow {
+  from { background-position: 0 0; }
+  to { background-position: 200% 0; }
+}
+.reel-marker {
+  position: absolute;
+  top: -3px; bottom: -3px;
+  width: 4px;
+  margin-left: -2px;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #fff, #7dd3fc);
+  box-shadow: 0 0 14px 2px rgba(125, 211, 252, 0.9);
+  z-index: 2;
+}
+.reel-marker::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  width: 10px; height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+}
+.reel-meter.is-perfect { animation: perfectPulse 0.35s ease; }
+@keyframes perfectPulse {
+  0% { box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(74, 222, 128, 0.7); }
+  100% { box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.45), 0 0 0 16px rgba(74, 222, 128, 0); }
+}
+.reel-progress {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(4, 12, 22, 0.6);
+}
+.reel-progress__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22d3ee, #818cf8, #c084fc);
+  transition: width 0.2s var(--ease);
+  box-shadow: 0 0 14px -2px rgba(129, 140, 248, 0.9);
+}
+.reel-progress__label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.reel-feedback {
+  min-height: 18px;
+  font-size: 0.72rem;
+  color: #bae0f5;
+}
+.reel-feedback.is-hit { color: #86efac; font-weight: 700; }
+.reel-feedback.is-miss { color: #fca5a5; font-weight: 700; }
+
+/* ---------------- KẾT QUẢ ---------------- */
+.fish-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    radial-gradient(100% 100% at 0% 0%, rgba(56, 189, 248, 0.1), transparent 62%),
+    rgba(255, 255, 255, 0.025);
+  animation: popIn 0.3s var(--ease);
+}
+.fish-result__icon {
+  width: 58px; height: 58px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 1.8rem;
+  background: rgba(8, 15, 26, 0.5);
+  border: 1px solid var(--line);
+}
+.fish-result__sprite { display: grid; place-items: center; flex: none; }
+.fish-result__body { flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 1px; }
+.fish-result__body strong { font-size: 0.92rem; }
+.fish-result__body p { font-size: 0.74rem; color: var(--text-2); }
+.fish-result__actions { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.fish-result--fail { border-color: rgba(248, 113, 113, 0.28); background: radial-gradient(100% 100% at 0% 0%, rgba(248, 113, 113, 0.1), transparent 62%), rgba(255, 255, 255, 0.022); }
+.fish-result--item { border-color: rgba(255, 209, 102, 0.28); background: radial-gradient(100% 100% at 0% 0%, rgba(255, 209, 102, 0.11), transparent 62%), rgba(255, 255, 255, 0.022); }
+.fish-result--catch { border-color: rgba(74, 222, 128, 0.3); background: radial-gradient(100% 100% at 0% 0%, rgba(74, 222, 128, 0.12), transparent 62%), rgba(255, 255, 255, 0.022); }
+.fish-result--catch.is-shiny {
+  border-color: rgba(255, 209, 102, 0.5);
+  background: radial-gradient(100% 100% at 0% 0%, rgba(255, 209, 102, 0.22), transparent 66%), rgba(255, 255, 255, 0.03);
+  box-shadow: 0 20px 50px -34px rgba(255, 209, 102, 0.9);
+}
+.fish-result--catch.is-golden {
+  border-color: #ffd166;
+  background: radial-gradient(100% 100% at 0% 0%, rgba(255, 209, 102, 0.32), transparent 68%), rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 1px rgba(255, 209, 102, 0.35), 0 22px 56px -30px rgba(255, 209, 102, 0.95);
+}
+.fish-result--catch.is-golden .eyebrow { color: #ffd166; letter-spacing: 0.08em; }
+.fish-result--catch.is-golden .fx-callout { color: #ffd166; }
+
+/* Lớp phủ thời tiết trên mặt nước (mưa/tuyết/bão cát/sương mù) */
+.fish-water::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  background-repeat: repeat;
+}
+
+/* Giảm chuyển động: vùng sáng vẫn trôi theo thời gian thực (luật chơi),
+   chỉ bỏ họa tiết chảy — không làm mất màu xanh lá. */
+@media (prefers-reduced-motion: reduce) {
+  .reel-zone { transition: none; }
+  .reel-zone::after { animation: none !important; opacity: 0.5; }
+}
+body.motion-reduced .reel-zone { transition: none; }
+body.motion-reduced .reel-zone::after { animation: none !important; opacity: 0.5; }

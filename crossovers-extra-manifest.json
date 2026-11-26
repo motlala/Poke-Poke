@@ -1,0 +1,1906 @@
+{
+  "9251": {
+    "name": "Chillet",
+    "id": "cross-chillet",
+    "sourceUrl": "https://palworld.wiki.gg/images/Chillet.png",
+    "local": "images/crossovers/9251.png",
+    "fallbackDex": 131
+  },
+  "9252": {
+    "name": "Lamball",
+    "id": "cross-lamball",
+    "sourceUrl": "https://palworld.wiki.gg/images/Lamball.png",
+    "local": "images/crossovers/9252.png",
+    "fallbackDex": 133
+  },
+  "9253": {
+    "name": "Pengullet",
+    "id": "cross-pengullet",
+    "sourceUrl": "https://palworld.wiki.gg/images/Pengullet.png",
+    "local": "images/crossovers/9253.png",
+    "fallbackDex": 54
+  },
+  "9254": {
+    "name": "Jolthog",
+    "id": "cross-jolthog",
+    "sourceUrl": "https://palworld.wiki.gg/images/Jolthog.png",
+    "local": "images/crossovers/9254.png",
+    "fallbackDex": 25
+  },
+  "9255": {
+    "name": "Daedream",
+    "id": "cross-daedream",
+    "sourceUrl": "https://palworld.wiki.gg/images/Daedream.png",
+    "local": "images/crossovers/9255.png",
+    "fallbackDex": 197
+  },
+  "9256": {
+    "name": "Direhowl",
+    "id": "cross-direhowl",
+    "sourceUrl": "https://palworld.wiki.gg/images/Direhowl.png",
+    "local": "images/crossovers/9256.png",
+    "fallbackDex": 133
+  },
+  "9257": {
+    "name": "Agumon",
+    "id": "cross-agumon",
+    "sourceUrl": "https://wikimon.net/images/7/72/Agumon.jpg",
+    "local": "images/crossovers/9257.png",
+    "fallbackDex": 391
+  },
+  "9258": {
+    "name": "Gabumon",
+    "id": "cross-gabumon",
+    "sourceUrl": "https://wikimon.net/images/7/71/Gabumon.jpg",
+    "local": "images/crossovers/9258.png",
+    "fallbackDex": 131
+  },
+  "9259": {
+    "name": "Piyomon",
+    "id": "cross-piyomon",
+    "sourceUrl": "https://wikimon.net/images/d/d8/Piyomon.jpg",
+    "local": "images/crossovers/9259.png",
+    "fallbackDex": 18
+  },
+  "9260": {
+    "name": "Tailmon",
+    "id": "cross-tailmon",
+    "sourceUrl": "https://wikimon.net/images/9/95/Tailmon.jpg",
+    "local": "images/crossovers/9260.png",
+    "fallbackDex": 197
+  },
+  "9261": {
+    "name": "Patamon",
+    "id": "cross-patamon",
+    "sourceUrl": "https://wikimon.net/images/7/7d/Patamon.jpg",
+    "local": "images/crossovers/9261.png",
+    "fallbackDex": 133
+  },
+  "9262": {
+    "name": "Foxparks",
+    "id": "cross-foxparks",
+    "sourceUrl": "https://palworld.wiki.gg/images/Foxparks.png",
+    "local": "images/crossovers/9262.png",
+    "fallbackDex": 4
+  },
+  "9263": {
+    "name": "Sparkit",
+    "id": "cross-sparkit",
+    "sourceUrl": "https://palworld.wiki.gg/images/Sparkit.png",
+    "local": "images/crossovers/9263.png",
+    "fallbackDex": 25
+  },
+  "9264": {
+    "name": "Fuack",
+    "id": "cross-fuack",
+    "sourceUrl": "https://palworld.wiki.gg/images/Fuack.png",
+    "local": "images/crossovers/9264.png",
+    "fallbackDex": 54
+  },
+  "9265": {
+    "name": "Lifmunk",
+    "id": "cross-lifmunk",
+    "sourceUrl": "https://palworld.wiki.gg/images/Lifmunk.png",
+    "local": "images/crossovers/9265.png",
+    "fallbackDex": 417
+  },
+  "9266": {
+    "name": "Gumoss",
+    "id": "cross-gumoss",
+    "sourceUrl": "https://palworld.wiki.gg/images/Gumoss.png",
+    "local": "images/crossovers/9266.png",
+    "fallbackDex": 152
+  },
+  "9267": {
+    "name": "Mossanda",
+    "id": "cross-mossanda",
+    "sourceUrl": "https://palworld.wiki.gg/images/Mossanda.png",
+    "local": "images/crossovers/9267.png",
+    "fallbackDex": 495
+  },
+  "9268": {
+    "name": "Grizzbolt",
+    "id": "cross-grizzbolt",
+    "sourceUrl": "https://palworld.wiki.gg/images/Grizzbolt.png",
+    "local": "images/crossovers/9268.png",
+    "fallbackDex": 25
+  },
+  "9269": {
+    "name": "Relaxaurus",
+    "id": "cross-relaxaurus",
+    "sourceUrl": "https://palworld.wiki.gg/images/Relaxaurus.png",
+    "local": "images/crossovers/9269.png",
+    "fallbackDex": 149
+  },
+  "9270": {
+    "name": "Pyrin Noct",
+    "id": "cross-pyrin-noct",
+    "sourceUrl": "https://palworld.wiki.gg/images/Pyrin_Noct.png",
+    "local": "images/crossovers/9270.png",
+    "fallbackDex": 4
+  },
+  "9271": {
+    "name": "Nitewing",
+    "id": "cross-nitewing",
+    "sourceUrl": "https://palworld.wiki.gg/images/Nitewing.png",
+    "local": "images/crossovers/9271.png",
+    "fallbackDex": 18
+  },
+  "9272": {
+    "name": "Dinossom",
+    "id": "cross-dinossom",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dinossom.png",
+    "local": "images/crossovers/9272.png",
+    "fallbackDex": 152
+  },
+  "9273": {
+    "name": "Surfent",
+    "id": "cross-surfent",
+    "sourceUrl": "https://palworld.wiki.gg/images/Surfent.png",
+    "local": "images/crossovers/9273.png",
+    "fallbackDex": 54
+  },
+  "9274": {
+    "name": "Penking",
+    "id": "cross-penking",
+    "sourceUrl": "https://palworld.wiki.gg/images/Penking.png",
+    "local": "images/crossovers/9274.png",
+    "fallbackDex": 131
+  },
+  "9275": {
+    "name": "Jetragon",
+    "id": "cross-jetragon",
+    "sourceUrl": "https://palworld.wiki.gg/images/Jetragon.png",
+    "local": "images/crossovers/9275.png",
+    "fallbackDex": 149
+  },
+  "9276": {
+    "name": "Necromus",
+    "id": "cross-necromus",
+    "sourceUrl": "https://palworld.wiki.gg/images/Necromus.png",
+    "local": "images/crossovers/9276.png",
+    "fallbackDex": 491
+  },
+  "9277": {
+    "name": "Paladius",
+    "id": "cross-paladius",
+    "sourceUrl": "https://palworld.wiki.gg/images/Paladius.png",
+    "local": "images/crossovers/9277.png",
+    "fallbackDex": 468
+  },
+  "9278": {
+    "name": "Pyrin",
+    "id": "cross-pyrin",
+    "sourceUrl": "https://palworld.wiki.gg/images/Pyrin.png",
+    "local": "images/crossovers/9278.png",
+    "fallbackDex": 4
+  },
+  "9279": {
+    "name": "Kingpaca",
+    "id": "cross-kingpaca",
+    "sourceUrl": "https://palworld.wiki.gg/images/Kingpaca.png",
+    "local": "images/crossovers/9279.png",
+    "fallbackDex": 133
+  },
+  "9280": {
+    "name": "Mammorest",
+    "id": "cross-mammorest",
+    "sourceUrl": "https://palworld.wiki.gg/images/Mammorest.png",
+    "local": "images/crossovers/9280.png",
+    "fallbackDex": 143
+  },
+  "9281": {
+    "name": "Wumpo",
+    "id": "cross-wumpo",
+    "sourceUrl": "https://palworld.wiki.gg/images/Wumpo.png",
+    "local": "images/crossovers/9281.png",
+    "fallbackDex": 460
+  },
+  "9282": {
+    "name": "Lyleen",
+    "id": "cross-lyleen",
+    "sourceUrl": "https://palworld.wiki.gg/images/Lyleen.png",
+    "local": "images/crossovers/9282.png",
+    "fallbackDex": 182
+  },
+  "9283": {
+    "name": "Faleris",
+    "id": "cross-faleris",
+    "sourceUrl": "https://palworld.wiki.gg/images/Faleris.png",
+    "local": "images/crossovers/9283.png",
+    "fallbackDex": 6
+  },
+  "9284": {
+    "name": "Shadowbeak",
+    "id": "cross-shadowbeak",
+    "sourceUrl": "https://palworld.wiki.gg/images/Shadowbeak.png",
+    "local": "images/crossovers/9284.png",
+    "fallbackDex": 491
+  },
+  "9285": {
+    "name": "Jolthog Cryst",
+    "id": "cross-jolthog-cryst",
+    "sourceUrl": "https://palworld.wiki.gg/images/Jolthog_Cryst.png",
+    "local": "images/crossovers/9285.png",
+    "fallbackDex": 25
+  },
+  "9286": {
+    "name": "Relaxaurus Lux",
+    "id": "cross-relaxaurus-lux",
+    "sourceUrl": "https://palworld.wiki.gg/images/Relaxaurus_Lux.png",
+    "local": "images/crossovers/9286.png",
+    "fallbackDex": 149
+  },
+  "9287": {
+    "name": "Mossanda Lux",
+    "id": "cross-mossanda-lux",
+    "sourceUrl": "https://palworld.wiki.gg/images/Mossanda_Lux.png",
+    "local": "images/crossovers/9287.png",
+    "fallbackDex": 495
+  },
+  "9288": {
+    "name": "Gomamon",
+    "id": "cross-gomamon",
+    "sourceUrl": "https://wikimon.net/images/9/9b/Gomamon.jpg",
+    "local": "images/crossovers/9288.png",
+    "fallbackDex": 393
+  },
+  "9289": {
+    "name": "Tentomon",
+    "id": "cross-tentomon",
+    "sourceUrl": "https://wikimon.net/images/a/ac/Tentomon.jpg",
+    "local": "images/crossovers/9289.png",
+    "fallbackDex": 214
+  },
+  "9290": {
+    "name": "Palmon",
+    "id": "cross-palmon",
+    "sourceUrl": "https://wikimon.net/images/6/61/Palmon.jpg",
+    "local": "images/crossovers/9290.png",
+    "fallbackDex": 152
+  },
+  "9291": {
+    "name": "Angewomon",
+    "id": "cross-angewomon",
+    "sourceUrl": "https://wikimon.net/images/5/5a/Angewomon.jpg",
+    "local": "images/crossovers/9291.png",
+    "fallbackDex": 468
+  },
+  "9292": {
+    "name": "Garurumon",
+    "id": "cross-garurumon",
+    "sourceUrl": "https://wikimon.net/images/5/57/Garurumon.jpg",
+    "local": "images/crossovers/9292.png",
+    "fallbackDex": 359
+  },
+  "9293": {
+    "name": "Greymon",
+    "id": "cross-greymon",
+    "sourceUrl": "https://wikimon.net/images/6/6c/Greymon.jpg",
+    "local": "images/crossovers/9293.png",
+    "fallbackDex": 6
+  },
+  "9294": {
+    "name": "Metalgreymon",
+    "id": "cross-metalgreymon",
+    "sourceUrl": "https://wikimon.net/images/d/d8/Metalgreymon.jpg",
+    "local": "images/crossovers/9294.png",
+    "fallbackDex": 6
+  },
+  "9295": {
+    "name": "Weregarurumon",
+    "id": "cross-weregarurumon",
+    "sourceUrl": "https://wikimon.net/images/8/8f/Weregarurumon.jpg",
+    "local": "images/crossovers/9295.png",
+    "fallbackDex": 460
+  },
+  "9296": {
+    "name": "Imperialdramon",
+    "id": "cross-imperialdramon",
+    "sourceUrl": "https://wikimon.net/images/5/5c/Imperialdramon.jpg",
+    "local": "images/crossovers/9296.png",
+    "fallbackDex": 149
+  },
+  "9297": {
+    "name": "Gallantmon",
+    "id": "cross-gallantmon",
+    "sourceUrl": "https://wikimon.net/images/4/4d/Dukemon.jpg",
+    "local": "images/crossovers/9297.png",
+    "fallbackDex": 448
+  },
+  "9298": {
+    "name": "Sakuyamon",
+    "id": "cross-sakuyamon",
+    "sourceUrl": "https://wikimon.net/images/a/a7/Sakuyamon.jpg",
+    "local": "images/crossovers/9298.png",
+    "fallbackDex": 282
+  },
+  "9299": {
+    "name": "Omnimon",
+    "id": "cross-omnimon",
+    "sourceUrl": "https://wikimon.net/images/7/78/Omegamon.jpg",
+    "local": "images/crossovers/9299.png",
+    "fallbackDex": 249
+  },
+  "9300": {
+    "name": "Diablomon",
+    "id": "cross-diablomon",
+    "sourceUrl": "https://wikimon.net/images/9/95/Diablomon.jpg",
+    "local": "images/crossovers/9300.png",
+    "fallbackDex": 491
+  },
+  "9301": {
+    "name": "Beelzebumon",
+    "id": "cross-beelzebumon",
+    "sourceUrl": "https://wikimon.net/images/e/e5/Beelzebumon.jpg",
+    "local": "images/crossovers/9301.png",
+    "fallbackDex": 491
+  },
+  "9302": {
+    "name": "Seraphimon",
+    "id": "cross-seraphimon",
+    "sourceUrl": "https://wikimon.net/images/7/75/Seraphimon.jpg",
+    "local": "images/crossovers/9302.png",
+    "fallbackDex": 468
+  },
+  "9303": {
+    "name": "Cattiva",
+    "id": "cross-cattiva",
+    "sourceUrl": "https://palworld.wiki.gg/images/Cattiva.png",
+    "local": "images/crossovers/9303.png",
+    "fallbackDex": 133
+  },
+  "9304": {
+    "name": "Chikipi",
+    "id": "cross-chikipi",
+    "sourceUrl": "https://palworld.wiki.gg/images/Chikipi.png",
+    "local": "images/crossovers/9304.png",
+    "fallbackDex": 16
+  },
+  "9305": {
+    "name": "Vixy",
+    "id": "cross-vixy",
+    "sourceUrl": "https://palworld.wiki.gg/images/Vixy.png",
+    "local": "images/crossovers/9305.png",
+    "fallbackDex": 133
+  },
+  "9306": {
+    "name": "Celaray",
+    "id": "cross-celaray",
+    "sourceUrl": "https://palworld.wiki.gg/images/Celaray.png",
+    "local": "images/crossovers/9306.png",
+    "fallbackDex": 18
+  },
+  "9307": {
+    "name": "Depresso",
+    "id": "cross-depresso",
+    "sourceUrl": "https://palworld.wiki.gg/images/Depresso.png",
+    "local": "images/crossovers/9307.png",
+    "fallbackDex": 519
+  },
+  "9308": {
+    "name": "Hoocrates",
+    "id": "cross-hoocrates",
+    "sourceUrl": "https://palworld.wiki.gg/images/Hoocrates.png",
+    "local": "images/crossovers/9308.png",
+    "fallbackDex": 197
+  },
+  "9309": {
+    "name": "Melpaca",
+    "id": "cross-melpaca",
+    "sourceUrl": "https://palworld.wiki.gg/images/Melpaca.png",
+    "local": "images/crossovers/9309.png",
+    "fallbackDex": 133
+  },
+  "9310": {
+    "name": "Tanzee",
+    "id": "cross-tanzee",
+    "sourceUrl": "https://palworld.wiki.gg/images/Tanzee.png",
+    "local": "images/crossovers/9310.png",
+    "fallbackDex": 34
+  },
+  "9311": {
+    "name": "Nox",
+    "id": "cross-nox",
+    "sourceUrl": "https://palworld.wiki.gg/images/Nox.png",
+    "local": "images/crossovers/9311.png",
+    "fallbackDex": 197
+  },
+  "9312": {
+    "name": "Rushoar",
+    "id": "cross-rushoar",
+    "sourceUrl": "https://palworld.wiki.gg/images/Rushoar.png",
+    "local": "images/crossovers/9312.png",
+    "fallbackDex": 50
+  },
+  "9313": {
+    "name": "Eikthyrdeer",
+    "id": "cross-eikthyrdeer",
+    "sourceUrl": "https://palworld.wiki.gg/images/Eikthyrdeer.png",
+    "local": "images/crossovers/9313.png",
+    "fallbackDex": 234
+  },
+  "9314": {
+    "name": "Hangyu",
+    "id": "cross-hangyu",
+    "sourceUrl": "https://palworld.wiki.gg/images/Hangyu.png",
+    "local": "images/crossovers/9314.png",
+    "fallbackDex": 18
+  },
+  "9315": {
+    "name": "Azurobe",
+    "id": "cross-azurobe",
+    "sourceUrl": "https://palworld.wiki.gg/images/Azurobe.png",
+    "local": "images/crossovers/9315.png",
+    "fallbackDex": 149
+  },
+  "9316": {
+    "name": "Univolt",
+    "id": "cross-univolt",
+    "sourceUrl": "https://palworld.wiki.gg/images/Univolt.png",
+    "local": "images/crossovers/9316.png",
+    "fallbackDex": 25
+  },
+  "9317": {
+    "name": "Gobfin",
+    "id": "cross-gobfin",
+    "sourceUrl": "https://palworld.wiki.gg/images/Gobfin.png",
+    "local": "images/crossovers/9317.png",
+    "fallbackDex": 320
+  },
+  "9318": {
+    "name": "Loupmoon",
+    "id": "cross-loupmoon",
+    "sourceUrl": "https://palworld.wiki.gg/images/Loupmoon.png",
+    "local": "images/crossovers/9318.png",
+    "fallbackDex": 197
+  },
+  "9319": {
+    "name": "Beegarde",
+    "id": "cross-beegarde",
+    "sourceUrl": "https://palworld.wiki.gg/images/Beegarde.png",
+    "local": "images/crossovers/9319.png",
+    "fallbackDex": 214
+  },
+  "9320": {
+    "name": "Katress",
+    "id": "cross-katress",
+    "sourceUrl": "https://palworld.wiki.gg/images/Katress.png",
+    "local": "images/crossovers/9320.png",
+    "fallbackDex": 197
+  },
+  "9321": {
+    "name": "Fenglope",
+    "id": "cross-fenglope",
+    "sourceUrl": "https://palworld.wiki.gg/images/Fenglope.png",
+    "local": "images/crossovers/9321.png",
+    "fallbackDex": 133
+  },
+  "9322": {
+    "name": "Ragnahawk",
+    "id": "cross-ragnahawk",
+    "sourceUrl": "https://palworld.wiki.gg/images/Ragnahawk.png",
+    "local": "images/crossovers/9322.png",
+    "fallbackDex": 18
+  },
+  "9323": {
+    "name": "Angemon",
+    "id": "cross-angemon",
+    "sourceUrl": "https://wikimon.net/images/1/1b/Angemon.jpg",
+    "local": "images/crossovers/9323.png",
+    "fallbackDex": 468
+  },
+  "9324": {
+    "name": "Hawkmon",
+    "id": "cross-hawkmon",
+    "sourceUrl": "https://wikimon.net/images/7/7f/Hawkmon.jpg",
+    "local": "images/crossovers/9324.png",
+    "fallbackDex": 18
+  },
+  "9325": {
+    "name": "Guilmon",
+    "id": "cross-guilmon",
+    "sourceUrl": "https://wikimon.net/images/c/c5/Guilmon.jpg",
+    "local": "images/crossovers/9325.png",
+    "fallbackDex": 6
+  },
+  "9326": {
+    "name": "Renamon",
+    "id": "cross-renamon",
+    "sourceUrl": "https://wikimon.net/images/4/46/Renamon.jpg",
+    "local": "images/crossovers/9326.png",
+    "fallbackDex": 197
+  },
+  "9327": {
+    "name": "Terriermon",
+    "id": "cross-terriermon",
+    "sourceUrl": "https://wikimon.net/images/5/51/Terriermon.jpg",
+    "local": "images/crossovers/9327.png",
+    "fallbackDex": 133
+  },
+  "9328": {
+    "name": "Impmon",
+    "id": "cross-impmon",
+    "sourceUrl": "https://wikimon.net/images/0/0b/Impmon.jpg",
+    "local": "images/crossovers/9328.png",
+    "fallbackDex": 4
+  },
+  "9329": {
+    "name": "Shoutmon",
+    "id": "cross-shoutmon",
+    "sourceUrl": "https://wikimon.net/images/4/44/Shoutmon.jpg",
+    "local": "images/crossovers/9329.png",
+    "fallbackDex": 6
+  },
+  "9330": {
+    "name": "Lucemon",
+    "id": "cross-lucemon",
+    "sourceUrl": "https://wikimon.net/images/1/15/Lucemon.jpg",
+    "local": "images/crossovers/9330.png",
+    "fallbackDex": 468
+  },
+  "9331": {
+    "name": "Alphamon",
+    "id": "cross-alphamon",
+    "sourceUrl": "https://wikimon.net/images/2/29/Alphamon.jpg",
+    "local": "images/crossovers/9331.png",
+    "fallbackDex": 448
+  },
+  "9332": {
+    "name": "Magnamon",
+    "id": "cross-magnamon",
+    "sourceUrl": "https://wikimon.net/images/6/6d/Magnamon.jpg",
+    "local": "images/crossovers/9332.png",
+    "fallbackDex": 448
+  },
+  "9333": {
+    "name": "Woolipop",
+    "id": "cross-pal-woolipop",
+    "sourceUrl": "https://palworld.wiki.gg/images/Woolipop_icon.png",
+    "local": "images/crossovers/9333.png",
+    "fallbackDex": 179
+  },
+  "9334": {
+    "name": "Galeclaw",
+    "id": "cross-pal-galeclaw",
+    "sourceUrl": "https://palworld.wiki.gg/images/Galeclaw_icon.png",
+    "local": "images/crossovers/9334.png",
+    "fallbackDex": 22
+  },
+  "9335": {
+    "name": "Bushi",
+    "id": "cross-pal-bushi",
+    "sourceUrl": "https://palworld.wiki.gg/images/Bushi_icon.png",
+    "local": "images/crossovers/9335.png",
+    "fallbackDex": 640
+  },
+  "9336": {
+    "name": "Omascul",
+    "id": "cross-pal-omascul",
+    "sourceUrl": "https://palworld.wiki.gg/images/Omascul_icon.png",
+    "local": "images/crossovers/9336.png",
+    "fallbackDex": 302
+  },
+  "9337": {
+    "name": "Leezpunk",
+    "id": "cross-pal-leezpunk",
+    "sourceUrl": "https://palworld.wiki.gg/images/Leezpunk_icon.png",
+    "local": "images/crossovers/9337.png",
+    "fallbackDex": 570
+  },
+  "9338": {
+    "name": "Flambelle",
+    "id": "cross-pal-flambelle",
+    "sourceUrl": "https://palworld.wiki.gg/images/Flambelle_icon.png",
+    "local": "images/crossovers/9338.png",
+    "fallbackDex": 637
+  },
+  "9339": {
+    "name": "Vanwyrm",
+    "id": "cross-pal-vanwyrm",
+    "sourceUrl": "https://palworld.wiki.gg/images/Vanwyrm_icon.png",
+    "local": "images/crossovers/9339.png",
+    "fallbackDex": 530
+  },
+  "9340": {
+    "name": "Reptyro",
+    "id": "cross-pal-reptyro",
+    "sourceUrl": "https://palworld.wiki.gg/images/Reptyro_icon.png",
+    "local": "images/crossovers/9340.png",
+    "fallbackDex": 323
+  },
+  "9341": {
+    "name": "Dazzi",
+    "id": "cross-pal-dazzi",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dazzi_icon.png",
+    "local": "images/crossovers/9341.png",
+    "fallbackDex": 145
+  },
+  "9342": {
+    "name": "Cryolinx",
+    "id": "cross-pal-cryolinx",
+    "sourceUrl": "https://palworld.wiki.gg/images/Cryolinx_icon.png",
+    "local": "images/crossovers/9342.png",
+    "fallbackDex": 471
+  },
+  "9343": {
+    "name": "Verdash",
+    "id": "cross-pal-verdash",
+    "sourceUrl": "https://palworld.wiki.gg/images/Verdash_icon.png",
+    "local": "images/crossovers/9343.png",
+    "fallbackDex": 640
+  },
+  "9344": {
+    "name": "Menasting",
+    "id": "cross-pal-menasting",
+    "sourceUrl": "https://palworld.wiki.gg/images/Menasting_icon.png",
+    "local": "images/crossovers/9344.png",
+    "fallbackDex": 302
+  },
+  "9345": {
+    "name": "Astegon",
+    "id": "cross-pal-astegon",
+    "sourceUrl": "https://palworld.wiki.gg/images/Astegon_icon.png",
+    "local": "images/crossovers/9345.png",
+    "fallbackDex": 635
+  },
+  "9346": {
+    "name": "Quivern",
+    "id": "cross-pal-quivern",
+    "sourceUrl": "https://palworld.wiki.gg/images/Quivern_icon.png",
+    "local": "images/crossovers/9346.png",
+    "fallbackDex": 330
+  },
+  "9347": {
+    "name": "Frostallion",
+    "id": "cross-pal-frostallion",
+    "sourceUrl": "https://palworld.wiki.gg/images/Frostallion_icon.png",
+    "local": "images/crossovers/9347.png",
+    "fallbackDex": 78
+  },
+  "9348": {
+    "name": "Jormuntide",
+    "id": "cross-pal-jormuntide",
+    "sourceUrl": "https://palworld.wiki.gg/images/Jormuntide_icon.png",
+    "local": "images/crossovers/9348.png",
+    "fallbackDex": 148
+  },
+  "9349": {
+    "name": "Jormuntide Ignis",
+    "id": "cross-pal-jormuntide-ignis",
+    "sourceUrl": "https://palworld.wiki.gg/images/Jormuntide_Ignis_icon.png",
+    "local": "images/crossovers/9349.png",
+    "fallbackDex": 6
+  },
+  "9350": {
+    "name": "Broncherry",
+    "id": "cross-pal-broncherry",
+    "sourceUrl": "https://palworld.wiki.gg/images/Broncherry_icon.png",
+    "local": "images/crossovers/9350.png",
+    "fallbackDex": 460
+  },
+  "9351": {
+    "name": "Elphidran",
+    "id": "cross-pal-elphidran",
+    "sourceUrl": "https://palworld.wiki.gg/images/Elphidran_icon.png",
+    "local": "images/crossovers/9351.png",
+    "fallbackDex": 381
+  },
+  "9352": {
+    "name": "Beakon",
+    "id": "cross-pal-beakon",
+    "sourceUrl": "https://palworld.wiki.gg/images/Beakon_icon.png",
+    "local": "images/crossovers/9352.png",
+    "fallbackDex": 145
+  },
+  "9353": {
+    "name": "Rayhound",
+    "id": "cross-pal-rayhound",
+    "sourceUrl": "https://palworld.wiki.gg/images/Rayhound_icon.png",
+    "local": "images/crossovers/9353.png",
+    "fallbackDex": 135
+  },
+  "9354": {
+    "name": "Digtoise",
+    "id": "cross-pal-digtoise",
+    "sourceUrl": "https://palworld.wiki.gg/images/Digtoise_icon.png",
+    "local": "images/crossovers/9354.png",
+    "fallbackDex": 213
+  },
+  "9355": {
+    "name": "Dumud",
+    "id": "cross-pal-dumud",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dumud_icon.png",
+    "local": "images/crossovers/9355.png",
+    "fallbackDex": 194
+  },
+  "9356": {
+    "name": "Grintale",
+    "id": "cross-pal-grintale",
+    "sourceUrl": "https://palworld.wiki.gg/images/Grintale_icon.png",
+    "local": "images/crossovers/9356.png",
+    "fallbackDex": 52
+  },
+  "9357": {
+    "name": "Sibelyx",
+    "id": "cross-pal-sibelyx",
+    "sourceUrl": "https://palworld.wiki.gg/images/Sibelyx_icon.png",
+    "local": "images/crossovers/9357.png",
+    "fallbackDex": 478
+  },
+  "9358": {
+    "name": "Petallia",
+    "id": "cross-pal-petallia",
+    "sourceUrl": "https://palworld.wiki.gg/images/Petallia_icon.png",
+    "local": "images/crossovers/9358.png",
+    "fallbackDex": 182
+  },
+  "9359": {
+    "name": "Vaelet",
+    "id": "cross-pal-vaelet",
+    "sourceUrl": "https://palworld.wiki.gg/images/Vaelet_icon.png",
+    "local": "images/crossovers/9359.png",
+    "fallbackDex": 492
+  },
+  "9360": {
+    "name": "Warsect",
+    "id": "cross-pal-warsect",
+    "sourceUrl": "https://palworld.wiki.gg/images/Warsect_icon.png",
+    "local": "images/crossovers/9360.png",
+    "fallbackDex": 214
+  },
+  "9361": {
+    "name": "Suzaku",
+    "id": "cross-pal-suzaku",
+    "sourceUrl": "https://palworld.wiki.gg/images/Suzaku_icon.png",
+    "local": "images/crossovers/9361.png",
+    "fallbackDex": 250
+  },
+  "9362": {
+    "name": "Yakumo",
+    "id": "cross-pal-yakumo",
+    "sourceUrl": "https://palworld.wiki.gg/images/Yakumo_icon.png",
+    "local": "images/crossovers/9362.png",
+    "fallbackDex": 328
+  },
+  "9363": {
+    "name": "Koromon",
+    "id": "cross-digi-koromon",
+    "sourceUrl": "https://wikimon.net/images/6/6e/Koromon.jpg",
+    "local": "images/crossovers/9363.png",
+    "fallbackDex": 133
+  },
+  "9364": {
+    "name": "Botamon",
+    "id": "cross-digi-botamon",
+    "sourceUrl": "https://wikimon.net/images/e/ed/Botamon.jpg",
+    "local": "images/crossovers/9364.png",
+    "fallbackDex": 175
+  },
+  "9365": {
+    "name": "Kunemon",
+    "id": "cross-digi-kunemon",
+    "sourceUrl": "https://wikimon.net/images/1/11/Kunemon.jpg",
+    "local": "images/crossovers/9365.png",
+    "fallbackDex": 10
+  },
+  "9366": {
+    "name": "DemiDevimon",
+    "id": "cross-digi-demi-devimon",
+    "sourceUrl": "https://wikimon.net/images/d/d4/Picodevimon.jpg",
+    "local": "images/crossovers/9366.png",
+    "fallbackDex": 198
+  },
+  "9367": {
+    "name": "Devimon",
+    "id": "cross-digi-devimon",
+    "sourceUrl": "https://wikimon.net/images/2/29/Devimon.jpg",
+    "local": "images/crossovers/9367.png",
+    "fallbackDex": 442
+  },
+  "9368": {
+    "name": "Leomon",
+    "id": "cross-digi-leomon",
+    "sourceUrl": "https://wikimon.net/images/6/68/Leomon.jpg",
+    "local": "images/crossovers/9368.png",
+    "fallbackDex": 448
+  },
+  "9369": {
+    "name": "Ogremon",
+    "id": "cross-digi-ogremon",
+    "sourceUrl": "https://wikimon.net/images/2/25/Orgemon.jpg",
+    "local": "images/crossovers/9369.png",
+    "fallbackDex": 62
+  },
+  "9370": {
+    "name": "Numemon",
+    "id": "cross-digi-numemon",
+    "sourceUrl": "https://wikimon.net/images/1/1f/Numemon.jpg",
+    "local": "images/crossovers/9370.png",
+    "fallbackDex": 88
+  },
+  "9371": {
+    "name": "Monzaemon",
+    "id": "cross-digi-monzaemon",
+    "sourceUrl": "https://wikimon.net/images/5/5f/Monzaemon.jpg",
+    "local": "images/crossovers/9371.png",
+    "fallbackDex": 143
+  },
+  "9372": {
+    "name": "Etemon",
+    "id": "cross-digi-etemon",
+    "sourceUrl": "https://wikimon.net/images/c/c4/Etemon.jpg",
+    "local": "images/crossovers/9372.png",
+    "fallbackDex": 106
+  },
+  "9373": {
+    "name": "Myotismon",
+    "id": "cross-digi-myotismon",
+    "sourceUrl": "https://wikimon.net/images/6/66/Vamdemon.jpg",
+    "local": "images/crossovers/9373.png",
+    "fallbackDex": 200
+  },
+  "9374": {
+    "name": "MetalGarurumon",
+    "id": "cross-digi-metal-garurumon",
+    "sourceUrl": "https://wikimon.net/images/2/25/Metalgarurumon.jpg",
+    "local": "images/crossovers/9374.png",
+    "fallbackDex": 448
+  },
+  "9375": {
+    "name": "WarGreymon",
+    "id": "cross-digi-war-greymon",
+    "sourceUrl": "https://wikimon.net/images/9/94/Wargreymon.jpg",
+    "local": "images/crossovers/9375.png",
+    "fallbackDex": 6
+  },
+  "9376": {
+    "name": "Airdramon",
+    "id": "cross-digi-airdramon",
+    "sourceUrl": "https://wikimon.net/images/6/63/Airdramon.jpg",
+    "local": "images/crossovers/9376.png",
+    "fallbackDex": 149
+  },
+  "9377": {
+    "name": "Seadramon",
+    "id": "cross-digi-seadramon",
+    "sourceUrl": "https://wikimon.net/images/4/49/Seadramon.jpg",
+    "local": "images/crossovers/9377.png",
+    "fallbackDex": 148
+  },
+  "9378": {
+    "name": "MegaSeadramon",
+    "id": "cross-digi-mega-seadramon",
+    "sourceUrl": "https://wikimon.net/images/3/32/Megaseadramon.jpg",
+    "local": "images/crossovers/9378.png",
+    "fallbackDex": 130
+  },
+  "9379": {
+    "name": "Kuwagamon",
+    "id": "cross-digi-kuwagamon",
+    "sourceUrl": "https://wikimon.net/images/2/20/Kuwagamon.jpg",
+    "local": "images/crossovers/9379.png",
+    "fallbackDex": 123
+  },
+  "9380": {
+    "name": "Okuwamon",
+    "id": "cross-digi-okuwamon",
+    "sourceUrl": "https://wikimon.net/images/6/61/Okuwamon.jpg",
+    "local": "images/crossovers/9380.png",
+    "fallbackDex": 212
+  },
+  "9381": {
+    "name": "Togemon",
+    "id": "cross-digi-togemon",
+    "sourceUrl": "https://wikimon.net/images/0/0f/Togemon.jpg",
+    "local": "images/crossovers/9381.png",
+    "fallbackDex": 652
+  },
+  "9382": {
+    "name": "Lillymon",
+    "id": "cross-digi-lillymon",
+    "sourceUrl": "https://wikimon.net/images/a/a8/Lilimon.jpg",
+    "local": "images/crossovers/9382.png",
+    "fallbackDex": 182
+  },
+  "9383": {
+    "name": "Golemon",
+    "id": "cross-digi-golemon",
+    "sourceUrl": "https://wikimon.net/images/5/59/Golemon.jpg",
+    "local": "images/crossovers/9383.png",
+    "fallbackDex": 75
+  },
+  "9384": {
+    "name": "GeoGreymon",
+    "id": "cross-digi-geo-greymon",
+    "sourceUrl": "https://wikimon.net/images/1/1d/Geogreymon.jpg",
+    "local": "images/crossovers/9384.png",
+    "fallbackDex": 6
+  },
+  "9385": {
+    "name": "SkullGreymon",
+    "id": "cross-digi-skull-greymon",
+    "sourceUrl": "https://wikimon.net/images/1/1f/Skullgreymon.jpg",
+    "local": "images/crossovers/9385.png",
+    "fallbackDex": 635
+  },
+  "9386": {
+    "name": "Machinedramon",
+    "id": "cross-digi-machinedramon",
+    "sourceUrl": "https://wikimon.net/images/c/c1/Mugendramon.jpg",
+    "local": "images/crossovers/9386.png",
+    "fallbackDex": 380
+  },
+  "9387": {
+    "name": "Piedmon",
+    "id": "cross-digi-piedmon",
+    "sourceUrl": "https://wikimon.net/images/4/44/Piemon.jpg",
+    "local": "images/crossovers/9387.png",
+    "fallbackDex": 658
+  },
+  "9388": {
+    "name": "VenomMyotismon",
+    "id": "cross-digi-venom-myotismon",
+    "sourceUrl": "https://wikimon.net/images/a/a1/Venomvamdemon.jpg",
+    "local": "images/crossovers/9388.png",
+    "fallbackDex": 302
+  },
+  "9389": {
+    "name": "ShineGreymon",
+    "id": "cross-digi-shine-greymon",
+    "sourceUrl": "https://wikimon.net/images/9/90/Shinegreymon.jpg",
+    "local": "images/crossovers/9389.png",
+    "fallbackDex": 445
+  },
+  "9390": {
+    "name": "MirageGaogamon",
+    "id": "cross-digi-mirage-gaogamon",
+    "sourceUrl": "https://wikimon.net/images/1/18/Miragegaogamon.jpg",
+    "local": "images/crossovers/9390.png",
+    "fallbackDex": 130
+  },
+  "9391": {
+    "name": "GranKuwagamon",
+    "id": "cross-digi-gran-kuwagamon",
+    "sourceUrl": "https://wikimon.net/images/a/aa/Grankuwagamon.jpg",
+    "local": "images/crossovers/9391.png",
+    "fallbackDex": 123
+  },
+  "9392": {
+    "name": "Susanoomon",
+    "id": "cross-digi-susanoomon",
+    "sourceUrl": "https://wikimon.net/images/7/73/Susanoomon.jpg",
+    "local": "images/crossovers/9392.png",
+    "fallbackDex": 383
+  },
+  "9423": {
+    "name": "Blazamut",
+    "id": "cross-pal-blazamut",
+    "sourceUrl": "https://palworld.wiki.gg/images/Blazamut.png",
+    "local": "images/crossovers/9423.png",
+    "fallbackDex": 6
+  },
+  "9424": {
+    "name": "Frostallion Noct",
+    "id": "cross-pal-frostallion-noct",
+    "sourceUrl": "https://palworld.wiki.gg/images/Frostallion_Noct.png",
+    "local": "images/crossovers/9424.png",
+    "fallbackDex": 646
+  },
+  "9425": {
+    "name": "Lyleen Noct",
+    "id": "cross-pal-lyleen-noct",
+    "sourceUrl": "https://palworld.wiki.gg/images/Lyleen_Noct.png",
+    "local": "images/crossovers/9425.png",
+    "fallbackDex": 282
+  },
+  "9426": {
+    "name": "Wumpo Botan",
+    "id": "cross-pal-wumpo-botan",
+    "sourceUrl": "https://palworld.wiki.gg/images/Wumpo_Botan.png",
+    "local": "images/crossovers/9426.png",
+    "fallbackDex": 460
+  },
+  "9427": {
+    "name": "Kingpaca Cryst",
+    "id": "cross-pal-kingpaca-cryst",
+    "sourceUrl": "https://palworld.wiki.gg/images/Kingpaca_Cryst.png",
+    "local": "images/crossovers/9427.png",
+    "fallbackDex": 131
+  },
+  "9428": {
+    "name": "Mammorest Cryst",
+    "id": "cross-pal-mammorest-cryst",
+    "sourceUrl": "https://palworld.wiki.gg/images/Mammorest_Cryst.png",
+    "local": "images/crossovers/9428.png",
+    "fallbackDex": 143
+  },
+  "9429": {
+    "name": "Incineram",
+    "id": "cross-pal-incineram",
+    "sourceUrl": "https://palworld.wiki.gg/images/Incineram.png",
+    "local": "images/crossovers/9429.png",
+    "fallbackDex": 5
+  },
+  "9430": {
+    "name": "Incineram Noct",
+    "id": "cross-pal-incineram-noct",
+    "sourceUrl": "https://palworld.wiki.gg/images/Incineram_Noct.png",
+    "local": "images/crossovers/9430.png",
+    "fallbackDex": 442
+  },
+  "9431": {
+    "name": "Killamari",
+    "id": "cross-pal-killamari",
+    "sourceUrl": "https://palworld.wiki.gg/images/Killamari.png",
+    "local": "images/crossovers/9431.png",
+    "fallbackDex": 224
+  },
+  "9432": {
+    "name": "Mau",
+    "id": "cross-pal-mau",
+    "sourceUrl": "https://palworld.wiki.gg/images/Mau.png",
+    "local": "images/crossovers/9432.png",
+    "fallbackDex": 215
+  },
+  "9433": {
+    "name": "Robinquill",
+    "id": "cross-pal-robinquill",
+    "sourceUrl": "https://palworld.wiki.gg/images/Robinquill.png",
+    "local": "images/crossovers/9433.png",
+    "fallbackDex": 21
+  },
+  "9434": {
+    "name": "Robinquill Terra",
+    "id": "cross-pal-robinquill-terra",
+    "sourceUrl": "https://palworld.wiki.gg/images/Robinquill_Terra.png",
+    "local": "images/crossovers/9434.png",
+    "fallbackDex": 22
+  },
+  "9435": {
+    "name": "Maraith",
+    "id": "cross-pal-maraith",
+    "sourceUrl": "https://palworld.wiki.gg/images/Maraith.png",
+    "local": "images/crossovers/9435.png",
+    "fallbackDex": 359
+  },
+  "9436": {
+    "name": "Sootseer",
+    "id": "cross-pal-sootseer",
+    "sourceUrl": "https://palworld.wiki.gg/images/Sootseer.png",
+    "local": "images/crossovers/9436.png",
+    "fallbackDex": 442
+  },
+  "9437": {
+    "name": "Knocklem",
+    "id": "cross-pal-knocklem",
+    "sourceUrl": "https://palworld.wiki.gg/images/Knocklem.png",
+    "local": "images/crossovers/9437.png",
+    "fallbackDex": 76
+  },
+  "9438": {
+    "name": "Elphidran Aqua",
+    "id": "cross-pal-elphidran-aqua",
+    "sourceUrl": "https://palworld.wiki.gg/images/Elphidran_Aqua.png",
+    "local": "images/crossovers/9438.png",
+    "fallbackDex": 148
+  },
+  "9439": {
+    "name": "Broncherry Aqua",
+    "id": "cross-pal-broncherry-aqua",
+    "sourceUrl": "https://palworld.wiki.gg/images/Broncherry_Aqua.png",
+    "local": "images/crossovers/9439.png",
+    "fallbackDex": 143
+  },
+  "9440": {
+    "name": "Dinossom Lux",
+    "id": "cross-pal-dinossom-lux",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dinossom_Lux.png",
+    "local": "images/crossovers/9440.png",
+    "fallbackDex": 148
+  },
+  "9441": {
+    "name": "Vanwyrm Cryst",
+    "id": "cross-pal-vanwyrm-cryst",
+    "sourceUrl": "https://palworld.wiki.gg/images/Vanwyrm_Cryst.png",
+    "local": "images/crossovers/9441.png",
+    "fallbackDex": 215
+  },
+  "9442": {
+    "name": "Katress Ignis",
+    "id": "cross-pal-katress-ignis",
+    "sourceUrl": "https://palworld.wiki.gg/images/Katress_Ignis.png",
+    "local": "images/crossovers/9442.png",
+    "fallbackDex": 197
+  },
+  "9443": {
+    "name": "Leezpunk Ignis",
+    "id": "cross-pal-leezpunk-ignis",
+    "sourceUrl": "https://palworld.wiki.gg/images/Leezpunk_Ignis.png",
+    "local": "images/crossovers/9443.png",
+    "fallbackDex": 302
+  },
+  "9444": {
+    "name": "Hangyu Cryst",
+    "id": "cross-pal-hangyu-cryst",
+    "sourceUrl": "https://palworld.wiki.gg/images/Hangyu_Cryst.png",
+    "local": "images/crossovers/9444.png",
+    "fallbackDex": 18
+  },
+  "9445": {
+    "name": "Surfent Terra",
+    "id": "cross-pal-surfent-terra",
+    "sourceUrl": "https://palworld.wiki.gg/images/Surfent_Terra.png",
+    "local": "images/crossovers/9445.png",
+    "fallbackDex": 131
+  },
+  "9446": {
+    "name": "Reptyro Cryst",
+    "id": "cross-pal-reptyro-cryst",
+    "sourceUrl": "https://palworld.wiki.gg/images/Reptyro_Cryst.png",
+    "local": "images/crossovers/9446.png",
+    "fallbackDex": 131
+  },
+  "9447": {
+    "name": "Eikthyrdeer Terra",
+    "id": "cross-pal-eikthyrdeer-terra",
+    "sourceUrl": "https://palworld.wiki.gg/images/Eikthyrdeer_Terra.png",
+    "local": "images/crossovers/9447.png",
+    "fallbackDex": 234
+  },
+  "9448": {
+    "name": "Chillet Ignis",
+    "id": "cross-pal-chillet-ignis",
+    "sourceUrl": "https://palworld.wiki.gg/images/Chillet_Ignis.png",
+    "local": "images/crossovers/9448.png",
+    "fallbackDex": 131
+  },
+  "9449": {
+    "name": "Tombat",
+    "id": "cross-pal-tombat",
+    "sourceUrl": "https://palworld.wiki.gg/images/Tombat.png",
+    "local": "images/crossovers/9449.png",
+    "fallbackDex": 215
+  },
+  "9450": {
+    "name": "Menasting Terra",
+    "id": "cross-pal-menasting-terra",
+    "sourceUrl": "https://palworld.wiki.gg/images/Menasting_Terra.png",
+    "local": "images/crossovers/9450.png",
+    "fallbackDex": 302
+  },
+  "9451": {
+    "name": "Warsect Terra",
+    "id": "cross-pal-warsect-terra",
+    "sourceUrl": "https://palworld.wiki.gg/images/Warsect_Terra.png",
+    "local": "images/crossovers/9451.png",
+    "fallbackDex": 212
+  },
+  "9452": {
+    "name": "Quivern Botan",
+    "id": "cross-pal-quivern-botan",
+    "sourceUrl": "https://palworld.wiki.gg/images/Quivern_Botan.png",
+    "local": "images/crossovers/9452.png",
+    "fallbackDex": 381
+  },
+  "9453": {
+    "name": "Kabuterimon",
+    "id": "cross-digi-kabuterimon",
+    "sourceUrl": "https://wikimon.net/images/4/4a/Kabuterimon.jpg",
+    "local": "images/crossovers/9453.png",
+    "fallbackDex": 145
+  },
+  "9454": {
+    "name": "V-dramon",
+    "id": "cross-digi-v-dramon",
+    "sourceUrl": "https://wikimon.net/images/1/1f/Vdramon.jpg",
+    "local": "images/crossovers/9454.png",
+    "fallbackDex": 149
+  },
+  "9455": {
+    "name": "Ulforce V-dramon",
+    "id": "cross-digi-ulforce-v-dramon",
+    "sourceUrl": "https://wikimon.net/images/6/6b/Ulforcevdramon.jpg",
+    "local": "images/crossovers/9455.png",
+    "fallbackDex": 131
+  },
+  "9456": {
+    "name": "Dynasmon",
+    "id": "cross-digi-dynasmon",
+    "sourceUrl": "https://wikimon.net/images/6/69/Dynasmon.jpg",
+    "local": "images/crossovers/9456.png",
+    "fallbackDex": 131
+  },
+  "9457": {
+    "name": "Elecmon",
+    "id": "cross-digi-elecmon",
+    "sourceUrl": "https://wikimon.net/images/d/dc/Elecmon.jpg",
+    "local": "images/crossovers/9457.png",
+    "fallbackDex": 25
+  },
+  "9458": {
+    "name": "Tunomon",
+    "id": "cross-digi-tunomon",
+    "sourceUrl": "https://wikimon.net/images/5/59/Tunomon.jpg",
+    "local": "images/crossovers/9458.png",
+    "fallbackDex": 25
+  },
+  "9459": {
+    "name": "Pyocomon",
+    "id": "cross-digi-pyocomon",
+    "sourceUrl": "https://wikimon.net/images/a/a4/Pyocomon.jpg",
+    "local": "images/crossovers/9459.png",
+    "fallbackDex": 35
+  },
+  "9460": {
+    "name": "Pukamon",
+    "id": "cross-digi-pukamon",
+    "sourceUrl": "https://wikimon.net/images/7/73/Pukamon.jpg",
+    "local": "images/crossovers/9460.png",
+    "fallbackDex": 54
+  },
+  "9461": {
+    "name": "Gottsumon",
+    "id": "cross-digi-gottsumon",
+    "sourceUrl": "https://wikimon.net/images/f/f4/Gottsumon.jpg",
+    "local": "images/crossovers/9461.png",
+    "fallbackDex": 95
+  },
+  "9462": {
+    "name": "V-mon",
+    "id": "cross-digi-v-mon",
+    "sourceUrl": "https://wikimon.net/images/2/23/Vmon.jpg",
+    "local": "images/crossovers/9462.png",
+    "fallbackDex": 149
+  },
+  "9463": {
+    "name": "Vikemon",
+    "id": "cross-digi-vikemon",
+    "sourceUrl": "https://wikimon.net/images/7/77/Vikemon.jpg",
+    "local": "images/crossovers/9463.png",
+    "fallbackDex": 131
+  },
+  "9464": {
+    "name": "Armadimon",
+    "id": "cross-digi-armadimon",
+    "sourceUrl": "https://wikimon.net/images/3/30/Armadimon.jpg",
+    "local": "images/crossovers/9464.png",
+    "fallbackDex": 95
+  },
+  "9465": {
+    "name": "Plesiomon",
+    "id": "cross-digi-plesiomon",
+    "sourceUrl": "https://wikimon.net/images/4/45/Plesiomon.jpg",
+    "local": "images/crossovers/9465.png",
+    "fallbackDex": 131
+  },
+  "9466": {
+    "name": "Marin Angemon",
+    "id": "cross-digi-marin-angemon",
+    "sourceUrl": "https://wikimon.net/images/b/b1/Marinangemon.jpg",
+    "local": "images/crossovers/9466.png",
+    "fallbackDex": 131
+  },
+  "9467": {
+    "name": "Holy Angemon",
+    "id": "cross-digi-holy-angemon",
+    "sourceUrl": "https://wikimon.net/images/6/6d/Holyangemon.jpg",
+    "local": "images/crossovers/9467.png",
+    "fallbackDex": 468
+  },
+  "9468": {
+    "name": "Lopmon",
+    "id": "cross-digi-lopmon",
+    "sourceUrl": "https://wikimon.net/images/a/af/Lopmon.jpg",
+    "local": "images/crossovers/9468.png",
+    "fallbackDex": 133
+  },
+  "9469": {
+    "name": "Chimairamon",
+    "id": "cross-digi-chimairamon",
+    "sourceUrl": "https://wikimon.net/images/1/1e/Chimairamon.jpg",
+    "local": "images/crossovers/9469.png",
+    "fallbackDex": 249
+  },
+  "9470": {
+    "name": "Belial Vamdemon",
+    "id": "cross-digi-belial-vamdemon",
+    "sourceUrl": "https://wikimon.net/images/c/ca/Belialvamdemon2.jpg",
+    "local": "images/crossovers/9470.png",
+    "fallbackDex": 244
+  },
+  "9471": {
+    "name": "Dominimon",
+    "id": "cross-digi-dominimon",
+    "sourceUrl": "https://wikimon.net/images/8/8b/Dominimon.jpg",
+    "local": "images/crossovers/9471.png",
+    "fallbackDex": 468
+  },
+  "9472": {
+    "name": "Lilithmon",
+    "id": "cross-digi-lilithmon",
+    "sourceUrl": "https://wikimon.net/images/7/79/Lilithmon.jpg",
+    "local": "images/crossovers/9472.png",
+    "fallbackDex": 197
+  },
+  "9473": {
+    "name": "Barbamon",
+    "id": "cross-digi-barbamon",
+    "sourceUrl": "https://wikimon.net/images/a/a4/Barbamon2.jpg",
+    "local": "images/crossovers/9473.png",
+    "fallbackDex": 302
+  },
+  "9474": {
+    "name": "Leviamon",
+    "id": "cross-digi-leviamon",
+    "sourceUrl": "https://wikimon.net/images/4/42/Leviamon.jpg",
+    "local": "images/crossovers/9474.png",
+    "fallbackDex": 130
+  },
+  "9475": {
+    "name": "Gankoomon",
+    "id": "cross-digi-gankoomon",
+    "sourceUrl": "https://wikimon.net/images/d/da/Gankoomon.jpg",
+    "local": "images/crossovers/9475.png",
+    "fallbackDex": 448
+  },
+  "9476": {
+    "name": "Ouryumon",
+    "id": "cross-digi-ouryumon",
+    "sourceUrl": "https://wikimon.net/images/a/af/Ouryumon.jpg",
+    "local": "images/crossovers/9476.png",
+    "fallbackDex": 149
+  },
+  "9477": {
+    "name": "Metal Seadramon",
+    "id": "cross-digi-metal-seadramon",
+    "sourceUrl": "https://wikimon.net/images/6/63/Metalseadramon.jpg",
+    "local": "images/crossovers/9477.png",
+    "fallbackDex": 131
+  },
+  "9478": {
+    "name": "Dorulumon",
+    "id": "cross-digi-dorulumon",
+    "sourceUrl": "https://wikimon.net/images/6/6a/Dorulumon.jpg",
+    "local": "images/crossovers/9478.png",
+    "fallbackDex": 149
+  },
+  "9479": {
+    "name": "Ballistamon",
+    "id": "cross-digi-ballistamon",
+    "sourceUrl": "https://wikimon.net/images/5/52/Ballistamon.jpg",
+    "local": "images/crossovers/9479.png",
+    "fallbackDex": 83
+  },
+  "9480": {
+    "name": "Starmon",
+    "id": "cross-digi-starmon",
+    "sourceUrl": "https://wikimon.net/images/4/41/Starmon.jpg",
+    "local": "images/crossovers/9480.png",
+    "fallbackDex": 120
+  },
+  "9481": {
+    "name": "Cyberdramon",
+    "id": "cross-digi-cyberdramon",
+    "sourceUrl": "https://wikimon.net/images/8/82/Cyberdramon.jpg",
+    "local": "images/crossovers/9481.png",
+    "fallbackDex": 448
+  },
+  "9482": {
+    "name": "Saint Galgomon",
+    "id": "cross-digi-saint-galgomon",
+    "sourceUrl": "https://wikimon.net/images/2/24/Saintgalgomon2.jpg",
+    "local": "images/crossovers/9482.png",
+    "fallbackDex": 262
+  },
+  "9483": {
+    "name": "Omegamon Alter-B",
+    "id": "cross-digi-omegamon-alter-b",
+    "sourceUrl": "https://wikimon.net/images/c/c3/Omegamon_alter-b.jpg",
+    "local": "images/crossovers/9483.png",
+    "fallbackDex": 448
+  },
+  "9484": {
+    "name": "Imperialdramon Paladin Mode",
+    "id": "cross-digi-imperialdramon-paladin-mode",
+    "sourceUrl": "https://wikimon.net/images/c/cb/Imperialdramon_paladin.jpg",
+    "local": "images/crossovers/9484.png",
+    "fallbackDex": 448
+  },
+  "9485": {
+    "name": "Shine Greymon Burst Mode",
+    "id": "cross-digi-shine-greymon-burst-mode",
+    "sourceUrl": "https://wikimon.net/images/6/67/Shinegreymon_burst.jpg",
+    "local": "images/crossovers/9485.png",
+    "fallbackDex": 6
+  },
+  "9486": {
+    "name": "Gabumon Bond of Friendship",
+    "id": "cross-digi-gabumon-bond-of-friendship",
+    "sourceUrl": "https://wikimon.net/images/7/77/Gabumon_bondoffriendship.jpg",
+    "local": "images/crossovers/9486.png",
+    "fallbackDex": 131
+  },
+  "9487": {
+    "name": "Dukemon Crimson Mode",
+    "id": "cross-digi-dukemon-crimson-mode",
+    "sourceUrl": "https://wikimon.net/images/5/50/Dukemon_crimson2.jpg",
+    "local": "images/crossovers/9487.png",
+    "fallbackDex": 6
+  },
+  "9488": {
+    "name": "Craniummon",
+    "id": "cross-digi-craniummon",
+    "sourceUrl": "https://wikimon.net/images/e/eb/Craniummon.jpg",
+    "local": "images/crossovers/9488.png",
+    "fallbackDex": 448
+  },
+  "9489": {
+    "name": "Kuzuhamon",
+    "id": "cross-digi-kuzuhamon",
+    "sourceUrl": "https://wikimon.net/images/f/fd/Kuzuhamon.jpg",
+    "local": "images/crossovers/9489.png",
+    "fallbackDex": 428
+  },
+  "9490": {
+    "name": "Grand Locomon",
+    "id": "cross-digi-grand-locomon",
+    "sourceUrl": "https://wikimon.net/images/7/7f/Grandlocomon.jpg",
+    "local": "images/crossovers/9490.png",
+    "fallbackDex": 448
+  },
+  "9491": {
+    "name": "Locomon",
+    "id": "cross-digi-locomon",
+    "sourceUrl": "https://wikimon.net/images/3/3e/Locomon2.jpg",
+    "local": "images/crossovers/9491.png",
+    "fallbackDex": 448
+  },
+  "9492": {
+    "name": "Archnemon",
+    "id": "cross-digi-archnemon",
+    "sourceUrl": "https://wikimon.net/images/6/6c/Archnemon.jpg",
+    "local": "images/crossovers/9492.png",
+    "fallbackDex": 167
+  },
+  "9493": {
+    "name": "Mummymon",
+    "id": "cross-digi-mummymon",
+    "sourceUrl": "https://wikimon.net/images/1/14/Mummymon.jpg",
+    "local": "images/crossovers/9493.png",
+    "fallbackDex": 105
+  },
+  "9494": {
+    "name": "Ofanimon",
+    "id": "cross-digi-ofanimon",
+    "sourceUrl": "https://wikimon.net/images/a/a6/Ofanimon.jpg",
+    "local": "images/crossovers/9494.png",
+    "fallbackDex": 468
+  },
+  "9495": {
+    "name": "Megidramon",
+    "id": "cross-digi-megidramon",
+    "sourceUrl": "https://wikimon.net/images/f/f4/Megidramon.jpg",
+    "local": "images/crossovers/9495.png",
+    "fallbackDex": 6
+  },
+  "9496": {
+    "name": "Beelzebumon Blast Mode",
+    "id": "cross-digi-beelzebumon-blast-mode",
+    "sourceUrl": "https://wikimon.net/images/1/1d/Beelzebumon_blast.jpg",
+    "local": "images/crossovers/9496.png",
+    "fallbackDex": 6
+  },
+  "9497": {
+    "name": "Knightmon",
+    "id": "cross-digi-knightmon",
+    "sourceUrl": "https://wikimon.net/images/2/23/Knightmon.jpg",
+    "local": "images/crossovers/9497.png",
+    "fallbackDex": 448
+  },
+  "9498": {
+    "name": "Black War Greymon",
+    "id": "cross-digi-black-war-greymon",
+    "sourceUrl": "https://wikimon.net/images/a/a2/Blackwargreymon.jpg",
+    "local": "images/crossovers/9498.png",
+    "fallbackDex": 6
+  },
+  "9499": {
+    "name": "Garurumon Black",
+    "id": "cross-digi-garurumon-black",
+    "sourceUrl": "https://wikimon.net/images/4/42/Garurumon_black.jpg",
+    "local": "images/crossovers/9499.png",
+    "fallbackDex": 131
+  },
+  "9500": {
+    "name": "Omegamon Zwart",
+    "id": "cross-digi-omegamon-zwart",
+    "sourceUrl": "https://wikimon.net/images/0/04/Omegamon_zwart.jpg",
+    "local": "images/crossovers/9500.png",
+    "fallbackDex": 448
+  },
+  "9501": {
+    "name": "Omegamon Merciful Mode",
+    "id": "cross-digi-omegamon-merciful-mode",
+    "sourceUrl": "https://wikimon.net/images/0/0f/Omegamon_merciful.jpg",
+    "local": "images/crossovers/9501.png",
+    "fallbackDex": 468
+  },
+  "9502": {
+    "name": "Imperialdramon Fighter Mode",
+    "id": "cross-digi-imperialdramon-fighter-mode",
+    "sourceUrl": "https://wikimon.net/images/1/1c/Imperialdramon_fighter.jpg",
+    "local": "images/crossovers/9502.png",
+    "fallbackDex": 448
+  },
+  "9503": {
+    "name": "Anubis",
+    "id": "cross-pal-anubis",
+    "sourceUrl": "https://palworld.wiki.gg/images/Anubis.png",
+    "local": "images/crossovers/9503.png",
+    "fallbackDex": 104
+  },
+  "9504": {
+    "name": "Blazamut Ryu",
+    "id": "cross-pal-blazamut-ryu",
+    "sourceUrl": "https://palworld.wiki.gg/images/Blazamut Ryu.png",
+    "local": "images/crossovers/9504.png",
+    "fallbackDex": 147
+  },
+  "9505": {
+    "name": "Bushi Noct",
+    "id": "cross-pal-bushi-noct",
+    "sourceUrl": "https://palworld.wiki.gg/images/Bushi Noct.png",
+    "local": "images/crossovers/9505.png",
+    "fallbackDex": 25
+  },
+  "9506": {
+    "name": "Blazehowl",
+    "id": "cross-pal-blazehowl",
+    "sourceUrl": "https://palworld.wiki.gg/images/Blazehowl.png",
+    "local": "images/crossovers/9506.png",
+    "fallbackDex": 10
+  },
+  "9507": {
+    "name": "Bellanoir",
+    "id": "cross-pal-bellanoir",
+    "sourceUrl": "https://palworld.wiki.gg/images/Bellanoir.png",
+    "local": "images/crossovers/9507.png",
+    "fallbackDex": 197
+  },
+  "9508": {
+    "name": "Bristla",
+    "id": "cross-pal-bristla",
+    "sourceUrl": "https://palworld.wiki.gg/images/Bristla.png",
+    "local": "images/crossovers/9508.png",
+    "fallbackDex": 1
+  },
+  "9509": {
+    "name": "Dark Mutant",
+    "id": "cross-pal-dark-mutant",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dark Mutant.png",
+    "local": "images/crossovers/9509.png",
+    "fallbackDex": 1
+  },
+  "9510": {
+    "name": "Caprity",
+    "id": "cross-pal-caprity",
+    "sourceUrl": "https://palworld.wiki.gg/images/Caprity.png",
+    "local": "images/crossovers/9510.png",
+    "fallbackDex": 133
+  },
+  "9511": {
+    "name": "Cawgnito",
+    "id": "cross-pal-cawgnito",
+    "sourceUrl": "https://palworld.wiki.gg/images/Cawgnito.png",
+    "local": "images/crossovers/9511.png",
+    "fallbackDex": 133
+  },
+  "9512": {
+    "name": "Boltmane",
+    "id": "cross-pal-boltmane",
+    "sourceUrl": "https://palworld.wiki.gg/images/Boltmane.png",
+    "local": "images/crossovers/9512.png",
+    "fallbackDex": 54
+  },
+  "9513": {
+    "name": "Ribbuny",
+    "id": "cross-pal-ribbuny",
+    "sourceUrl": "https://palworld.wiki.gg/images/Ribbuny.png",
+    "local": "images/crossovers/9513.png",
+    "fallbackDex": 133
+  },
+  "9514": {
+    "name": "Cinnamoth",
+    "id": "cross-pal-cinnamoth",
+    "sourceUrl": "https://palworld.wiki.gg/images/Cinnamoth.png",
+    "local": "images/crossovers/9514.png",
+    "fallbackDex": 10
+  },
+  "9515": {
+    "name": "Swee",
+    "id": "cross-pal-swee",
+    "sourceUrl": "https://palworld.wiki.gg/images/Swee.png",
+    "local": "images/crossovers/9515.png",
+    "fallbackDex": 87
+  },
+  "9516": {
+    "name": "Cremis",
+    "id": "cross-pal-cremis",
+    "sourceUrl": "https://palworld.wiki.gg/images/Cremis.png",
+    "local": "images/crossovers/9516.png",
+    "fallbackDex": 133
+  },
+  "9517": {
+    "name": "Lunaris",
+    "id": "cross-pal-lunaris",
+    "sourceUrl": "https://palworld.wiki.gg/images/Lunaris.png",
+    "local": "images/crossovers/9517.png",
+    "fallbackDex": 197
+  },
+  "9518": {
+    "name": "Fuack Ignis",
+    "id": "cross-pal-fuack-ignis",
+    "sourceUrl": "https://palworld.wiki.gg/images/Fuack Ignis.png",
+    "local": "images/crossovers/9518.png",
+    "fallbackDex": 25
+  },
+  "9519": {
+    "name": "Selyne",
+    "id": "cross-pal-selyne",
+    "sourceUrl": "https://palworld.wiki.gg/images/Selyne.png",
+    "local": "images/crossovers/9519.png",
+    "fallbackDex": 133
+  },
+  "9520": {
+    "name": "Gorirat Terra",
+    "id": "cross-pal-gorirat-terra",
+    "sourceUrl": "https://palworld.wiki.gg/images/Gorirat Terra.png",
+    "local": "images/crossovers/9520.png",
+    "fallbackDex": 74
+  },
+  "9521": {
+    "name": "Croajiro",
+    "id": "cross-pal-croajiro",
+    "sourceUrl": "https://palworld.wiki.gg/images/Croajiro.png",
+    "local": "images/crossovers/9521.png",
+    "fallbackDex": 1
+  },
+  "9522": {
+    "name": "Dogen",
+    "id": "cross-pal-dogen",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dogen.png",
+    "local": "images/crossovers/9522.png",
+    "fallbackDex": 133
+  },
+  "9523": {
+    "name": "Helzephyr Lux",
+    "id": "cross-pal-helzephyr-lux",
+    "sourceUrl": "https://palworld.wiki.gg/images/Helzephyr Lux.png",
+    "local": "images/crossovers/9523.png",
+    "fallbackDex": 104
+  },
+  "9524": {
+    "name": "Wixen Noct",
+    "id": "cross-pal-wixen-noct",
+    "sourceUrl": "https://palworld.wiki.gg/images/Wixen Noct.png",
+    "local": "images/crossovers/9524.png",
+    "fallbackDex": 104
+  },
+  "9525": {
+    "name": "Helzephyr",
+    "id": "cross-pal-helzephyr",
+    "sourceUrl": "https://palworld.wiki.gg/images/Helzephyr.png",
+    "local": "images/crossovers/9525.png",
+    "fallbackDex": 133
+  },
+  "9526": {
+    "name": "Elizabee",
+    "id": "cross-pal-elizabee",
+    "sourceUrl": "https://palworld.wiki.gg/images/Elizabee.png",
+    "local": "images/crossovers/9526.png",
+    "fallbackDex": 10
+  },
+  "9527": {
+    "name": "Rooby",
+    "id": "cross-pal-rooby",
+    "sourceUrl": "https://palworld.wiki.gg/images/Rooby.png",
+    "local": "images/crossovers/9527.png",
+    "fallbackDex": 104
+  },
+  "9528": {
+    "name": "Lullu",
+    "id": "cross-pal-lullu",
+    "sourceUrl": "https://palworld.wiki.gg/images/Lullu.png",
+    "local": "images/crossovers/9528.png",
+    "fallbackDex": 5
+  },
+  "9529": {
+    "name": "Felbat",
+    "id": "cross-pal-felbat",
+    "sourceUrl": "https://palworld.wiki.gg/images/Felbat.png",
+    "local": "images/crossovers/9529.png",
+    "fallbackDex": 197
+  },
+  "9530": {
+    "name": "Orserk",
+    "id": "cross-pal-orserk",
+    "sourceUrl": "https://palworld.wiki.gg/images/Orserk.png",
+    "local": "images/crossovers/9530.png",
+    "fallbackDex": 133
+  },
+  "9531": {
+    "name": "Flopie",
+    "id": "cross-pal-flopie",
+    "sourceUrl": "https://palworld.wiki.gg/images/Flopie.png",
+    "local": "images/crossovers/9531.png",
+    "fallbackDex": 133
+  },
+  "9532": {
+    "name": "Foxcicle",
+    "id": "cross-pal-foxcicle",
+    "sourceUrl": "https://palworld.wiki.gg/images/Foxcicle.png",
+    "local": "images/crossovers/9532.png",
+    "fallbackDex": 87
+  },
+  "9533": {
+    "name": "Arsox",
+    "id": "cross-pal-arsox",
+    "sourceUrl": "https://palworld.wiki.gg/images/Arsox.png",
+    "local": "images/crossovers/9533.png",
+    "fallbackDex": 5
+  },
+  "9534": {
+    "name": "Dazemu",
+    "id": "cross-pal-dazemu",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dazemu.png",
+    "local": "images/crossovers/9534.png",
+    "fallbackDex": 54
+  },
+  "9535": {
+    "name": "Suzaku Aqua",
+    "id": "cross-pal-suzaku-aqua",
+    "sourceUrl": "https://palworld.wiki.gg/images/Suzaku Aqua.png",
+    "local": "images/crossovers/9535.png",
+    "fallbackDex": 133
+  },
+  "9536": {
+    "name": "Fuddler",
+    "id": "cross-pal-fuddler",
+    "sourceUrl": "https://palworld.wiki.gg/images/Fuddler.png",
+    "local": "images/crossovers/9536.png",
+    "fallbackDex": 54
+  },
+  "9537": {
+    "name": "Wixen",
+    "id": "cross-pal-wixen",
+    "sourceUrl": "https://palworld.wiki.gg/images/Wixen.png",
+    "local": "images/crossovers/9537.png",
+    "fallbackDex": 25
+  },
+  "9538": {
+    "name": "Dragostrophe",
+    "id": "cross-pal-dragostrophe",
+    "sourceUrl": "https://palworld.wiki.gg/images/Dragostrophe.png",
+    "local": "images/crossovers/9538.png",
+    "fallbackDex": 1
+  },
+  "9539": {
+    "name": "Teafant",
+    "id": "cross-pal-teafant",
+    "sourceUrl": "https://palworld.wiki.gg/images/Teafant.png",
+    "local": "images/crossovers/9539.png",
+    "fallbackDex": 87
+  },
+  "9540": {
+    "name": "Kikit",
+    "id": "cross-pal-kikit",
+    "sourceUrl": "https://palworld.wiki.gg/images/Kikit.png",
+    "local": "images/crossovers/9540.png",
+    "fallbackDex": 197
+  },
+  "9541": {
+    "name": "Lovander",
+    "id": "cross-pal-lovander",
+    "sourceUrl": "https://palworld.wiki.gg/images/Lovander.png",
+    "local": "images/crossovers/9541.png",
+    "fallbackDex": 147
+  },
+  "9542": {
+    "name": "Gorirat",
+    "id": "cross-pal-gorirat",
+    "sourceUrl": "https://palworld.wiki.gg/images/Gorirat.png",
+    "local": "images/crossovers/9542.png",
+    "fallbackDex": 25
+  },
+  "9543": {
+    "name": "Reindrix",
+    "id": "cross-pal-reindrix",
+    "sourceUrl": "https://palworld.wiki.gg/images/Reindrix.png",
+    "local": "images/crossovers/9543.png",
+    "fallbackDex": 197
+  },
+  "9544": {
+    "name": "Kelpsea",
+    "id": "cross-pal-kelpsea",
+    "sourceUrl": "https://palworld.wiki.gg/images/Kelpsea.png",
+    "local": "images/crossovers/9544.png",
+    "fallbackDex": 54
+  },
+  "9545": {
+    "name": "Shroomer",
+    "id": "cross-pal-shroomer",
+    "sourceUrl": "https://palworld.wiki.gg/images/Shroomer.png",
+    "local": "images/crossovers/9545.png",
+    "fallbackDex": 133
+  },
+  "9546": {
+    "name": "Kitsun",
+    "id": "cross-pal-kitsun",
+    "sourceUrl": "https://palworld.wiki.gg/images/Kitsun.png",
+    "local": "images/crossovers/9546.png",
+    "fallbackDex": 5
+  },
+  "9547": {
+    "name": "Mozzarina",
+    "id": "cross-pal-mozzarina",
+    "sourceUrl": "https://palworld.wiki.gg/images/Mozzarina.png",
+    "local": "images/crossovers/9547.png",
+    "fallbackDex": 133
+  },
+  "9548": {
+    "name": "Mimog",
+    "id": "cross-pal-mimog",
+    "sourceUrl": "https://palworld.wiki.gg/images/Mimog.png",
+    "local": "images/crossovers/9548.png",
+    "fallbackDex": 1
+  },
+  "9549": {
+    "name": "Prixter",
+    "id": "cross-pal-prixter",
+    "sourceUrl": "https://palworld.wiki.gg/images/Prixter.png",
+    "local": "images/crossovers/9549.png",
+    "fallbackDex": 197
+  },
+  "9550": {
+    "name": "Tocotoco",
+    "id": "cross-pal-tocotoco",
+    "sourceUrl": "https://palworld.wiki.gg/images/Tocotoco.png",
+    "local": "images/crossovers/9550.png",
+    "fallbackDex": 1
+  },
+  "9551": {
+    "name": "Xenovader",
+    "id": "cross-pal-xenovader",
+    "sourceUrl": "https://palworld.wiki.gg/images/Xenovader.png",
+    "local": "images/crossovers/9551.png",
+    "fallbackDex": 1
+  },
+  "9552": {
+    "name": "Xenogard",
+    "id": "cross-pal-xenogard",
+    "sourceUrl": "https://palworld.wiki.gg/images/Xenogard.png",
+    "local": "images/crossovers/9552.png",
+    "fallbackDex": 1
+  }
+}

@@ -1,0 +1,380 @@
+/* ============================================================
+   THÍCH ỨNG: máy tính bảng, điện thoại, thanh điều hướng dưới
+   ============================================================ */
+
+/* ---------------- MÀN HÌNH LỚN VỪA ---------------- */
+@media (max-width: 1240px) {
+  .home-grid { grid-template-columns: minmax(0, 1fr); }
+  .home-side {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .home-side > .panel { align-self: start; }
+  .home-side > .panel:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+  .lobby-grid { grid-template-columns: minmax(0, 1fr); }
+  .lobby-side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+
+  .battle-bottom { grid-template-columns: minmax(0, 1fr); }
+  .battle-log { max-height: 164px; min-height: 120px; }
+
+  .equip-layout { grid-template-columns: minmax(0, 1fr); }
+  .equip-side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+
+  .market-layout, .craft-layout, .quests-layout, .profile-grid, .fish-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fish-side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+
+  .profile-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ---------------- CHUYỂN SANG ĐIỀU HƯỚNG DƯỚI ---------------- */
+@media (max-width: 1080px) {
+  .sidebar { display: none; }
+  .app-main { margin-left: 0; }
+  .topbar__menu { display: inline-grid; }
+  .topbar { padding: 0 18px; }
+
+  .bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: stretch;
+    gap: 0;
+    min-height: var(--bottomnav-h);
+    padding: 5px 4px calc(5px + env(safe-area-inset-bottom, 0px));
+    background: rgba(6, 11, 20, 0.94);
+    border-top: 1px solid var(--line-2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 -18px 40px -30px #000;
+  }
+  .bottom-nav__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 5px 2px;
+    border: 0;
+    border-radius: 11px;
+    background: transparent;
+    color: #93a5bf;
+    font-size: 0.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bottom-nav__item > span {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    filter: grayscale(0.25);
+    transition: transform 0.2s var(--ease), filter 0.2s;
+  }
+  .bottom-nav__item > small { font-size: 0.58rem; letter-spacing: 0.01em; white-space: nowrap; }
+  .bottom-nav__item.is-active {
+    color: #fff;
+    background: linear-gradient(180deg, rgba(109, 140, 255, 0.16), rgba(109, 140, 255, 0.03));
+  }
+  .bottom-nav__item.is-active > span { transform: translateY(-1px) scale(1.08); filter: none; }
+  .bottom-nav__item.is-active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 22px;
+    height: 2px;
+    border-radius: 99px;
+    background: var(--gold);
+    box-shadow: 0 0 10px var(--gold);
+  }
+  .bottom-nav__item { position: relative; }
+
+  .view { padding: 22px 20px calc(var(--bottomnav-h) + 40px); }
+  .toast-root { bottom: calc(var(--bottomnav-h) + 16px); }
+}
+
+/* ---------------- MÁY TÍNH BẢNG ---------------- */
+@media (max-width: 900px) {
+  .home-side, .lobby-side, .equip-side, .fish-side { grid-template-columns: minmax(0, 1fr); }
+
+  .hero { min-height: 320px; border-radius: 22px; }
+  .hero__content { padding: 20px 20px 18px; }
+  .hero__name { font-size: clamp(1.55rem, 5vw, 2.1rem); }
+
+  .team-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .catch-controls { grid-template-columns: minmax(0, 1fr); }
+  .catch-scene { min-height: 380px; border-radius: 22px; }
+  .catch-mon-wrap { width: 280px; height: 280px; }
+
+  .battle-scene { min-height: 380px; border-radius: 22px; }
+  .battle-enemy { right: 3%; top: 7%; }
+  .battle-player { left: 3%; bottom: 4%; }
+  .combatant { gap: 7px; }
+  .combatant__plate { width: 176px; padding: 8px 9px; }
+  .combatant--enemy .sprite-box { width: 112px; height: 112px; }
+  .combatant--player .sprite-box { width: 136px; height: 136px; }
+  .battle-weather, .battle-turn { top: 10px; font-size: 0.6rem; padding: 4px 8px; }
+  .battle-weather { left: 10px; }
+  .battle-turn { right: 10px; }
+  .move-btn { min-height: 70px; }
+
+  .lobby-region { min-height: 142px; }
+
+  .fish-water { min-height: 380px; border-radius: 22px; }
+  .fish-water__sky::after { width: 58px; height: 58px; }
+
+  .dex-progress-card { flex-wrap: wrap; }
+  .event-panel { align-items: flex-start; }
+
+  .modal__backdrop { padding: 14px; }
+}
+
+/* ---------------- ĐIỆN THOẠI ---------------- */
+@media (max-width: 720px) {
+  body { font-size: 14px; }
+  h1 { font-size: 1.42rem; }
+  h2 { font-size: 1.16rem; }
+
+  .topbar { height: 64px; padding: 0 12px; gap: 8px; }
+  .trainer-chip { gap: 7px; }
+  .trainer-chip__info { width: min(150px, 40vw); }
+  .trainer-chip__name { font-size: 0.78rem; }
+  .trainer-chip__lv { font-size: 0.6rem; }
+  .topbar__right { gap: 5px; }
+  .resource { padding: 6px 8px; font-size: 0.73rem; border-radius: 9px; gap: 4px; }
+  .resource__icon { font-size: 0.82rem; }
+  .resource__sub { font-size: 0.58rem; }
+  [data-act="toggle-sound"] { display: none; }
+  .icon-btn { width: 36px; height: 36px; border-radius: 10px; }
+
+  .view { padding: 16px 13px calc(var(--bottomnav-h) + 34px); }
+  .page-head { margin-bottom: 16px; gap: 12px; }
+  .page-head .muted { font-size: 0.78rem; }
+  .panel { padding: 14px; border-radius: 18px; }
+  .panel__head { margin-bottom: 10px; }
+
+  .home { gap: 13px; }
+  .home-grid, .home-side, .home-main { gap: 13px; }
+  .hero { min-height: 292px; }
+  .hero__content { padding: 16px 15px 15px; gap: 8px; }
+  .hero__emoji { width: 44px; height: 44px; font-size: 1.45rem; border-radius: 13px; }
+  .hero__sub { font-size: 0.78rem; }
+  .hero__actions { gap: 6px; }
+  .hero__actions .btn { flex: 1 1 130px; }
+  .hero__stamina-bar { max-width: none; }
+  .region-grid { grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 7px; }
+  .region-card { min-height: 126px; padding: 10px; border-radius: 13px; }
+  .region-card__name { font-size: 0.8rem; }
+  .region-card__sub { font-size: 0.58rem; }
+  .region-card__now { font-size: 0.54rem; }
+  .team-slot { min-height: 84px; }
+  .team-slot .sprite-box { width: 46px !important; height: 46px !important; }
+
+  .login-banner { flex-wrap: wrap; }
+  .login-banner__cta { margin-left: auto; }
+
+  .box-grid { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 8px; }
+  .dex-grid { grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 7px; }
+  .poke-card { padding: 9px 7px 10px; border-radius: 14px; }
+  .poke-card__sprite { min-height: 56px; }
+  .poke-card__sprite .sprite-box { width: 54px; height: 54px; }
+  .poke-card__name { font-size: 0.78rem; }
+  .dex-card { padding: 8px 6px; }
+  .dex-card__sprite .sprite-box { width: 50px; height: 50px; }
+
+  .box-toolbar { gap: 6px; }
+  .box-toolbar .select { flex: 1 1 132px; }
+  .segmented { flex-wrap: wrap; }
+  .segmented__btn { flex: 1 1 auto; }
+  .segmented--wide { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .segmented--wide::-webkit-scrollbar { display: none; }
+
+  .detail__grid { grid-template-columns: minmax(0, 1fr); }
+  .detail__hero { gap: 11px; padding: 11px; }
+  .detail__title h2 { font-size: 1.16rem; }
+  .stat-row { grid-template-columns: 66px 34px minmax(40px, 1fr) 28px; }
+  .info-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+
+  .species-columns { grid-template-columns: minmax(0, 1fr); }
+  .species-hero { gap: 11px; padding: 11px; }
+  .species-hero__name { font-size: 1.15rem; }
+
+  .shop-grid { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 8px; }
+  .lucky-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .trainer-shop-grid, .npc-shop-grid { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 8px; }
+  .trainer-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .trainer-stat { padding: 7px; }
+  .sell-grid { grid-template-columns: minmax(0, 1fr); }
+  .market-row { flex-wrap: wrap; }
+  .market-row .btn { margin-left: auto; }
+
+  .equip-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .equip-slot { min-height: 104px; }
+  .equip-grid { grid-template-columns: repeat(auto-fill, minmax(126px, 1fr)); }
+  .totals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .equip-stats { grid-template-columns: minmax(0, 1fr); }
+
+  .craft-grid { grid-template-columns: minmax(0, 1fr); }
+  .craft-card { padding: 10px; }
+
+  .quests-layout { gap: 12px; }
+  .ach-grid { grid-template-columns: minmax(0, 1fr); }
+  .login-panel .login-strip { gap: 3px; }
+  .login-day { padding: 5px 2px; }
+  .login-day__label { display: none; }
+
+  .profile-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-hero { padding: 16px; gap: 12px; border-radius: 20px; }
+  .profile-hero__avatar { width: 66px; height: 66px; border-radius: 20px; font-size: 2rem; }
+  .profile-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .badge-grid { grid-template-columns: minmax(0, 1fr); }
+
+  .catch-scene { min-height: 348px; }
+  .catch-mon-wrap { width: 240px; height: 240px; top: 52%; }
+  .catch-mon-wrap > .sprite-box { width: 140px; height: 140px; }
+  .catch-ring { width: 208px; height: 208px; margin: -104px 0 0 -104px; }
+  .catch-chance { width: 66px; height: 66px; right: 12px; bottom: 14px; }
+  .catch-chance__num { font-size: 0.9rem; }
+  .catch-chance small { font-size: 0.48rem; }
+  .catch-scene__info { top: 12px; left: 14px; right: 14px; }
+  .catch-hint { bottom: 86px; font-size: 0.62rem; }
+  .catch-ball { bottom: 14px; width: 56px; height: 56px; margin-left: -28px; }
+  .catch-ball__icon { font-size: 2.25rem; }
+  .catch-ball__icon .ball-art { width: 52px; height: 52px; }
+  .catch-hp { width: min(180px, 100%); }
+  .catch-quality { bottom: 120px; font-size: 1.05rem; }
+  .catch-result-card { gap: 10px; }
+
+  .battle-scene { min-height: 336px; }
+  .battle-enemy { right: 2%; top: 5%; }
+  .battle-player { left: 2%; bottom: 3%; }
+  .combatant__plate { width: 152px; padding: 7px 8px; border-radius: 11px; }
+  .combatant__name { font-size: 0.72rem; }
+  .combatant--enemy .sprite-box { width: 92px; height: 92px; }
+  .combatant--player .sprite-box { width: 112px; height: 112px; }
+  .combatant--player { gap: 4px; }
+  .hp-label { font-size: 0.5rem; }
+  .float-text { font-size: 1.3rem; }
+  .moves-grid { gap: 5px; }
+  .move-btn { min-height: 64px; padding: 7px 8px; }
+  .move-btn__name { font-size: 0.74rem; }
+  .battle-console { padding: 9px; }
+  .battle-tools { gap: 4px; }
+  .tool-btn { font-size: 0.6rem; min-height: 32px; }
+  .battle-log { max-height: 136px; min-height: 96px; font-size: 0.7rem; }
+  .lobby-region { min-height: 124px; padding: 12px; }
+  .lobby-region__team .sprite-box { width: 40px !important; height: 40px !important; }
+  .tmt-tier-mini .pill { font-size: 0.58rem; }
+
+  .fish-water { min-height: 360px; }
+  .fish-stage { padding: 16px 12px; }
+  .fish-float { width: 96px; height: 96px; }
+  .fish-float__bob { font-size: 2.5rem; }
+  .reel-meter { height: 46px; }
+  .fish-result { padding: 10px; gap: 9px; }
+  .spot-grid { grid-template-columns: minmax(0, 1fr); }
+
+  .tips-list li { font-size: 0.7rem; }
+  .empty-state { padding: 40px 16px; }
+  .empty-state__icon { width: 64px; height: 64px; font-size: 1.8rem; }
+  .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .modal__backdrop { padding: 10px; align-items: flex-end; }
+  .modal__panel { max-height: 92vh; border-radius: 20px; }
+  .modal__panel--lg { max-height: 94vh; }
+  .modal__head { padding: 15px 16px 13px; }
+  .modal__body { padding: 14px 16px; }
+  .modal__foot { padding: 12px 16px; }
+  .modal__foot .btn { flex: 1 1 auto; }
+
+  .toast-root { right: 10px; left: 10px; bottom: calc(var(--bottomnav-h) + 12px); width: auto; }
+}
+
+/* ---------------- ĐIỆN THOẠI NHỎ ---------------- */
+@media (max-width: 560px) {
+  .trainer-chip__info { width: 104px; }
+  .trainer-chip__lv { font-size: 0.56rem; }
+  .trainer-chip .mini-bar { display: none; }
+  .topbar__right { gap: 4px; }
+  .resource { padding: 5px 6px; font-size: 0.68rem; }
+  .resource--stamina .resource__sub { display: none; }
+  .resource--violet { display: none; }
+
+  .box-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lucky-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .starter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .profile-stat-grid { grid-template-columns: minmax(0, 1fr); }
+  .totals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .equip-slots { gap: 6px; }
+  .equip-slot { min-height: 96px; padding: 8px 6px; }
+  .equip-slot__name { font-size: 0.66rem; }
+
+  .battle-bottom { gap: 9px; }
+  .battle-enemy { top: 4%; }
+  .combatant__plate { width: 138px; }
+  .combatant--enemy .sprite-box { width: 82px; height: 82px; }
+  .combatant--player .sprite-box { width: 100px; height: 100px; }
+  .combatant__meta { min-height: 12px; }
+  .stage-tag { font-size: 0.48rem; }
+  .battle-turn { display: none; }
+  .battle-log { max-height: 116px; min-height: 86px; }
+  .move-btn__type { font-size: 0.54rem; }
+  .battle-team__dot { width: 19px; height: 19px; font-size: 0.55rem; }
+
+  .fish-active__foot { flex-direction: column; align-items: stretch; text-align: center; }
+  .fish-active__foot .btn { width: 100%; }
+  .fish-water { min-height: 330px; }
+
+  .login-banner__body small { display: none; }
+  .event-panel__body p { font-size: 0.66rem; }
+
+  .modal__foot .btn { flex: 1 1 100%; }
+  .enchant-compare__row { font-size: 0.66rem; }
+}
+
+@media (max-width: 400px) {
+  .resource--teal { display: none; }
+  .trainer-chip__info { width: 84px; }
+  .hero__badges .pill { padding: 4px 7px; font-size: 0.66rem; }
+  .catch-ring { width: 176px; height: 176px; margin: -88px 0 0 -88px; }
+  .catch-mon-wrap { width: 210px; height: 210px; }
+  .catch-mon-wrap > .sprite-box { width: 124px; height: 124px; }
+  .catch-chance { width: 58px; height: 58px; }
+  .catch-chance__num { font-size: 0.8rem; }
+  .combatant__plate { width: 124px; }
+  .battle-enemy .combatant__name, .battle-player .combatant__name { font-size: 0.66rem; }
+  .battle-tools .tool-btn span { display: none; }
+  .move-btn { min-height: 60px; }
+  .move-btn__name { font-size: 0.7rem; }
+}
+
+/* Thiết bị ngang thấp */
+@media (max-height: 520px) and (orientation: landscape) {
+  .battle-scene { min-height: 300px; }
+  .fish-water { min-height: 280px; }
+  .catch-scene { min-height: 300px; }
+  .combatant--enemy .sprite-box { width: 88px; height: 88px; }
+  .combatant--player .sprite-box { width: 104px; height: 104px; }
+  .catch-ball { bottom: 8px; }
+  .catch-hint { display: none; }
+}
+
+/* In ấn */
+@media print {
+  .sidebar, .topbar, .bottom-nav, .toast-root, .app-bg { display: none !important; }
+  .app-main { margin: 0; }
+  body { background: #fff; color: #000; }
+}

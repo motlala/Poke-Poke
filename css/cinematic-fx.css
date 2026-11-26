@@ -1,0 +1,217 @@
+/* ============================================================
+   CINEMATIC SKILL FX — lớp "điện ảnh" nạp CUỐI cùng.
+   Chỉ dùng hook có sẵn (.is-skill-flash, data-skill-flair,
+   data-skill-style, data-skill-world, .is-hit, .is-fainting).
+   Không đổi luật trận đấu, không thêm class/JS, không tải ảnh.
+   ============================================================ */
+
+.battle-scene {
+  --cine-shake: 3px;
+  --cine-accent: #a78bfa;
+  --cine-bar: #e2e8f0;
+  --cine-bar-h: 10%;
+  --cine-dur: 420ms;
+}
+
+/* Màu nhận diện theo từng chiêu / nhãn chiêu. */
+.battle-scene.is-skill-flash[data-skill-style] {
+  --cine-accent: var(--sk-a, #a78bfa);
+  --cine-bar: var(--sk-c, #fff);
+}
+.battle-scene.is-skill-flash[data-skill-flair="combo"] {
+  --cine-accent: #f0abfc;
+  --cine-bar: #fde68a;
+  --cine-dur: 480ms;
+}
+.battle-scene.is-skill-flash[data-skill-flair="ultimate"] {
+  --cine-accent: #fde68a;
+  --cine-bar: #ffd166;
+  --cine-bar-h: 16%;
+  --cine-dur: 540ms;
+  --cine-shake: 5px;
+}
+.battle-scene.is-skill-flash[data-skill-flair="evolution"] {
+  --cine-accent: #7dd3fc;
+  --cine-bar: #bae6fd;
+  --cine-dur: 540ms;
+}
+.battle-scene.is-skill-flash[data-skill-world="movie"] { --cine-accent: #fbbf24; --cine-bar: #fde68a; }
+.battle-scene.is-skill-flash[data-skill-world="palworld"] { --cine-accent: #38bdf8; --cine-bar: #bae6fd; }
+.battle-scene.is-skill-flash[data-skill-world="digimon"] { --cine-accent: #f472b6; --cine-bar: #fbcfe8; }
+.battle-scene.is-skill-flash[data-skill-world="anima"] { --cine-accent: #34d399; --cine-bar: #a7f3d0; }
+
+/* ---------------- 1. MÁY QUAY: RUNG NHẸ KHI TUNG CHIÊU ---------------- */
+.battle-scene.is-skill-flash {
+  animation: cineCameraShake var(--cine-dur) cubic-bezier(.36, .07, .19, .97) both;
+}
+@keyframes cineCameraShake {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  12% { transform: translate3d(calc(var(--cine-shake) * -1), 1px, 0); }
+  28% { transform: translate3d(var(--cine-shake), -2px, 0); }
+  46% { transform: translate3d(calc(var(--cine-shake) * -.7), 1px, 0); }
+  64% { transform: translate3d(calc(var(--cine-shake) * .5), 0, 0); }
+  82% { transform: translate3d(calc(var(--cine-shake) * -.3), 0, 0); }
+}
+
+/* ---------------- 2. THANH LETTERBOX + ÁNH ĐÈN SÂN KHẤU ---------------- */
+#battle-fx::before,
+#battle-fx::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  opacity: 0;
+  z-index: 22;
+  pointer-events: none;
+}
+#battle-fx::before {
+  top: 0;
+  background: linear-gradient(180deg, #000 12%, rgba(2, 5, 12, .94));
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--cine-bar, #e2e8f0) 72%, transparent),
+    0 8px 22px rgba(0, 0, 0, .75);
+}
+#battle-fx::after {
+  bottom: 0;
+  background: linear-gradient(0deg, #000 12%, rgba(2, 5, 12, .94));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--cine-bar, #e2e8f0) 72%, transparent),
+    0 -8px 22px rgba(0, 0, 0, .75);
+}
+.battle-scene.is-skill-flash #battle-fx::before { animation: cineBarTop var(--cine-dur) ease-out both; }
+.battle-scene.is-skill-flash #battle-fx::after { animation: cineBarBottom var(--cine-dur) ease-out both; }
+@keyframes cineBarTop {
+  0% { height: 0; opacity: 0; }
+  10% { height: var(--cine-bar-h); opacity: 1; }
+  72% { height: var(--cine-bar-h); opacity: 1; }
+  100% { height: 0; opacity: 0; }
+}
+@keyframes cineBarBottom {
+  0% { height: 0; opacity: 0; }
+  10% { height: var(--cine-bar-h); opacity: 1; }
+  72% { height: var(--cine-bar-h); opacity: 1; }
+  100% { height: 0; opacity: 0; }
+}
+
+/* Chùm sáng từ trời + vignette góc — dùng pseudo còn trống của __mode. */
+.battle-scene__mode::before,
+.battle-scene__mode::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.battle-scene__mode::before {
+  background:
+    conic-gradient(from 205deg at 50% -12%, transparent 0deg,
+      color-mix(in srgb, var(--cine-accent) 28%, transparent) 24deg, transparent 52deg),
+    radial-gradient(90% 60% at 50% -8%,
+      color-mix(in srgb, var(--cine-accent) 20%, transparent), transparent 68%);
+  mix-blend-mode: screen;
+}
+.battle-scene__mode::after {
+  background: radial-gradient(ellipse 74% 60% at 50% 44%, transparent 36%, rgba(2, 5, 12, .8) 100%);
+}
+.battle-scene.is-skill-flash .battle-scene__mode::before { animation: cineSpot var(--cine-dur) ease-out both; }
+.battle-scene.is-skill-flash .battle-scene__mode::after { animation: cineVignette var(--cine-dur) ease-out both; }
+@keyframes cineSpot {
+  0% { opacity: 0; transform: scale(1.08); }
+  18% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1); }
+}
+@keyframes cineVignette {
+  0% { opacity: 0; }
+  26% { opacity: .85; }
+  100% { opacity: 0; }
+}
+
+/* ---------------- 3. THẺ TÊN CHIÊU: CẮT PHIM ---------------- */
+.move-banner__label {
+  text-shadow:
+    0 2px 2px rgba(0, 0, 0, .95),
+    0 0 8px rgba(0, 0, 0, .9),
+    0 0 20px color-mix(in srgb, var(--fx-color, #ffd166) 80%, transparent),
+    0 0 42px color-mix(in srgb, var(--fx-color, #ffd166) 45%, transparent);
+}
+.battle-scene.is-skill-flash .move-banner__label {
+  animation: cineTitle var(--cine-dur) cubic-bezier(.16, 1, .3, 1) both;
+}
+@keyframes cineTitle {
+  0% { opacity: 0; transform: scale(.86); filter: blur(4px); letter-spacing: .16em; }
+  24% { opacity: 1; transform: scale(1.06); filter: blur(0); }
+  60% { transform: scale(1); letter-spacing: .03em; }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ---------------- 4. PHẢN ỨNG TRÚNG ĐÒN / NGÃ GỤC ---------------- */
+.combatant.is-hit .combatant__sprite {
+  animation: cineHit 300ms ease-out both;
+}
+@keyframes cineHit {
+  0%, 100% { transform: translateX(0); filter: none; }
+  22% { transform: translateX(calc(var(--cine-shake) * .7)); filter: brightness(1.35) contrast(1.18); }
+  48% { transform: translateX(calc(var(--cine-shake) * -.6)); }
+  72% { transform: translateX(calc(var(--cine-shake) * .3)); }
+}
+.combatant.is-fainting .combatant__sprite {
+  animation: cineFaint 720ms cubic-bezier(.4, 0, .6, 1) both;
+}
+@keyframes cineFaint {
+  0% { transform: scale(1); opacity: 1; }
+  35% { transform: scale(1.06); opacity: .9; }
+  100% { transform: scale(.86) translateY(10px); opacity: .35; }
+}
+
+/* ---------------- 5. NÚT CHIÊU: SÀNG LÊN KHI RÊ / CHỌN ---------------- */
+.move-btn[data-skill-style]:not(.is-disabled):not(:disabled):hover,
+.move-btn[data-skill-style]:not(.is-disabled):not(:disabled):focus-visible,
+.move-btn--world:not(.is-disabled):not(:disabled):hover,
+.move-btn--world:not(.is-disabled):not(:disabled):focus-visible {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    inset 3px 0 0 var(--sk-a, var(--world-accent, #a78bfa)),
+    0 16px 34px -18px var(--sk-a, var(--world-accent, #a78bfa)),
+    0 0 0 1px color-mix(in srgb, var(--sk-a, var(--world-accent, #a78bfa)) 30%, transparent);
+}
+.move-pill[data-skill-style]:hover,
+.move-pill--world:hover {
+  box-shadow: 0 0 18px -6px var(--sk-a, var(--world-accent, #a78bfa));
+}
+
+/* ---------------- 6. ĐIỆN THOẠI: GIẢM BIÊN ĐỘ RUNG ---------------- */
+@media (max-width: 640px) {
+  .battle-scene { --cine-shake: 1.5px; --cine-bar-h: 7%; }
+  .battle-scene.is-skill-flash[data-skill-flair="ultimate"] { --cine-shake: 2.5px; --cine-bar-h: 11%; }
+}
+
+/* ---------------- 7. GIẢM CHUYỂN ĐỘNG ---------------- */
+@media (prefers-reduced-motion: reduce) {
+  .battle-scene.is-skill-flash,
+  .battle-scene.is-skill-flash .battle-scene__mode::before,
+  .battle-scene.is-skill-flash .battle-scene__mode::after,
+  .battle-scene.is-skill-flash .move-banner__label,
+  .combatant.is-hit .combatant__sprite,
+  .combatant.is-fainting .combatant__sprite { animation: none !important; }
+  #battle-fx::before,
+  #battle-fx::after { display: none !important; }
+  .battle-scene.is-skill-flash .battle-scene__mode::before { opacity: .22; }
+  .battle-scene.is-skill-flash .battle-scene__mode::after { opacity: .16; }
+  .move-btn[data-skill-style]:not(.is-disabled):not(:disabled):hover,
+  .move-btn[data-skill-style]:not(.is-disabled):not(:disabled):focus-visible,
+  .move-btn--world:not(.is-disabled):not(:disabled):hover,
+  .move-btn--world:not(.is-disabled):not(:disabled):focus-visible { transform: none !important; }
+}
+body.motion-reduced .battle-scene.is-skill-flash,
+body.motion-reduced .battle-scene.is-skill-flash .battle-scene__mode::before,
+body.motion-reduced .battle-scene.is-skill-flash .battle-scene__mode::after,
+body.motion-reduced .battle-scene.is-skill-flash .move-banner__label,
+body.motion-reduced .combatant.is-hit .combatant__sprite,
+body.motion-reduced .combatant.is-fainting .combatant__sprite { animation: none !important; }
+body.motion-reduced #battle-fx::before,
+body.motion-reduced #battle-fx::after { display: none !important; }
+body.motion-reduced .battle-scene.is-skill-flash .battle-scene__mode::before { opacity: .22; }
+body.motion-reduced .battle-scene.is-skill-flash .battle-scene__mode::after { opacity: .16; }
+body.motion-reduced .move-btn[data-skill-style]:not(.is-disabled):not(:disabled):hover,
+body.motion-reduced .move-btn[data-skill-style]:not(.is-disabled):not(:disabled):focus-visible,
+body.motion-reduced .move-btn--world:not(.is-disabled):not(:disabled):hover,
+body.motion-reduced .move-btn--world:not(.is-disabled):not(:disabled):focus-visible { transform: none !important; }

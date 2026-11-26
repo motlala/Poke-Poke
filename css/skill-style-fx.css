@@ -1,0 +1,190 @@
+/* ============================================================
+   SKILL STYLE FX — mỗi chiêu/tuyệt kỹ có họa tiết + màu riêng.
+   Chỉ trang trí: nhãn chiêu, hệ, sát thương không đổi.
+   Load SAU world-skills-fx.css để họa tiết từng chiêu áp dụng cả
+   chiêu thế giới, nhưng vẫn giữ badge 🌌/🌟/✦ từ JS.
+   ============================================================ */
+
+[data-skill-style] { --sk-a: #a78bfa; --sk-b: #6d28d9; --sk-c: #fff; --sk-speed: 2.4s; }
+[data-skill-style="ember"] {
+  --sk-a: #fb7185; --sk-b: #f97316; --sk-c: #fde68a; --sk-speed: 1.9s;
+  --sk-pattern: repeating-linear-gradient(115deg, transparent 0 8px, rgba(251, 113, 133, .32) 8px 10px, transparent 10px 17px);
+}
+[data-skill-style="frost"] {
+  --sk-a: #bae6fd; --sk-b: #38bdf8; --sk-c: #e0f2fe; --sk-speed: 2.8s;
+  --sk-pattern: repeating-linear-gradient(45deg, transparent 0 7px, rgba(186, 230, 253, .32) 7px 9px, transparent 9px 15px);
+}
+[data-skill-style="storm"] {
+  --sk-a: #facc15; --sk-b: #a78bfa; --sk-c: #fef08a; --sk-speed: 1.5s;
+  --sk-pattern: repeating-linear-gradient(75deg, transparent 0 12px, rgba(250, 204, 21, .38) 12px 14px, transparent 14px 23px);
+}
+[data-skill-style="verdant"] {
+  --sk-a: #86efac; --sk-b: #22c55e; --sk-c: #d9f99d; --sk-speed: 3.1s;
+  --sk-pattern: repeating-radial-gradient(circle at 18% 118%, transparent 0 7px, rgba(134, 239, 172, .3) 7px 9px, transparent 9px 17px);
+}
+[data-skill-style="abyss"] {
+  --sk-a: #67e8f9; --sk-b: #7e22ce; --sk-c: #c4b5fd; --sk-speed: 2.5s;
+  --sk-pattern: repeating-radial-gradient(circle at 50% 50%, transparent 0 10px, rgba(103, 232, 249, .24) 10px 12px, transparent 12px 22px);
+}
+[data-skill-style="radiance"] {
+  --sk-a: #fde68a; --sk-b: #fbbf24; --sk-c: #fff7ed; --sk-speed: 2.2s;
+  --sk-pattern: repeating-conic-gradient(from 0deg at 50% 50%, rgba(253, 230, 138, .3) 0 8deg, transparent 8deg 22deg);
+}
+[data-skill-style="astral"] {
+  --sk-a: #c4b5fd; --sk-b: #818cf8; --sk-c: #f5f3ff; --sk-speed: 3.4s;
+  --sk-pattern: radial-gradient(circle at 22% 28%, rgba(255, 255, 255, .55) 0 1px, transparent 2px),
+    radial-gradient(circle at 74% 62%, rgba(196, 181, 253, .5) 0 1.5px, transparent 3px),
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(129, 140, 248, .18) 14px 16px);
+}
+[data-skill-style="harmonic"] {
+  --sk-a: #f9a8d4; --sk-b: #ec4899; --sk-c: #fdf2f8; --sk-speed: 2s;
+  --sk-pattern: repeating-linear-gradient(0deg, transparent 0 5px, rgba(249, 168, 212, .3) 5px 7px, transparent 7px 12px);
+}
+[data-skill-style="mech"] {
+  --sk-a: #cbd5e1; --sk-b: #64748b; --sk-c: #f8fafc; --sk-speed: 1.7s;
+  --sk-pattern: repeating-linear-gradient(90deg, transparent 0 9px, rgba(203, 213, 225, .3) 9px 10px),
+    repeating-linear-gradient(0deg, transparent 0 11px, rgba(100, 116, 139, .26) 11px 12px);
+}
+[data-skill-style="phantom"] {
+  --sk-a: #d8b4fe; --sk-b: #6d28d9; --sk-c: #f3e8ff; --sk-speed: 2.9s;
+  --sk-pattern: repeating-linear-gradient(160deg, transparent 0 14px, rgba(216, 180, 254, .28) 14px 17px, transparent 17px 29px);
+}
+
+/* Nút chiêu: viền + đáy phát quang riêng, họa tiết trượt nhẹ. */
+.move-btn[data-skill-style] {
+  border-color: color-mix(in srgb, var(--sk-a) 68%, var(--mt, #94a3b8)) !important;
+  box-shadow: inset 3px 0 0 var(--sk-a), 0 12px 24px -18px var(--sk-b);
+}
+.move-btn[data-skill-style] .move-btn__name {
+  color: #fff;
+  text-shadow: 0 0 10px color-mix(in srgb, var(--sk-a) 70%, transparent);
+}
+.move-btn[data-skill-style] .move-btn__badge { border-color: color-mix(in srgb, var(--sk-a) 72%, transparent); }
+.move-btn[data-skill-style]:not(.is-disabled):not(:disabled)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: var(--sk-pattern);
+  background-size: 180% 180%;
+  opacity: .38;
+  animation: skillPatternDrift var(--sk-speed) ease-in-out infinite alternate;
+}
+.move-btn[data-skill-style] > span { position: relative; z-index: 1; }
+@keyframes skillPatternDrift {
+  from { background-position: 0% 0%; transform: scale(1); opacity: .24; }
+  to { background-position: 100% 100%; transform: scale(1.04); opacity: .5; }
+}
+
+/* Pill trong Pokédex: nền họa tiết riêng từng chiêu. */
+.move-pill[data-skill-style] {
+  border-color: color-mix(in srgb, var(--sk-a) 74%, transparent) !important;
+  background: var(--sk-pattern), linear-gradient(120deg,
+    color-mix(in srgb, var(--sk-a) 22%, transparent),
+    color-mix(in srgb, var(--sk-b) 18%, transparent)) !important;
+  box-shadow: 0 0 14px -9px var(--sk-a);
+}
+.move-pill[data-skill-style] .move-pill__tag { color: var(--sk-a); }
+
+/* Banner tên chiêu: họa tiết chạy ngang + viền màu riêng. */
+.move-banner[data-skill-style] {
+  border-color: color-mix(in srgb, var(--sk-a) 82%, #fff);
+  background-image: var(--sk-pattern), linear-gradient(100deg,
+    rgba(6, 10, 20, .92), color-mix(in srgb, var(--sk-b) 34%, rgba(6, 10, 20, .92)) 48%, rgba(6, 10, 20, .92));
+  background-size: 180% 100%, auto;
+  box-shadow: 0 0 30px -10px var(--sk-a), inset 0 0 18px -8px var(--sk-b);
+  animation: bannerPop .65s var(--ease), skillBannerFlow var(--sk-speed) linear both;
+}
+.move-banner[data-skill-style]::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--sk-a) 82%, transparent);
+  box-shadow: 0 0 22px -6px var(--sk-a), inset 0 0 16px -8px var(--sk-b);
+  animation: skillHalo .6s ease-out both;
+}
+@keyframes skillBannerFlow {
+  from { background-position: 120% 0, 0 0; filter: brightness(1.25); }
+  to { background-position: -120% 0, 0 0; filter: brightness(1); }
+}
+@keyframes skillHalo {
+  0% { opacity: 0; transform: scale(.9) rotate(-2deg); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.14) rotate(2deg); }
+}
+
+/* Đạn/vòng xung theo từng chiêu. */
+#battle-fx[data-skill-style] .fx-projectile {
+  box-shadow: 0 0 15px 5px var(--sk-a), 0 0 38px 15px color-mix(in srgb, var(--sk-b) 62%, transparent);
+}
+#battle-fx[data-skill-style] .fx-projectile::after {
+  content: '';
+  position: absolute;
+  inset: -11px;
+  border-radius: 50%;
+  border: 2px dashed var(--sk-a);
+  box-shadow: inset 0 0 14px -4px var(--sk-b);
+  animation: skillRingSpin var(--sk-speed) linear infinite;
+}
+@keyframes skillRingSpin {
+  from { transform: rotate(0deg) scale(.8); opacity: .9; }
+  to { transform: rotate(360deg) scale(1.2); opacity: .25; }
+}
+
+/* Vòng phóng / đuôi / va chạm cũng mang màu riêng của chiêu. */
+#battle-fx[data-skill-style] .fx-launch {
+  border-color: var(--sk-a);
+  box-shadow: 0 0 20px 5px color-mix(in srgb, var(--sk-a) 70%, transparent),
+              inset 0 0 12px 3px color-mix(in srgb, var(--sk-b) 55%, transparent);
+}
+#battle-fx[data-skill-style] .fx-launch::after { border-color: var(--sk-c); }
+#battle-fx[data-skill-style] .fx-comet {
+  background: linear-gradient(90deg, transparent 0%,
+    color-mix(in srgb, var(--sk-b) 45%, transparent) 48%, var(--sk-a) 82%, var(--sk-c) 100%);
+  filter: blur(2px) drop-shadow(0 0 8px var(--sk-a));
+}
+#battle-fx[data-skill-style] .fx-impact {
+  background: radial-gradient(circle, #fff 0 10%, var(--sk-a) 36%, var(--sk-b) 58%, transparent 76%);
+  box-shadow: 0 0 28px 9px color-mix(in srgb, var(--sk-a) 72%, transparent);
+}
+#battle-fx[data-skill-style] .fx-impact::after { border-color: var(--sk-c); }
+
+/* Sóng năng lượng trên nền sân: mỗi chiêu một họa tiết. */
+.battle-scene[data-skill-style].is-skill-flash[data-skill-flair] .battle-scene__ambient::after {
+  --world-accent: var(--sk-a);
+  background-image: var(--sk-pattern), radial-gradient(circle,
+    color-mix(in srgb, var(--sk-a) 38%, transparent) 0%, transparent 62%);
+  border-color: var(--sk-b);
+  box-shadow: 0 0 40px -12px var(--sk-a), inset 0 0 30px -10px var(--sk-b);
+}
+
+/* ---------- Giảm chuyển động: giữ màu/nhãn, bỏ chuyển động ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .move-btn[data-skill-style]:not(.is-disabled):not(:disabled)::after,
+  .move-banner[data-skill-style],
+  .move-banner[data-skill-style]::after,
+  #battle-fx[data-skill-style] .fx-projectile::after,
+  #battle-fx[data-skill-style] .fx-launch,
+  #battle-fx[data-skill-style] .fx-launch::after,
+  #battle-fx[data-skill-style] .fx-comet,
+  #battle-fx[data-skill-style] .fx-impact,
+  #battle-fx[data-skill-style] .fx-impact::after {
+    animation: none !important;
+  }
+  .move-btn[data-skill-style]:not(.is-disabled):not(:disabled)::after { opacity: .3; }
+}
+body.motion-reduced .move-btn[data-skill-style]:not(.is-disabled):not(:disabled)::after,
+body.motion-reduced .move-banner[data-skill-style],
+body.motion-reduced .move-banner[data-skill-style]::after,
+body.motion-reduced #battle-fx[data-skill-style] .fx-projectile::after,
+body.motion-reduced #battle-fx[data-skill-style] .fx-launch,
+body.motion-reduced #battle-fx[data-skill-style] .fx-launch::after,
+body.motion-reduced #battle-fx[data-skill-style] .fx-comet,
+body.motion-reduced #battle-fx[data-skill-style] .fx-impact,
+body.motion-reduced #battle-fx[data-skill-style] .fx-impact::after {
+  animation: none !important;
+}
+body.motion-reduced .move-btn[data-skill-style]:not(.is-disabled):not(:disabled)::after { opacity: .3; }

@@ -1,0 +1,546 @@
+/* ============================================================
+   SÂN ĐẤU THEO VÙNG — mỗi khu vực có bầu trời, cảnh nền và
+   không khí riêng. Chỉ dùng CSS, không tải thêm ảnh.
+   ============================================================ */
+
+.battle-scene__scenery,
+.battle-scene__mode {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.battle-scene__scenery { z-index: 1; }
+.battle-scene__ground { z-index: 2; }
+.battle-scene__mode { z-index: 3; }
+.battle-region {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  z-index: 8;
+  transform: translateX(-50%);
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(5, 10, 18, 0.52);
+  color: #eaf2ff;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px -12px rgba(0, 0, 0, 0.9);
+}
+
+.battle-scene__scenery span { position: absolute; display: block; }
+
+/* ---------------- RỪNG XANH ---------------- */
+.arena-bg--forest { --sky-1: #0e3b2a; --sky-2: #071e17; --sky-3: #030b08; --wx: #6ee7b7; }
+.arena-bg--forest .battle-scene__sky {
+  background:
+    radial-gradient(72% 52% at 76% 10%, rgba(110, 231, 183, 0.26), transparent 60%),
+    radial-gradient(90% 60% at 50% 100%, rgba(16, 185, 129, 0.2), transparent 72%),
+    linear-gradient(180deg, #0d3b2b 0%, #071f17 62%, #030b08 100%);
+}
+.arena-bg--forest .battle-scene__scenery span:nth-child(1) {
+  left: -6%; right: -6%; bottom: 24%; height: 42%;
+  background:
+    radial-gradient(ellipse 18% 56% at 8% 100%, #04150e 62%, transparent 63%),
+    radial-gradient(ellipse 13% 78% at 21% 100%, #061b12 62%, transparent 63%),
+    radial-gradient(ellipse 20% 62% at 35% 100%, #04150e 62%, transparent 63%),
+    radial-gradient(ellipse 15% 88% at 49% 100%, #061b12 62%, transparent 63%),
+    radial-gradient(ellipse 18% 58% at 63% 100%, #04150e 62%, transparent 63%),
+    radial-gradient(ellipse 14% 82% at 77% 100%, #061b12 62%, transparent 63%),
+    radial-gradient(ellipse 19% 64% at 92% 100%, #04150e 62%, transparent 63%);
+}
+.arena-bg--forest .battle-scene__scenery span:nth-child(2) {
+  inset: 8% 0 28%;
+  background-image:
+    radial-gradient(circle, rgba(190, 242, 100, 0.85) 0 1.2px, transparent 1.6px),
+    radial-gradient(circle, rgba(110, 231, 183, 0.75) 0 1px, transparent 1.4px);
+  background-size: 96px 72px, 58px 46px;
+  background-position: 10px 18px, 34px 8px;
+  opacity: 0.7;
+  animation: arenaDrift 18s linear infinite;
+}
+.arena-bg--forest .battle-scene__scenery span:nth-child(3) {
+  left: -4%; right: -4%; bottom: 16%; height: 14%;
+  background: repeating-linear-gradient(82deg, transparent 0 11px, rgba(52, 211, 153, 0.22) 11px 12px, transparent 12px 24px);
+  mask-image: linear-gradient(180deg, transparent, #000 62%);
+}
+.arena-bg--forest .battle-scene__mode {
+  background: radial-gradient(70% 60% at 50% 100%, rgba(16, 185, 129, 0.12), transparent 70%);
+}
+
+/* ---------------- HANG ĐỘNG ---------------- */
+.arena-bg--cave { --sky-1: #1c2333; --sky-2: #0b101b; --sky-3: #04060a; --wx: #a5b4fc; }
+.arena-bg--cave .battle-scene__sky {
+  background:
+    radial-gradient(50% 40% at 20% 18%, rgba(129, 140, 248, 0.22), transparent 62%),
+    radial-gradient(46% 36% at 82% 24%, rgba(56, 189, 248, 0.14), transparent 64%),
+    linear-gradient(180deg, #1b2333 0%, #0b101b 58%, #04060a 100%);
+}
+.arena-bg--cave .battle-scene__scenery span:nth-child(1) {
+  top: -2%; left: -2%; right: -2%; height: 34%;
+  background: linear-gradient(180deg, #05080d 0%, #0d1420 76%, transparent 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 46%, 94% 72%, 88% 42%, 82% 84%, 76% 48%, 70% 68%, 64% 40%, 58% 80%, 52% 46%, 46% 72%, 40% 42%, 34% 86%, 28% 50%, 22% 70%, 16% 44%, 10% 78%, 4% 46%, 0 64%);
+}
+.arena-bg--cave .battle-scene__scenery span:nth-child(2) {
+  left: 4%; right: 4%; bottom: 18%; height: 26%;
+  background:
+    linear-gradient(135deg, transparent 46%, rgba(129, 140, 248, 0.32) 47% 53%, transparent 54%) 8% 100% / 90px 120px no-repeat,
+    linear-gradient(45deg, transparent 46%, rgba(56, 189, 248, 0.28) 47% 53%, transparent 54%) 82% 100% / 70px 96px no-repeat,
+    radial-gradient(ellipse 60% 30% at 50% 100%, rgba(99, 102, 241, 0.18), transparent 70%);
+}
+.arena-bg--cave .battle-scene__scenery span:nth-child(3) {
+  inset: 20% 0 24%;
+  background-image: radial-gradient(circle, rgba(165, 180, 252, 0.65) 0 1px, transparent 1.5px);
+  background-size: 84px 64px;
+  opacity: 0.5;
+  animation: arenaDrift 24s linear infinite reverse;
+}
+.arena-bg--cave .battle-scene__mode {
+  background: radial-gradient(90% 80% at 50% 40%, transparent 45%, rgba(2, 6, 12, 0.55) 100%);
+}
+
+/* ---------------- BỜ BIỂN ---------------- */
+.arena-bg--beach { --sky-1: #1c5d86; --sky-2: #0b2d44; --sky-3: #04121c; --wx: #67e8f9; }
+.arena-bg--beach .battle-scene__sky {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(254, 240, 138, 0.9) 0 5%, rgba(251, 191, 36, 0.3) 12%, transparent 30%),
+    linear-gradient(180deg, #1e6a96 0%, #0b334d 56%, #04121c 100%);
+}
+.arena-bg--beach .battle-scene__scenery span:nth-child(1) {
+  left: 0; right: 0; bottom: 22%; height: 20%;
+  background:
+    linear-gradient(180deg, rgba(103, 232, 249, 0.22), rgba(14, 116, 144, 0.38)),
+    repeating-linear-gradient(180deg, transparent 0 9px, rgba(224, 242, 254, 0.18) 9px 10px);
+  mask-image: linear-gradient(180deg, #000, transparent);
+}
+.arena-bg--beach .battle-scene__scenery span:nth-child(2) {
+  left: -10%; right: -10%; bottom: 14%; height: 16%;
+  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(250, 204, 21, 0.18), transparent 70%);
+}
+.arena-bg--beach .battle-scene__scenery span:nth-child(3) {
+  inset: 12% 0 26%;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.4px);
+  background-size: 110px 76px;
+  opacity: 0.45;
+  animation: arenaDrift 20s linear infinite;
+}
+.arena-bg--beach .battle-scene__mode {
+  background: linear-gradient(180deg, transparent 45%, rgba(251, 191, 36, 0.1) 100%);
+}
+
+/* ---------------- HỒ NƯỚC ---------------- */
+.arena-bg--lake { --sky-1: #0b4a5c; --sky-2: #062b38; --sky-3: #021016; --wx: #5eead4; }
+.arena-bg--lake .battle-scene__sky {
+  background:
+    radial-gradient(circle at 24% 18%, rgba(226, 232, 240, 0.85) 0 4%, rgba(148, 233, 255, 0.25) 10%, transparent 26%),
+    radial-gradient(80% 50% at 50% 100%, rgba(45, 212, 191, 0.18), transparent 70%),
+    linear-gradient(180deg, #0b4a5c 0%, #062b38 58%, #021016 100%);
+}
+.arena-bg--lake .battle-scene__scenery span:nth-child(1) {
+  left: -6%; right: -6%; bottom: 30%; height: 20%;
+  background:
+    radial-gradient(ellipse 30% 90% at 16% 100%, #041820 68%, transparent 69%),
+    radial-gradient(ellipse 24% 70% at 38% 100%, #051d26 68%, transparent 69%),
+    radial-gradient(ellipse 28% 84% at 64% 100%, #041820 68%, transparent 69%),
+    radial-gradient(ellipse 22% 66% at 84% 100%, #051d26 68%, transparent 69%);
+}
+.arena-bg--lake .battle-scene__scenery span:nth-child(2) {
+  left: 0; right: 0; bottom: 20%; height: 20%;
+  background: repeating-linear-gradient(180deg, transparent 0 10px, rgba(94, 234, 212, 0.16) 10px 11px, transparent 11px 24px);
+  mask-image: linear-gradient(180deg, #000, transparent);
+}
+.arena-bg--lake .battle-scene__scenery span:nth-child(3) {
+  inset: 14% 0 24%;
+  background-image: radial-gradient(circle, rgba(165, 243, 252, 0.8) 0 1px, transparent 1.4px);
+  background-size: 92px 68px;
+  opacity: 0.55;
+  animation: arenaDrift 22s linear infinite reverse;
+}
+.arena-bg--lake .battle-scene__mode {
+  background: radial-gradient(70% 60% at 50% 100%, rgba(34, 211, 238, 0.12), transparent 70%);
+}
+
+/* ---------------- NÚI LỬA ---------------- */
+.arena-bg--volcano { --sky-1: #5b1c12; --sky-2: #2a0b07; --sky-3: #0d0302; --wx: #fb923c; }
+.arena-bg--volcano .battle-scene__sky {
+  background:
+    radial-gradient(70% 46% at 50% 8%, rgba(251, 146, 60, 0.36), transparent 62%),
+    radial-gradient(46% 30% at 18% 30%, rgba(239, 68, 68, 0.24), transparent 64%),
+    linear-gradient(180deg, #5b1c12 0%, #2a0b07 58%, #0d0302 100%);
+}
+.arena-bg--volcano .battle-scene__scenery span:nth-child(1) {
+  left: 8%; right: 8%; bottom: 22%; height: 34%;
+  background: linear-gradient(180deg, #1a0805 0%, #0d0302 100%);
+  clip-path: polygon(0 100%, 0 78%, 16% 62%, 24% 68%, 38% 34%, 44% 46%, 50% 22%, 56% 46%, 62% 34%, 76% 68%, 84% 62%, 100% 78%, 100% 100%);
+  filter: drop-shadow(0 -8px 22px rgba(249, 115, 22, 0.35));
+}
+.arena-bg--volcano .battle-scene__scenery span:nth-child(2) {
+  left: -6%; right: -6%; bottom: 12%; height: 18%;
+  background:
+    repeating-linear-gradient(115deg, transparent 0 42px, rgba(251, 146, 60, 0.4) 42px 45px, transparent 45px 96px),
+    radial-gradient(ellipse 70% 70% at 50% 100%, rgba(239, 68, 68, 0.32), transparent 70%);
+  filter: blur(0.5px);
+}
+.arena-bg--volcano .battle-scene__scenery span:nth-child(3) {
+  inset: 10% 0 20%;
+  background-image:
+    radial-gradient(circle, rgba(253, 186, 116, 0.9) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle, rgba(248, 113, 113, 0.7) 0 1px, transparent 1.5px);
+  background-size: 78px 96px, 46px 64px;
+  opacity: 0.6;
+  animation: arenaEmber 9s linear infinite;
+}
+.arena-bg--volcano .battle-scene__mode {
+  background: radial-gradient(80% 70% at 50% 100%, rgba(249, 115, 22, 0.2), transparent 64%);
+}
+
+/* ---------------- SA MẠC ---------------- */
+.arena-bg--desert { --sky-1: #6b4a12; --sky-2: #332207; --sky-3: #100b02; --wx: #fbbf24; }
+.arena-bg--desert .battle-scene__sky {
+  background:
+    radial-gradient(circle at 72% 18%, rgba(254, 243, 199, 0.9) 0 5%, rgba(251, 191, 36, 0.28) 12%, transparent 32%),
+    linear-gradient(180deg, #6b4a12 0%, #332207 58%, #100b02 100%);
+}
+.arena-bg--desert .battle-scene__scenery span:nth-child(1) {
+  left: -8%; right: -8%; bottom: 22%; height: 30%;
+  background:
+    radial-gradient(ellipse 50% 100% at 18% 100%, #241804 62%, transparent 63%),
+    radial-gradient(ellipse 58% 100% at 52% 100%, #2d1e05 62%, transparent 63%),
+    radial-gradient(ellipse 46% 100% at 86% 100%, #241804 62%, transparent 63%);
+}
+.arena-bg--desert .battle-scene__scenery span:nth-child(2) {
+  left: -10%; right: -10%; bottom: 10%; height: 20%;
+  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(251, 191, 36, 0.16), transparent 70%);
+}
+.arena-bg--desert .battle-scene__scenery span:nth-child(3) {
+  inset: 16% 0 20%;
+  background: repeating-linear-gradient(168deg, transparent 0 22px, rgba(253, 230, 138, 0.12) 22px 24px, transparent 24px 52px);
+  opacity: 0.7;
+  animation: arenaDrift 14s linear infinite;
+}
+.arena-bg--desert .battle-scene__mode {
+  background: linear-gradient(180deg, transparent 40%, rgba(251, 191, 36, 0.1) 100%);
+}
+
+/* ---------------- NÚI TUYẾT ---------------- */
+.arena-bg--snow { --sky-1: #1e4b66; --sky-2: #0d2638; --sky-3: #040d14; --wx: #bae6fd; }
+.arena-bg--snow .battle-scene__sky {
+  background:
+    radial-gradient(70% 42% at 30% 12%, rgba(186, 230, 253, 0.3), transparent 62%),
+    linear-gradient(180deg, #1e4b66 0%, #0d2638 58%, #040d14 100%);
+}
+.arena-bg--snow .battle-scene__scenery span:nth-child(1) {
+  left: 2%; right: 2%; bottom: 24%; height: 32%;
+  background: linear-gradient(180deg, #0c2538 0%, #061724 100%);
+  clip-path: polygon(0 100%, 0 74%, 18% 42%, 28% 58%, 42% 18%, 52% 52%, 62% 30%, 74% 60%, 86% 44%, 100% 74%, 100% 100%);
+  filter: drop-shadow(0 -10px 20px rgba(186, 230, 253, 0.18));
+}
+.arena-bg--snow .battle-scene__scenery span:nth-child(2) {
+  left: -6%; right: -6%; bottom: 14%; height: 18%;
+  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(224, 242, 254, 0.22), transparent 72%);
+}
+.arena-bg--snow .battle-scene__scenery span:nth-child(3) {
+  inset: 0 0 18%;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 1.3px, transparent 1.8px),
+    radial-gradient(circle, rgba(186, 230, 253, 0.8) 0 1px, transparent 1.5px);
+  background-size: 84px 84px, 52px 52px;
+  opacity: 0.72;
+  animation: arenaSnow 12s linear infinite;
+}
+.arena-bg--snow .battle-scene__mode {
+  background: radial-gradient(80% 70% at 50% 100%, rgba(125, 211, 252, 0.13), transparent 68%);
+}
+
+/* ---------------- THÀNH PHỐ ---------------- */
+.arena-bg--city { --sky-1: #2a174d; --sky-2: #120a24; --sky-3: #05020b; --wx: #c084fc; }
+.arena-bg--city .battle-scene__sky {
+  background:
+    radial-gradient(60% 44% at 74% 12%, rgba(192, 132, 252, 0.32), transparent 62%),
+    radial-gradient(46% 36% at 18% 20%, rgba(56, 189, 248, 0.2), transparent 64%),
+    linear-gradient(180deg, #2a174d 0%, #120a24 58%, #05020b 100%);
+}
+.arena-bg--city .battle-scene__scenery span:nth-child(1) {
+  left: 0; right: 0; bottom: 24%; height: 38%;
+  background:
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 4% 100% / 9% 74% no-repeat,
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 15% 100% / 7% 92% no-repeat,
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 25% 100% / 10% 58% no-repeat,
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 38% 100% / 8% 84% no-repeat,
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 49% 100% / 11% 66% no-repeat,
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 63% 100% / 8% 96% no-repeat,
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 74% 100% / 10% 62% no-repeat,
+    linear-gradient(180deg, #0b0618 0%, #080411 100%) 87% 100% / 9% 82% no-repeat;
+}
+.arena-bg--city .battle-scene__scenery span:nth-child(2) {
+  left: 0; right: 0; bottom: 24%; height: 38%;
+  background-image:
+    radial-gradient(circle, rgba(253, 224, 71, 0.85) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(56, 189, 248, 0.75) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(244, 114, 182, 0.8) 0 1px, transparent 1.5px);
+  background-size: 42px 34px, 66px 48px, 54px 40px;
+  background-position: 6px 14px, 22px 6px, 38px 22px;
+  opacity: 0.5;
+  mask-image: linear-gradient(180deg, #000 0 72%, transparent 96%);
+}
+.arena-bg--city .battle-scene__scenery span:nth-child(3) {
+  left: -10%; right: -10%; bottom: 12%; height: 18%;
+  background: radial-gradient(ellipse 60% 100% at 50% 100%, rgba(192, 132, 252, 0.22), transparent 70%);
+}
+.arena-bg--city .battle-scene__mode {
+  background: linear-gradient(180deg, transparent 44%, rgba(88, 28, 135, 0.2) 100%);
+}
+
+/* ---------------- ĐỀN CỔ ---------------- */
+.arena-bg--temple { --sky-1: #4a3510; --sky-2: #221805; --sky-3: #0a0701; --wx: #ffd86b; }
+.arena-bg--temple .battle-scene__sky {
+  background:
+    radial-gradient(56% 44% at 50% 8%, rgba(255, 216, 107, 0.38), transparent 62%),
+    radial-gradient(46% 32% at 16% 28%, rgba(245, 158, 11, 0.18), transparent 64%),
+    linear-gradient(180deg, #4a3510 0%, #221805 58%, #0a0701 100%);
+}
+.arena-bg--temple .battle-scene__scenery span:nth-child(1) {
+  left: 8%; right: 8%; bottom: 22%; height: 36%;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 16%, rgba(255, 216, 107, 0.12) 16% 19%, transparent 19% 33%),
+    linear-gradient(180deg, transparent 0 18%, rgba(120, 80, 12, 0.34) 18% 22%, transparent 22% 100%);
+  mask-image: linear-gradient(180deg, #000, transparent 92%);
+}
+.arena-bg--temple .battle-scene__scenery span:nth-child(2) {
+  left: 18%; right: 18%; bottom: 24%; height: 24%;
+  border: 2px solid rgba(255, 216, 107, 0.24);
+  border-bottom: 0;
+  border-radius: 46% 46% 0 0 / 30% 30% 0 0;
+  box-shadow: inset 0 0 26px rgba(255, 216, 107, 0.1);
+}
+.arena-bg--temple .battle-scene__scenery span:nth-child(3) {
+  inset: 10% 0 20%;
+  background-image:
+    radial-gradient(circle, rgba(255, 216, 107, 0.85) 0 1.1px, transparent 1.6px),
+    radial-gradient(circle, rgba(253, 230, 138, 0.6) 0 1px, transparent 1.5px);
+  background-size: 96px 82px, 58px 54px;
+  opacity: 0.55;
+  animation: arenaDrift 26s linear infinite;
+}
+.arena-bg--temple .battle-scene__mode {
+  background: radial-gradient(70% 60% at 50% 100%, rgba(255, 216, 107, 0.16), transparent 66%);
+}
+
+/* ---------------- ÁNH SÁNG NỀN ĐIỆN ẢNH ----------------
+   Dùng lại layer có sẵn (không thêm DOM): dải sáng chân trời, bụi bay,
+   phản chiếu sàn. Màu lấy theo --wx của từng vùng. */
+.battle-scene__scenery::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 14%;
+  width: min(78%, 660px); height: 48%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 100%,
+    color-mix(in srgb, var(--wx, #7dd3fc) 28%, transparent), transparent 72%);
+  filter: blur(15px);
+  animation: arenaHorizonBreath 7s ease-in-out infinite;
+}
+.battle-scene__scenery::after {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb, var(--wx, #7dd3fc) 72%, #fff) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.55) 1px, transparent 2px);
+  background-size: 92px 74px, 148px 126px;
+  background-position: 0 0, 34px 46px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 76%);
+  opacity: 0.34;
+  animation: arenaDustDrift 26s linear infinite;
+}
+.battle-scene__ground::before {
+  content: '';
+  position: absolute;
+  left: 12%; right: 12%; top: 0; height: 38%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 0%,
+    color-mix(in srgb, var(--wx, #7dd3fc) 32%, transparent), transparent 70%);
+  filter: blur(11px);
+  animation: arenaFloorGlow 5.5s ease-in-out infinite;
+}
+.battle-scene__ground::after {
+  content: '';
+  position: absolute;
+  left: 19%; right: 19%; top: 5%; height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent,
+    color-mix(in srgb, var(--wx, #7dd3fc) 70%, #fff), transparent);
+  filter: blur(1px);
+  opacity: 0.6;
+  animation: arenaFloorLine 5.5s ease-in-out infinite;
+}
+/* Lúc phóng chiêu, sàn và chân trời nhấp màu riêng của chiêu. */
+.battle-scene[data-skill-style].is-skill-flash .battle-scene__scenery::before,
+.battle-scene[data-skill-style].is-skill-flash .battle-scene__ground::before {
+  background: radial-gradient(ellipse at 50% 80%,
+    color-mix(in srgb, var(--sk-a) 48%, transparent), transparent 74%);
+}
+@keyframes arenaHorizonBreath {
+  0%, 100% { opacity: 0.55; transform: translateX(-50%) scale(0.95); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.06); }
+}
+@keyframes arenaDustDrift {
+  from { background-position: 0 0, 34px 46px; }
+  to { background-position: -92px -74px, -114px -80px; }
+}
+@keyframes arenaFloorGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.95; }
+}
+@keyframes arenaFloorLine {
+  0%, 100% { opacity: 0.35; transform: scaleX(0.94); }
+  50% { opacity: 0.85; transform: scaleX(1.02); }
+}
+
+/* ---------------- HIỆU ỨNG VÀO SÂN THEO BẢN ĐỒ ---------------- */
+/* Chỉ chạy lần đầu khi trận đấu mở, màu lấy theo vùng (--wx). */
+.battle-map-fx {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+.battle-map-fx span { position: absolute; display: block; pointer-events: none; }
+.battle-map-fx__grid {
+  inset: 4%;
+  opacity: 0;
+  border-radius: 14px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px) 0 0 / 100% 34px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px) 0 0 / 34px 100%,
+    radial-gradient(80% 70% at 50% 80%, color-mix(in srgb, var(--wx, #67e8f9) 26%, transparent), transparent 72%);
+  mask-image: radial-gradient(80% 75% at 50% 55%, #000 35%, transparent 100%);
+  animation: battleMapGrid 0.85s ease-out both;
+}
+.battle-map-fx__sweep {
+  top: -20%; bottom: -20%;
+  left: -42%;
+  width: 34%;
+  opacity: 0;
+  transform: skewX(-14deg);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--wx, #67e8f9) 52%, transparent), transparent);
+  filter: blur(2px);
+  animation: battleMapSweep 0.9s ease-out both;
+}
+.battle-map-fx__ping {
+  left: 50%; top: 46%;
+  width: 26px; height: 26px;
+  margin: -13px 0 0 -13px;
+  border: 2px solid color-mix(in srgb, var(--wx, #67e8f9) 80%, #fff);
+  border-radius: 50%;
+  box-shadow: 0 0 22px -4px var(--wx, #67e8f9);
+  animation: battleMapPing 0.85s ease-out both;
+}
+.battle-region {
+  border-color: color-mix(in srgb, var(--wx, #67e8f9) 46%, rgba(255, 255, 255, 0.2));
+  box-shadow: 0 0 22px -12px var(--wx, #67e8f9), 0 6px 18px -12px rgba(0, 0, 0, 0.9);
+}
+@keyframes battleMapGrid {
+  0% { opacity: 0; transform: scale(1.12); }
+  35% { opacity: 0.9; }
+  100% { opacity: 0; transform: scale(1); }
+}
+@keyframes battleMapSweep {
+  0% { opacity: 0; left: -42%; }
+  25% { opacity: 0.9; }
+  100% { opacity: 0; left: 110%; }
+}
+@keyframes battleMapPing {
+  0% { opacity: 0; transform: scale(0.2); }
+  25% { opacity: 0.95; }
+  100% { opacity: 0; transform: scale(7); }
+}
+
+/* ---------------- CHẾ ĐỘ ĐẤU ---------------- */
+.arena-mode--gym .battle-scene {
+  border-color: rgba(255, 209, 102, 0.45);
+  box-shadow: 0 0 0 1px rgba(255, 209, 102, 0.16), var(--shadow-lg);
+}
+.arena-mode--gym .battle-scene__mode {
+  background:
+    linear-gradient(90deg, rgba(255, 209, 102, 0.14), transparent 18%, transparent 82%, rgba(255, 209, 102, 0.14)),
+    radial-gradient(60% 40% at 50% 0%, rgba(255, 209, 102, 0.2), transparent 64%);
+}
+.arena-mode--tournament .battle-scene {
+  border-color: rgba(192, 132, 252, 0.45);
+}
+.arena-mode--tournament .battle-scene__mode {
+  background:
+    conic-gradient(from 180deg at 50% -10%, transparent 0 38%, rgba(192, 132, 252, 0.18) 42% 46%, transparent 50% 58%, rgba(56, 189, 248, 0.14) 62% 66%, transparent 70%),
+    radial-gradient(70% 50% at 50% 0%, rgba(192, 132, 252, 0.16), transparent 68%);
+}
+.arena-mode--raid .battle-scene {
+  border-color: rgba(248, 113, 113, 0.5);
+  animation: raidArenaPulse 3.4s ease-in-out infinite;
+}
+.arena-mode--raid .battle-scene__mode {
+  background: radial-gradient(80% 70% at 50% 50%, transparent 46%, rgba(127, 29, 29, 0.32) 100%);
+}
+.arena-mode--trainer .battle-scene__mode {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.08), transparent 28%, transparent 72%, rgba(251, 191, 36, 0.08));
+}
+@keyframes raidArenaPulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.16), var(--shadow-lg); }
+  50% { box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.34), 0 0 44px -18px rgba(248, 113, 113, 0.8), var(--shadow-lg); }
+}
+@keyframes arenaDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 180px 0, -120px 0; }
+}
+@keyframes arenaSnow {
+  from { background-position: 0 -100px, 0 -60px; }
+  to { background-position: 30px 420px, -20px 320px; }
+}
+@keyframes arenaEmber {
+  from { background-position: 0 100%, 0 100%; }
+  to { background-position: 24px -160px, -18px -120px; }
+}
+
+@media (max-width: 720px) {
+  .battle-region { display: none; }
+  .arena-bg--forest .battle-scene__scenery span:nth-child(2),
+  .arena-bg--cave .battle-scene__scenery span:nth-child(3),
+  .arena-bg--beach .battle-scene__scenery span:nth-child(3),
+  .arena-bg--lake .battle-scene__scenery span:nth-child(3),
+  .arena-bg--volcano .battle-scene__scenery span:nth-child(3),
+  .arena-bg--snow .battle-scene__scenery span:nth-child(3),
+  .arena-bg--temple .battle-scene__scenery span:nth-child(3) { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .battle-scene__scenery span,
+  .battle-scene__scenery::before,
+  .battle-scene__scenery::after,
+  .battle-scene__ground::before,
+  .battle-scene__ground::after,
+  .battle-map-fx span,
+  .arena-mode--raid .battle-scene { animation: none !important; }
+  .battle-scene__scenery::before, .battle-scene__ground::before { opacity: 0.6; }
+  .battle-scene__scenery::after { opacity: 0.18; }
+  .battle-map-fx__grid { opacity: 0.4; }
+  .battle-map-fx__sweep, .battle-map-fx__ping { opacity: 0; }
+}
+body.motion-reduced .battle-scene__scenery span,
+body.motion-reduced .battle-scene__scenery::before,
+body.motion-reduced .battle-scene__scenery::after,
+body.motion-reduced .battle-scene__ground::before,
+body.motion-reduced .battle-scene__ground::after,
+body.motion-reduced .battle-map-fx span,
+body.motion-reduced .arena-mode--raid .battle-scene { animation: none !important; }
+body.motion-reduced .battle-scene__scenery::before,
+body.motion-reduced .battle-scene__ground::before { opacity: 0.6; }
+body.motion-reduced .battle-scene__scenery::after { opacity: 0.18; }
+body.motion-reduced .battle-map-fx__grid { opacity: 0.4; }
+body.motion-reduced .battle-map-fx__sweep,
+body.motion-reduced .battle-map-fx__ping { opacity: 0; }

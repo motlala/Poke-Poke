@@ -1,0 +1,37 @@
+/* Kết quả bắt: hai nút footer rõ ràng + Pokémon mờ dần khi bỏ chạy. */
+.modal__foot .catch-ux__btn {
+  flex: 1 1 140px;
+  min-width: 132px;
+  min-height: 42px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 560px) {
+  .modal__foot .catch-ux__btn {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+/* Sân bắt: giữ nguyên trạng thái cuối của .is-fled nhưng mờ dần thay vì biến mất ngay. */
+.catch-scene.is-fled .catch-mon-wrap {
+  animation: catchFleeFade 0.5s ease-in both;
+}
+@keyframes catchFleeFade {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to   { opacity: 0; transform: translate(-50%, -50%) scale(0.6) rotate(12deg); }
+}
+
+/* Hộp kết quả thất bại: sprite trượt ra và mờ đi khi Pokémon đã bỏ chạy. */
+.catch-fail.is-fled .catch-fail__sprite {
+  animation: catchFailSpriteFade 0.6s ease-out 0.15s both;
+}
+@keyframes catchFailSpriteFade {
+  from { opacity: 0.85; filter: grayscale(0.55); transform: translateY(0) scale(1); }
+  to   { opacity: 0; filter: grayscale(1); transform: translateY(-10px) scale(0.8); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catch-scene.is-fled .catch-mon-wrap,
+  .catch-fail.is-fled .catch-fail__sprite { animation: none; }
+}

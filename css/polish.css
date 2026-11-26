@@ -1,0 +1,148 @@
+/* ============================================================
+   POLISH — lớp hoàn thiện cuối cùng.
+   Chỉ thêm chiều sâu, ánh sáng và nhịp thở cho giao diện có sẵn:
+   nền cực quang, thẻ kính mỏng, modal/toast tinh tế hơn.
+   Không đổi cấu trúc HTML, không đổi hành vi, không tải ảnh.
+   Mọi chuyển động đều tôn trọng reduced-motion.
+   ============================================================ */
+
+/* ---------------- NỀN: DẢI SÁNG BAY ---------------- */
+.app-bg::before {
+  content: '';
+  position: absolute;
+  inset: -24% -12%;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 26% at 16% 16%, rgba(99, 102, 241, 0.3), transparent 72%),
+    radial-gradient(34% 24% at 84% 32%, rgba(236, 72, 153, 0.18), transparent 72%),
+    radial-gradient(46% 28% at 50% 92%, rgba(45, 212, 191, 0.16), transparent 74%);
+  filter: blur(38px);
+  opacity: 0.62;
+  animation: plAurora 26s ease-in-out infinite alternate;
+}
+@keyframes plAurora {
+  0%   { transform: translate3d(-2%, 0, 0) scale(1); opacity: 0.5; }
+  50%  { transform: translate3d(2%, -1.5%, 0) scale(1.06); opacity: 0.72; }
+  100% { transform: translate3d(-1%, 2%, 0) scale(0.98); opacity: 0.58; }
+}
+
+/* ---------------- TRANG CHỦ: ÁNH CHÂN TRỜI TRONG HERO ---------------- */
+.hero__overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 42%, rgba(255, 209, 102, 0.09) 62%, transparent 78%),
+    repeating-linear-gradient(102deg, transparent 0 48px, rgba(255, 255, 255, 0.035) 48px 49px, transparent 49px 98px);
+  mask-image: linear-gradient(180deg, transparent 26%, #000 62%, #000 100%);
+}
+.hero__overlay::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 27%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22) 28%, color-mix(in srgb, var(--r1, #38bdf8) 55%, transparent) 62%, transparent);
+  box-shadow: 0 0 16px 2px color-mix(in srgb, var(--r1, #38bdf8) 35%, transparent);
+}
+.mini-mon:hover {
+  box-shadow: 0 10px 22px -14px color-mix(in srgb, var(--r1, #38bdf8) 80%, transparent);
+}
+
+/* ---------------- TIÊU ĐỀ PANEL: GẠCH NHẤN ---------------- */
+.panel__title::before {
+  content: '';
+  width: 3px;
+  height: 14px;
+  flex: none;
+  border-radius: 99px;
+  background: linear-gradient(180deg, var(--gold), var(--primary-2));
+  box-shadow: 0 0 10px rgba(255, 209, 102, 0.4);
+}
+
+/* ---------------- THẺ: KÍNH MỎNG, ĐỌC TỐT HƠN ---------------- */
+.bag-card {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--primary) 12%, transparent), transparent 58%),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 12px 26px -26px #000;
+}
+.bag-card:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 30px -22px rgba(167, 139, 250, 0.9);
+}
+.shop-card:not(.shop-card--gift), .equip-card, .item-card {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 14px 30px -28px #000;
+}
+.team-slot:not(.team-slot--empty) {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 10px 22px -22px rgba(124, 155, 255, 0.8);
+}
+.empty-state__icon {
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.11), rgba(148, 163, 184, 0.04));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 18px 36px -30px #000;
+}
+
+/* ---------------- MODAL: VIỀN ÁNH + ĐẦU TRANG ---------------- */
+.modal__backdrop {
+  background:
+    radial-gradient(90% 76% at 50% 42%, rgba(18, 30, 51, 0.72), rgba(2, 5, 12, 0.9) 80%);
+}
+.modal__panel {
+  border-color: rgba(255, 209, 102, 0.18);
+  box-shadow:
+    0 50px 130px -50px #000,
+    0 0 0 1px rgba(124, 155, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+.modal__panel::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(124, 155, 255, 0.75) 26%, rgba(255, 209, 102, 0.8) 70%, transparent);
+}
+.modal__title { letter-spacing: -0.01em; }
+.modal__foot { background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(5, 9, 17, 0.5)); }
+
+/* ---------------- TOAST / PHẦN THƯỞNG ---------------- */
+.toast {
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(19, 30, 50, 0.97), rgba(9, 15, 26, 0.97));
+  box-shadow: 0 20px 46px -24px #000, inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+.toast__icon {
+  width: 27px; height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.reward-lines > span {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.reward-reveal {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 40px -30px rgba(255, 209, 102, 0.9);
+}
+
+/* ---------------- THANH TAB DÀI: CUỘN NGANG GỌN ----------------
+   Ở màn hình hẹp, các tab Chợ nhiều mục có thể vượt quá khung cha. */
+@media (max-width: 1080px) {
+  .segmented--wide {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .segmented--wide::-webkit-scrollbar { display: none; }
+  .segmented--wide .segmented__btn { flex: 1 0 auto; min-width: max-content; }
+}
+
+/* ---------------- KHÔNG CHUYỂN ĐỘNG ---------------- */
+@media (prefers-reduced-motion: reduce) {
+  .app-bg::before { animation: none; opacity: 0.4; }
+  .hero__overlay::before { opacity: 0.45; }
+}
+body.motion-reduced .app-bg::before { animation: none; opacity: 0.4; }
+body.motion-reduced .hero__overlay::before { opacity: 0.45; }

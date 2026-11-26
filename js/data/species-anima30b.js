@@ -1,0 +1,72 @@
+/* ============================================================
+   HONKAI: NEXUS ANIMA — ĐỢT 2 (dex 9613-9642)
+   30 Anima bổ sung, artwork thật từ hna.wiki, nền trong suốt.
+   Dex / id / tên / hệ / vùng sống đều khác các loài đã có.
+   ============================================================ */
+(function () {
+  'use strict';
+  const PG = window.PG = window.PG || {};
+
+  PG.addSpecies([
+    [9613, 'Chowpownd', ['normal', 'ice'], [70, 75, 65, 70, 75, 85], 'common', 'forest,digi-forest', null,
+      { id: 'cross-anima-chowpownd', desc: 'Anima bông tuyết hay vỗ cánh, hơi thở lạnh làm đối thủ chậm lại.' }],
+    [9614, 'Damasque', ['fire', 'ice'], [75, 85, 70, 90, 75, 70], 'common', 'cave,indigo', null,
+      { id: 'cross-anima-damasque', desc: 'Anima mang vỏ lửa và sương đông, cân bằng hai cực nóng lạnh.' }],
+    [9615, 'Cublade', ['water', 'ground'], [80, 85, 85, 70, 75, 60], 'common', 'lake,digi-forest', null,
+      { id: 'cross-anima-cublade', desc: 'Anima gấu con cầm lưỡi dao nước, bơi lội dưới đáy hồ sâu.' }],
+    [9616, 'Marshalbird', ['electric', 'psychic'], [70, 80, 65, 95, 80, 95], 'rare', 'volcano,pal-tundra', null,
+      { id: 'cross-anima-marshalbird', desc: 'Anima chim chỉ huy, lông vũ phát điện và đọc được ý nghĩ đồng minh.' }],
+    [9617, 'Plumelune', ['grass', 'fairy'], [75, 70, 70, 85, 90, 70], 'common', 'volcano,celadon', null,
+      { id: 'cross-anima-plumelune', desc: 'Anima hoa mận ánh trăng, dẫn sáng bằng hạt phấn hoa.' }],
+    [9618, 'Mimoo', ['fighting', 'bug'], [70, 90, 75, 60, 65, 95], 'common', 'snow,city', null,
+      { id: 'cross-anima-mimoo', desc: 'Anima bắt chước cử động, đòn của nó thường lặp lại hai lần.' }],
+    [9619, 'Rimechime', ['poison', 'fairy'], [70, 75, 65, 85, 85, 75], 'common', 'snow,vermilion', null,
+      { id: 'cross-anima-rimechime', desc: 'Anima chuông ngọt ngào, hương độc từ tiếng chuông làm đối thủ say sưa.' }],
+    [9620, 'Vixemourne', ['flying', 'dark'], [70, 85, 60, 80, 65, 100], 'rare', 'temple,pal-isles', null,
+      { id: 'cross-anima-vixemourne', desc: 'Anima cáo tang tối, lướt qua bóng tối bằng đôi cánh im lặng.' }],
+    [9621, 'Bladehound', ['rock', 'dark'], [85, 90, 95, 65, 70, 55], 'rare', 'pal-tundra,pal-isles', null,
+      { id: 'cross-anima-bladehound', desc: 'Anima chó săn lưỡi dao, hàm răng cắn gãy cả đá.' }],
+    [9622, 'Eggluvs', ['normal', 'fighting'], [80, 95, 70, 60, 65, 85], 'common', 'pal-lava,digi-temple', null,
+      { id: 'cross-anima-eggluvs', desc: 'Anima trứng yêu thương, ôm lấy quả trứng để hồi phục sau trận.' }],
+    [9623, 'Chimaura', ['fire', 'fighting'], [80, 95, 70, 75, 70, 85], 'rare', 'digi-city,viridian', null,
+      { id: 'cross-anima-chimaura', desc: 'Anima hóa thân kỳ lân lửa, vung vuốt hỗn hợp cắn phá phòng thủ.' }],
+    [9624, 'Donnatallow', ['water', 'flying'], [75, 80, 65, 85, 70, 95], 'common', 'pal-isles,indigo', null,
+      { id: 'cross-anima-donnatallow', desc: 'Anima bánh rán biết bay, lớp mỡ bóng lướt nhẹ trên mặt nước.' }],
+    [9625, 'Frigull', ['electric', 'bug'], [65, 80, 60, 85, 70, 105], 'rare', 'cerulean,vermilion', null,
+      { id: 'cross-anima-frigull', desc: 'Anima cú lạnh cánh rung liên hồi, tỏa ra những tia điện nhỏ.' }],
+    [9626, 'Starspine', ['ice', 'fighting'], [80, 95, 75, 70, 70, 80], 'rare', 'forest,digi-forest', null,
+      { id: 'cross-anima-starspine', desc: 'Anima gai băng, lưng lấp lánh như sao và kết liễu bằng cú húc.' }],
+    [9627, 'Camcorgi', ['fighting', 'dragon'], [90, 100, 85, 85, 80, 80], 'rare', 'beach,desert', null,
+      { id: 'cross-anima-camcorgi', desc: 'Anima corgi quay phim, cú cắn được khuếch đại thành đòn rồng.' }],
+    [9628, 'Kaffiend', ['ground', 'flying'], [80, 85, 70, 75, 70, 95], 'common', 'cave,viridian', null,
+      { id: 'cross-anima-kaffiend', desc: 'Anima cà phê bay lượn, hạt rang rơi xuống như cơn mưa bụi.' }],
+    [9629, 'Foalhardy', ['flying', 'fairy'], [70, 75, 65, 85, 80, 100], 'common', 'lake,city', null,
+      { id: 'cross-anima-foalhardy', desc: 'Anima ngựa con cưỡi gió, móng ngọc khẽ đạp làm đối thủ chói mắt.' }],
+    [9630, 'Octopourri', ['rock', 'fairy'], [85, 85, 95, 75, 90, 55], 'rare', 'volcano,snow', null,
+      { id: 'cross-anima-octopourri', desc: 'Anima bạch tuộc pha trà, vỏ cứng như đá mà vị lại ngọt ngào.' }],
+    [9631, 'Hoppelon', ['normal', 'ground'], [85, 85, 75, 65, 70, 70], 'common', 'volcano,viridian', null,
+      { id: 'cross-anima-hoppelon', desc: 'Anima nhảy nhót trên đất bụi, mỗi cú đạp đều rung chuyển mặt sân.' }],
+    [9632, 'Cinechel', ['fire', 'bug'], [70, 90, 65, 80, 65, 95], 'rare', 'desert,cerulean', null,
+      { id: 'cross-anima-cinechel', desc: 'Anima vỏ sò chiếu phim, khung hình lửa cháy rực trên cát.' }],
+    [9633, 'Catnapir', ['water', 'psychic'], [75, 80, 70, 95, 90, 75], 'common', 'snow,pallet', null,
+      { id: 'cross-anima-catnapir', desc: 'Anima mèo ngủ gật, đọc mộng trong dòng nước và đoán đòn đối thủ.' }],
+    [9634, 'Framamba', ['electric', 'dragon'], [90, 105, 85, 110, 85, 85], 'legendary', 'temple,pal-tundra', null,
+      { id: 'cross-anima-framamba', desc: 'Anima rồng khung hình, phóng tia điện xé ngang bầu trời.' }],
+    [9635, 'Chocllamour', ['ice', 'poison'], [75, 80, 75, 90, 85, 70], 'common', 'temple,indigo', null,
+      { id: 'cross-anima-chocllamour', desc: 'Anima sô cô la lạnh, ngọt ngào nhưng ngấm độc rất nhanh.' }],
+    [9636, 'Capybunner', ['fighting', 'dark'], [85, 100, 80, 80, 75, 90], 'rare', 'pal-lava,digi-city', null,
+      { id: 'cross-anima-capybunner', desc: 'Anima chuột bông cứng cáp, cú đấm được bọc trong bóng tối.' }],
+    [9637, 'Waxula', ['ground', 'psychic'], [90, 90, 85, 100, 95, 75], 'rare', 'digi-city,digi-forest', null,
+      { id: 'cross-anima-waxula', desc: 'Anima sáp dẻo, đọc được ý nghĩ rồi đào bẫy ngay dưới chân đối thủ.' }],
+    [9638, 'Pomparrot', ['psychic', 'bug'], [75, 85, 70, 95, 80, 90], 'common', 'pal-isles,cerulean', null,
+      { id: 'cross-anima-pomparrot', desc: 'Anima vẹt bắt chước giọng nói, học lại chiêu của đối thủ ngay tại trận.' }],
+    [9639, 'Hamburgoof', ['ghost', 'dragon'], [85, 95, 80, 105, 90, 85], 'legendary', 'digi-temple,pallet', null,
+      { id: 'cross-anima-hamburgoof', desc: 'Anima hamburger ma, gọi hồn rồng cổ đại từ đĩa thức ăn bỏ quên.' }],
+    [9640, 'Magisaki', ['normal', 'flying'], [70, 85, 60, 70, 65, 105], 'common', 'pallet,indigo', null,
+      { id: 'cross-anima-magisaki', desc: 'Anima cáo bay lướt nhẹ, đuôi khẽ quét làm đối thủ trượt đòn.' }],
+    [9641, 'Beaubeanie', ['fire', 'dragon'], [95, 110, 85, 105, 85, 90], 'legendary', 'celadon,indigo', null,
+      { id: 'cross-anima-beaubeanie', desc: 'Anima mũ len rồng lửa, ngọn lửa cháy từ chiếc mũ nhỏ xíu.' }],
+    [9642, 'Lumehart', ['water', 'bug'], [75, 85, 70, 80, 75, 90], 'common', 'forest,celadon', null,
+      { id: 'cross-anima-lumehart', desc: 'Anima hươu nước sáng trong, sừng phát quang dò đường trong đêm.' }]
+  ]);
+})();

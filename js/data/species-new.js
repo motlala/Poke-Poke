@@ -1,0 +1,337 @@
+/* ============================================================
+   POKÉMON MỚI: 100 loài chuẩn + 40 fan-made + thần thoại/huyền thoại
+   + các dạng tiến hóa kiểu anime (Mega, Gigantamax, Awakened...)
+   File này phải nạp TRƯỚC species-finalize.js.
+   ============================================================ */
+(function () {
+  'use strict';
+  const PG = window.PG = window.PG || {};
+  const S = PG.S;
+
+  /* ---------- 100 LOÀI BỔ SUNG (thứ tự dex không trùng với bản gốc) ---------- */
+  PG.addSpecies([
+    [19, 'Rattata', ['normal'], [30, 56, 35, 25, 35, 72], 'common', 'city,forest', ['raticate', 20, 20]],
+    [20, 'Raticate', ['normal'], [55, 81, 60, 50, 70, 97], 'rare', 'city,forest'],
+    [21, 'Spearow', ['normal', 'flying'], [40, 60, 30, 31, 31, 70], 'common', 'forest,city', ['fearow', 25, 20]],
+    [22, 'Fearow', ['normal', 'flying'], [65, 90, 65, 61, 61, 100], 'rare', 'forest,city'],
+    [23, 'Ekans', ['poison'], [35, 60, 44, 40, 54, 55], 'common', 'desert,forest', ['arbok', 25, 22]],
+    [24, 'Arbok', ['poison'], [60, 95, 69, 65, 79, 80], 'rare', 'desert,forest'],
+    [29, 'Nidoran♀', ['poison'], [55, 47, 52, 40, 40, 41], 'common', 'forest,city', ['nidorina', 25, 16], { id: 'nidoran-f' }],
+    [30, 'Nidorina', ['poison'], [70, 62, 67, 55, 55, 56], 'rare', 'forest,city', ['nidoqueen', 100, 30]],
+    [31, 'Nidoqueen', ['poison', 'ground'], [90, 92, 87, 75, 85, 76], 'rare', 'forest,city'],
+    [32, 'Nidoran♂', ['poison'], [46, 57, 40, 40, 40, 50], 'common', 'forest,city', ['nidorino', 25, 16], { id: 'nidoran-m' }],
+    [33, 'Nidorino', ['poison'], [61, 72, 57, 55, 55, 65], 'rare', 'forest,city', ['nidoking', 100, 30]],
+    [34, 'Nidoking', ['poison', 'ground'], [81, 102, 77, 85, 75, 85], 'rare', 'forest,city'],
+    [46, 'Paras', ['bug', 'grass'], [35, 70, 55, 45, 55, 25], 'common', 'forest,cave', ['parasect', 25, 24]],
+    [47, 'Parasect', ['bug', 'grass'], [60, 95, 80, 60, 80, 30], 'rare', 'forest,cave'],
+    [48, 'Venonat', ['bug', 'poison'], [60, 55, 50, 40, 55, 45], 'common', 'forest,city,viridian', ['venomoth', 25, 25]],
+    [49, 'Venomoth', ['bug', 'poison'], [70, 65, 60, 90, 75, 90], 'rare', 'forest,city'],
+    [50, 'Diglett', ['ground'], [10, 55, 25, 35, 45, 95], 'common', 'cave,desert', ['dugtrio', 25, 26]],
+    [51, 'Dugtrio', ['ground'], [35, 100, 50, 50, 70, 120], 'rare', 'cave,desert'],
+    [54, 'Psyduck', ['water'], [50, 52, 48, 65, 50, 55], 'common', 'lake,beach,cerulean', ['golduck', 25, 33]],
+    [55, 'Golduck', ['water'], [80, 82, 78, 95, 80, 85], 'rare', 'lake,beach'],
+    [56, 'Mankey', ['fighting'], [40, 80, 35, 35, 45, 70], 'common', 'forest,volcano', ['primeape', 25, 28]],
+    [57, 'Primeape', ['fighting'], [65, 105, 60, 60, 70, 95], 'rare', 'forest,volcano'],
+    [69, 'Bellsprout', ['grass', 'poison'], [50, 75, 35, 70, 30, 40], 'common', 'forest', ['weepinbell', 25, 21]],
+    [70, 'Weepinbell', ['grass', 'poison'], [65, 90, 50, 85, 45, 55], 'rare', 'forest', ['victreebel', 100, 27]],
+    [71, 'Victreebel', ['grass', 'poison'], [80, 105, 65, 100, 70, 70], 'rare', 'forest'],
+    [77, 'Ponyta', ['fire'], [50, 85, 55, 65, 65, 90], 'common', 'volcano,forest', ['rapidash', 25, 40]],
+    [78, 'Rapidash', ['fire'], [65, 100, 70, 80, 80, 105], 'rare', 'volcano,forest'],
+    [84, 'Doduo', ['normal', 'flying'], [35, 85, 45, 35, 35, 75], 'common', 'forest,city', ['dodrio', 25, 31]],
+    [85, 'Dodrio', ['normal', 'flying'], [60, 110, 70, 60, 60, 110], 'rare', 'forest,city'],
+    [86, 'Seel', ['water'], [65, 45, 55, 45, 70, 45], 'common', 'lake,snow', ['dewgong', 25, 34]],
+    [87, 'Dewgong', ['water', 'ice'], [90, 70, 80, 70, 95, 70], 'rare', 'lake,snow'],
+    [88, 'Grimer', ['poison'], [80, 80, 50, 40, 50, 25], 'common', 'city,desert', ['muk', 25, 38]],
+    [89, 'Muk', ['poison'], [105, 105, 75, 65, 100, 50], 'rare', 'city,desert'],
+    [90, 'Shellder', ['water'], [30, 65, 100, 45, 25, 40], 'common', 'beach,lake', ['cloyster', 25, null, 'water-stone']],
+    [91, 'Cloyster', ['water', 'ice'], [50, 95, 180, 85, 45, 70], 'rare', 'beach,lake'],
+    [96, 'Drowzee', ['psychic'], [60, 48, 45, 43, 90, 42], 'common', 'city,forest', ['hypno', 25, 36]],
+    [97, 'Hypno', ['psychic'], [85, 73, 70, 73, 115, 67], 'rare', 'city,forest'],
+    [98, 'Krabby', ['water'], [30, 105, 90, 25, 25, 50], 'common', 'beach,lake', ['kingler', 25, 28]],
+    [99, 'Kingler', ['water'], [55, 130, 115, 50, 50, 75], 'rare', 'beach,lake'],
+    [100, 'Voltorb', ['electric'], [40, 30, 50, 55, 55, 100], 'common', 'city,cave,vermilion', ['electrode', 25, 30]],
+    [101, 'Electrode', ['electric'], [60, 55, 70, 80, 80, 140], 'rare', 'city,cave'],
+    [102, 'Exeggcute', ['grass', 'psychic'], [60, 40, 80, 60, 45, 40], 'common', 'forest,temple,celadon', ['exeggutor', 25, null, 'leaf-stone']],
+    [103, 'Exeggutor', ['grass', 'psychic'], [95, 95, 85, 125, 75, 55], 'rare', 'forest,temple'],
+    [104, 'Cubone', ['ground'], [50, 50, 95, 40, 50, 35], 'common', 'desert,cave', ['marowak', 25, 28]],
+    [105, 'Marowak', ['ground'], [60, 80, 110, 50, 80, 45], 'rare', 'desert,cave'],
+    [108, 'Hitmonchan', ['fighting'], [50, 105, 79, 35, 110, 76], 'rare', 'city,temple'],
+    [109, 'Koffing', ['poison'], [40, 65, 95, 60, 45, 35], 'common', 'city,volcano', ['weezing', 25, 35]],
+    [110, 'Weezing', ['poison'], [65, 90, 120, 85, 70, 60], 'rare', 'city,volcano'],
+    [113, 'Chansey', ['normal'], [250, 5, 5, 35, 105, 50], 'rare', 'city,forest'],
+    [114, 'Tangela', ['grass'], [65, 55, 115, 100, 40, 60], 'rare', 'forest,cave'],
+    [115, 'Kangaskhan', ['normal'], [105, 95, 80, 40, 80, 90], 'rare', 'desert,forest'],
+    [127, 'Pinsir', ['bug'], [65, 125, 100, 55, 70, 85], 'rare', 'forest'],
+    [128, 'Tauros', ['normal'], [75, 100, 95, 40, 70, 110], 'rare', 'forest,desert'],
+    [138, 'Omanyte', ['rock', 'water'], [35, 40, 100, 90, 55, 35], 'common', 'beach,cave', ['omastar', 25, 40]],
+    [139, 'Omastar', ['rock', 'water'], [70, 60, 125, 115, 70, 55], 'rare', 'beach,cave'],
+    [140, 'Kabuto', ['rock', 'water'], [30, 80, 90, 55, 45, 55], 'common', 'beach,cave', ['kabutops', 25, 40]],
+    [141, 'Kabutops', ['rock', 'water'], [60, 115, 105, 65, 70, 80], 'rare', 'beach,cave'],
+    [144, 'Articuno', ['ice', 'flying'], [90, 85, 85, 95, 125, 85], 'legendary', 'snow,temple', null, { canElemental: false, size: 'large', desc: 'Huyền thoại băng giá, sải cánh mang theo mùa đông vĩnh cửu.' }],
+    [145, 'Zapdos', ['electric', 'flying'], [90, 85, 85, 105, 90, 100], 'legendary', 'volcano,temple', null, { canElemental: false, size: 'large', desc: 'Huyền thoại sấm sét, tiếng gầm vang khắp bầu trời.' }],
+    [146, 'Moltres', ['fire', 'flying'], [90, 100, 90, 125, 85, 90], 'legendary', 'volcano,temple', null, { canElemental: false, size: 'large', desc: 'Huyền thoại lửa, đôi cánh cháy rực như bình minh.' }],
+    [150, 'Mewtwo', ['psychic'], [106, 110, 90, 154, 90, 130], 'legendary', 'temple,city,indigo', null, { canElemental: false, desc: 'Được tạo ra từ gen của Mew, sở hữu sức mạnh tâm linh đỉnh cao.' }],
+    [152, 'Chikorita', ['grass'], [45, 49, 65, 49, 65, 45], 'common', 'forest', ['bayleef', 25, 16]],
+    [153, 'Bayleef', ['grass'], [60, 62, 80, 63, 80, 60], 'rare', 'forest', ['meganium', 100, 32]],
+    [154, 'Meganium', ['grass'], [80, 82, 100, 83, 100, 80], 'rare', 'forest'],
+    [155, 'Cyndaquil', ['fire'], [39, 52, 43, 60, 50, 65], 'common', 'volcano,forest', ['quilava', 25, 14]],
+    [156, 'Quilava', ['fire'], [58, 64, 58, 80, 65, 80], 'rare', 'volcano,forest', ['typhlosion', 100, 36]],
+    [157, 'Typhlosion', ['fire'], [78, 84, 78, 109, 85, 100], 'rare', 'volcano,forest'],
+    [158, 'Totodile', ['water'], [50, 65, 64, 44, 48, 43], 'common', 'lake,beach', ['croconaw', 25, 18]],
+    [159, 'Croconaw', ['water'], [65, 80, 80, 59, 63, 58], 'rare', 'lake,beach', ['feraligatr', 100, 30]],
+    [160, 'Feraligatr', ['water'], [85, 105, 100, 79, 83, 78], 'rare', 'lake,beach'],
+    [161, 'Sentret', ['normal'], [35, 46, 34, 35, 45, 20], 'common', 'forest,city', ['furret', 25, 15]],
+    [162, 'Furret', ['normal'], [85, 76, 64, 45, 55, 90], 'rare', 'forest,city'],
+    [163, 'Hoothoot', ['normal', 'flying'], [60, 30, 30, 36, 56, 50], 'common', 'forest,city', ['noctowl', 25, 20]],
+    [164, 'Noctowl', ['normal', 'flying'], [100, 50, 50, 86, 96, 70], 'rare', 'forest,city'],
+    [165, 'Ledyba', ['bug', 'flying'], [40, 20, 30, 40, 80, 55], 'common', 'forest,city', ['ledian', 25, 18]],
+    [166, 'Ledian', ['bug', 'flying'], [55, 35, 50, 55, 110, 85], 'rare', 'forest,city'],
+    [167, 'Spinarak', ['bug', 'poison'], [40, 60, 40, 40, 40, 30], 'common', 'forest,city', ['ariados', 25, 22]],
+    [168, 'Ariados', ['bug', 'poison'], [70, 90, 70, 60, 70, 40], 'rare', 'forest,city'],
+    [175, 'Togepi', ['fairy'], [35, 20, 65, 40, 65, 20], 'common', 'city,forest', ['togetic', 25, null, 'moon-stone']],
+    [176, 'Togetic', ['fairy', 'flying'], [55, 40, 85, 80, 105, 40], 'rare', 'city,forest', ['togekiss', 100, null, 'fairy-stone']],
+    [468, 'Togekiss', ['fairy', 'flying'], [85, 50, 95, 120, 115, 80], 'rare', 'city,forest'],
+    [179, 'Mareep', ['electric'], [55, 40, 40, 65, 45, 35], 'common', 'forest,city', ['flaaffy', 25, 30]],
+    [180, 'Flaaffy', ['electric'], [70, 55, 55, 80, 60, 45], 'rare', 'forest,city', ['ampharos', 100, 45]],
+    [181, 'Ampharos', ['electric', 'dragon'], [90, 95, 85, 155, 110, 45], 'rare', 'forest,city'],
+    [182, 'Bellossom', ['grass'], [75, 80, 95, 90, 100, 50], 'rare', 'forest,lake'],
+    [187, 'Hoppip', ['grass', 'flying'], [35, 35, 40, 35, 55, 50], 'common', 'forest', ['skiploom', 25, 18]],
+    [188, 'Skiploom', ['grass', 'flying'], [55, 45, 50, 45, 65, 80], 'rare', 'forest', ['jumpluff', 100, 27]],
+    [189, 'Jumpluff', ['grass', 'flying'], [75, 55, 70, 55, 95, 110], 'rare', 'forest'],
+    [190, 'Aipom', ['normal'], [55, 70, 55, 40, 55, 85], 'common', 'forest,city', ['ambipom', 25, null, 'sun-stone']],
+    [424, 'Ambipom', ['normal'], [75, 100, 66, 60, 66, 115], 'rare', 'forest,city'],
+    [191, 'Sunkern', ['grass'], [30, 30, 30, 30, 30, 30], 'common', 'forest,desert', ['sunflora', 25, null, 'sun-stone']],
+    [192, 'Sunflora', ['grass'], [75, 75, 55, 105, 85, 30], 'rare', 'forest,desert'],
+    [193, 'Yanma', ['bug', 'flying'], [65, 65, 45, 75, 45, 95], 'common', 'forest,lake', ['yanmega', 25, null, 'dragon-scale']],
+    [469, 'Yanmega', ['bug', 'flying'], [90, 76, 86, 116, 56, 95], 'rare', 'forest,lake'],
+    [201, 'Unown', ['psychic'], [48, 72, 48, 72, 48, 48], 'rare', 'cave,temple', null, { canElemental: false, desc: 'Dạng chữ cái cổ, được cho là hiện thân của ý nghĩ.' }],
+    [202, 'Wobbuffet', ['psychic'], [190, 33, 58, 33, 58, 33], 'rare', 'cave,city'],
+    [203, 'Girafarig', ['normal', 'psychic'], [70, 80, 65, 85, 65, 85], 'rare', 'forest,desert'],
+    [204, 'Pineco', ['bug'], [50, 65, 90, 35, 35, 15], 'common', 'forest', ['forretress', 25, 30]],
+    [205, 'Forretress', ['bug', 'steel'], [75, 90, 140, 60, 60, 40], 'rare', 'forest,city'],
+    [206, 'Dunsparce', ['normal'], [100, 70, 70, 65, 65, 45], 'rare', 'cave,forest'],
+
+    /* ---------- 40 LOÀI FAN-MADE / LẤY CẢM HỨNG TỪ GAME KHÁC ---------- */
+    [9001, 'Gokuchu', ['electric', 'fighting'], [55, 95, 45, 70, 50, 110], 'rare', 'city,volcano', ['ultra-gokuchu', 80, 60], { id: 'gokuchu', desc: 'Chuột điện luyện võ theo phong cách anime, luôn muốn thử thách đối thủ mạnh hơn.' }],
+    [9002, 'Ultra Gokuchu', ['electric', 'fighting'], [80, 140, 70, 95, 75, 145], 'legendary', 'city,volcano', null, { id: 'ultra-gokuchu', desc: 'Dạng cuối cùng của Gokuchu, cú đấm tích tụ cả năng lượng điện và ý chí.' }],
+    [9003, 'Mechazor', ['steel', 'electric'], [70, 120, 110, 65, 80, 100], 'rare', 'city,cave', null, { id: 'mechazor', desc: 'Bọ cạp cơ khí được cải tạo từ Scizor, càng kẹp phát ra tia điện.' }],
+    [9004, 'Godzillar', ['fire', 'rock'], [110, 130, 110, 80, 90, 70], 'rare', 'volcano,beach', ['kingzillar', 120, 70], { id: 'godzillar', desc: 'Quái thú khổng lồ từ lửa và đá, bước đi khiến mặt đất rung chuyển.' }],
+    [9005, 'Kingzillar', ['fire', 'dragon'], [135, 160, 125, 100, 105, 95], 'legendary', 'volcano,beach', null, { id: 'kingzillar', desc: 'Vua của các quái thú lửa, hơi thở nóng đến mức làm chảy kim loại.' }],
+    [9006, 'Neon Pika', ['electric', 'normal'], [50, 85, 45, 80, 55, 120], 'rare', 'city,celadon', null, { id: 'neon-pika', desc: 'Pikachu phong cách arcade, má phát sáng theo nhịu điện tử.' }],
+    [9007, 'Shadow Lucario', ['dark', 'fighting'], [80, 125, 75, 120, 80, 110], 'rare', 'cave,temple', null, { id: 'shadow-lucario', desc: 'Lucario bị nhiễm năng lượng bóng tối, aura trở nên sắc lẹm nhưng không ổn định.' }],
+    [9008, 'Crystal Mew', ['psychic', 'ice'], [100, 100, 100, 130, 120, 120], 'legendary', 'cave,temple', null, { id: 'crystal-mew', desc: 'Mew được kết tinh trong băng cổ, cơ thể phản chiếu ánh sáng như pha lê.' }],
+    [9009, 'Dinochrome', ['grass', 'dragon'], [95, 110, 95, 90, 80, 85], 'rare', 'forest,desert', null, { id: 'dinochrome', desc: 'Khủng long lai thực vật, sống sót từ kỷ nguyên tiền sử trong rừng sâu.' }],
+    [9010, 'Volt Gator', ['electric', 'water'], [85, 115, 90, 85, 75, 95], 'rare', 'lake,beach', null, { id: 'volt-gator', desc: 'Cá sấu điện biết phóng tia từ vảy lưng khi lên sóng.' }],
+    [9011, 'Pixelmon', ['normal', 'fire'], [65, 90, 60, 70, 60, 100], 'common', 'city', null, { id: 'pixelmon', desc: 'Sinh vật pixel từ một trò chơi bị bỏ quên, tình cờ sống dậy trong thế giới này.' }],
+    [9012, 'Robo Rotom', ['electric', 'steel'], [60, 80, 95, 110, 85, 90], 'rare', 'city,cave', null, { id: 'robo-rotom', desc: 'Rotom được lắp vào bộ giáp robot, có thể đổi cấu hình tùy từng trận.' }],
+    [9013, 'Sailor Jiggly', ['fairy', 'water'], [90, 60, 55, 75, 85, 60], 'rare', 'beach,lake', null, { id: 'sailor-jiggly', desc: 'Jigglypuff đi biển, bài hát của nó làm sóng biển dập theo nhịp.' }],
+    [9014, 'Cardmon', ['psychic', 'normal'], [70, 70, 70, 110, 100, 80], 'rare', 'city,temple', null, { id: 'cardmon', desc: 'Pokémon thẻ bài sống, mỗi lần lật mặt là một khả năng khác nhau.' }],
+    [9015, 'Drago Buster', ['dragon', 'fire'], [90, 135, 90, 100, 80, 105], 'rare', 'volcano,cave', null, { id: 'drago-buster', desc: 'Rồng chiến binh mang theo pháo lửa trên vai, được tạo ra từ công nghệ cổ.' }],
+    [9016, 'Steel Tailor', ['steel', 'fighting'], [75, 115, 110, 60, 85, 80], 'rare', 'city,cave', null, { id: 'steel-tailor', desc: 'Thợ may cơ khí, may những bộ giáp vừa khít cho cả Huấn luyện viên.' }],
+    [9017, 'Forest Spirit', ['grass', 'fairy'], [80, 70, 80, 105, 110, 70], 'rare', 'forest', null, { id: 'forest-spirit', desc: 'Tinh linh rừng xuất hiện khi trăng tròn, chữa lành vết thương bằng hạt phấn hoa.' }],
+    [9018, 'Deep Abyss', ['water', 'dark'], [100, 110, 90, 85, 95, 70], 'rare', 'beach,cave', null, { id: 'deep-abyss', desc: 'Sinh vật từ vực sâu, ánh mắt nó nuốt trọn ánh sáng mặt trời.' }],
+    [9019, 'Sand Samurai', ['ground', 'fighting'], [80, 125, 95, 55, 75, 95], 'rare', 'desert', null, { id: 'sand-samurai', desc: 'Chiến binh sa mạc với kiếm cát, di chuyển như một cơn bão nhỏ.' }],
+    [9020, 'Frost Knight', ['ice', 'steel'], [85, 105, 120, 75, 100, 65], 'rare', 'snow,cave', null, { id: 'frost-knight', desc: 'Hiệp sĩ bọc thép đóng băng, khiên của nó lạnh đến đông cứng cả lửa.' }],
+    [9021, 'Thunder Bird', ['electric', 'flying'], [80, 100, 70, 110, 85, 125], 'rare', 'volcano,forest', null, { id: 'thunder-bird', desc: 'Điểu sấm vừa bay vừa tích điện, để lại vệt sét trên bầu trời.' }],
+    [9022, 'Cursed Doll', ['ghost', 'fairy'], [70, 80, 70, 110, 105, 75], 'rare', 'cave,temple', null, { id: 'cursed-doll', desc: 'Búp bê bị nguyền nhưng lại rất dịu dàng, nó chỉ trêu chọc kẻ có ý xấu.' }],
+    [9023, 'Storm Seadra', ['water', 'electric'], [75, 105, 85, 115, 80, 105], 'rare', 'beach,lake', null, { id: 'storm-seadra', desc: 'Seadra hấp thụ sấm chóp, gây bão ngay cả trong hồ nhỏ.' }],
+    [9024, 'Lava Mole', ['fire', 'ground'], [90, 110, 100, 70, 65, 55], 'common', 'volcano,desert', null, { id: 'lava-mole', desc: 'Chuột đào hang trong dung nham, lông của nó luôn rực đỏ.' }],
+    [9025, 'Cyber Gengar', ['ghost', 'steel'], [75, 110, 90, 130, 90, 110], 'rare', 'city,cave', null, { id: 'cyber-gengar', desc: 'GengarPhiên bản cơ khí, có thể dịch chuyển qua mạng và cười bằng giọng điện tử.' }],
+    [9026, 'Lucky Clover', ['normal', 'fairy'], [85, 65, 75, 80, 95, 70], 'rare', 'forest,city', null, { id: 'lucky-clover', desc: 'Cỏ bốn lá may mắn có tri thức, đi theo người bạn đồng hành.' }],
+    [9027, 'Nova Staryu', ['psychic', 'steel'], [65, 85, 90, 120, 95, 105], 'rare', 'beach,temple', null, { id: 'nova-staryu', desc: 'Sao biển kim loại phát sáng giữa đêm, hạt nhân của nó là một ngôi sao nhỏ.' }],
+    [9028, 'Toxic Bloom', ['poison', 'grass'], [75, 90, 70, 110, 80, 65], 'rare', 'forest,desert', null, { id: 'toxic-bloom', desc: 'Hoa độc nở về đêm, hương của nó khiến giác quan tê liệt.' }],
+    [9029, 'Iron Rhino', ['steel', 'ground'], [100, 130, 130, 55, 70, 60], 'rare', 'desert,cave', null, { id: 'iron-rhino', desc: 'Tê giác thép, sừng cứng hơn kim cương và có từ tính.' }],
+    [9030, 'Moon Cat', ['psychic', 'dark'], [75, 95, 65, 110, 90, 115], 'rare', 'city,temple', null, { id: 'moon-cat', desc: 'Mèo tháng riêng, bóng của nó di chuyển ngược chiều ánh trăng.' }],
+    [9031, 'Surf Snorlax', ['water', 'normal'], [160, 105, 90, 65, 110, 45], 'rare', 'beach,lake', null, { id: 'surf-snorlax', desc: 'Snorlax nằm trên ván lướt, ngủ nhưng vẫn trôi theo sóng.' }],
+    [9032, 'Blaze Monkey', ['fire', 'fighting'], [75, 120, 70, 80, 70, 110], 'rare', 'volcano,forest', null, { id: 'blaze-monkey', desc: 'Khỉ lửa leo núi bằng đuôi cháy, cú đấm kèm khói.' }],
+    [9033, 'Frost Fox', ['ice', 'fairy'], [65, 75, 60, 105, 95, 110], 'rare', 'snow,forest', null, { id: 'frost-fox', desc: 'Cáo băng chạy trên mặt hồ đóng băng, để lại dấu chân lấp lánh.' }],
+    [9034, 'Desert Wyrm', ['ground', 'dragon'], [95, 115, 90, 85, 75, 90], 'rare', 'desert,cave', null, { id: 'desert-wyrm', desc: 'Rồng cát cuộn mình trong bão cát, khó phân biệt với cát thường.' }],
+    [9035, 'Sky Whale', ['flying', 'water'], [130, 90, 85, 100, 95, 70], 'rare', 'beach,lake', null, { id: 'sky-whale', desc: 'Cá voi bay giữa mây, tiếng hót của nó gọi mưa.' }],
+    [9036, 'Bug Mecha', ['bug', 'steel'], [70, 100, 110, 60, 75, 85], 'common', 'city,cave', null, { id: 'bug-mecha', desc: 'Côn trùng cơ khí được lắp ráp từ phế liệu, rất trung thành.' }],
+    [9037, 'Arcane Owl', ['psychic', 'flying'], [75, 70, 70, 125, 100, 95], 'rare', 'forest,temple', null, { id: 'arcane-owl', desc: 'Cú canh giữ thư viện cổ, biết trước câu trả lời của mọi câu hỏi.' }],
+    [9038, 'Giga Venus', ['grass', 'poison'], [110, 105, 100, 130, 100, 70], 'rare', 'forest', null, { id: 'giga-venus', desc: 'Venusaur khổng lồ, hoa trên lưng nở thành một khu rừng thu nhỏ.' }],
+    [9039, 'Rainbow Mew', ['fairy', 'psychic'], [105, 100, 95, 125, 120, 115], 'legendary', 'temple,city', null, { id: 'rainbow-mew', desc: 'Mew mang sắc cầu vồng, lông của nó đổi màu theo cảm xúc.' }],
+    [9040, 'Omega Pika', ['electric', 'fire'], [75, 125, 65, 110, 75, 140], 'legendary', 'volcano,city', null, { id: 'omega-pika', desc: 'Pikachu đạt đến dạng tối thượng, má phát cả điện lẫn lửa.' }],
+
+    /* ---------- THẦN THOẠI / HUYỀN THOẠI MỚI ---------- */
+    [8801, 'Aether Dragon', ['celestial'], [120, 120, 110, 150, 130, 130], 'legendary', 'temple', null, { id: 'aether-dragon', mythical: true, canElemental: false, size: 'large', desc: 'Rồng từ tầng không gian cao nhất, mang sức mạnh Thiên Hệ thuần túy.' }],
+    [8802, 'Void Mew', ['psychic'], [110, 110, 100, 160, 120, 140], 'legendary', 'temple,cave', null, { id: 'void-mew', mythical: true, canElemental: false, desc: 'Mew từ khoảng không giữa các vì sao, có thể nhìn thấy điều chưa xảy ra.' }],
+    [8803, 'Solaris', ['fire'], [125, 145, 105, 150, 100, 135], 'legendary', 'temple,volcano', null, { id: 'solaris', canElemental: false, size: 'large', desc: 'Hiện thân của mặt trời, mỗi lần thở ra là một mùa hạn mới.' }],
+    [8804, 'Lunarae', ['ice', 'psychic'], [115, 100, 110, 145, 140, 120], 'legendary', 'temple,snow', null, { id: 'lunarae', mythical: true, canElemental: false, desc: 'Nữ thần ánh trăng, dệt những cơn mơ bằng sương đóng băng.' }],
+    [8805, 'Zeusbolt', ['electric', 'flying'], [120, 150, 100, 140, 110, 150], 'legendary', 'temple,volcano', null, { id: 'zeusbolt', canElemental: false, size: 'large', desc: 'Chúa tể sấm chóp, cơn giận của nó là bão điện giữa trưa.' }],
+    [8806, 'Leviathyss', ['water', 'dragon'], [150, 135, 120, 125, 120, 100], 'legendary', 'temple,beach', null, { id: 'leviathyss', canElemental: false, size: 'large', desc: 'Con quái vật từ đáy đại dương, khi nổi lên thủy triều đảo ngược.' }],
+    [8807, 'Gaia Titan', ['ground', 'rock'], [160, 145, 160, 90, 110, 75], 'legendary', 'temple,desert', null, { id: 'gaia-titan', canElemental: false, size: 'large', desc: 'Khổng lồ đất đá, thân thể là một dãy núi đang ngủ.' }],
+    [8808, 'Flux Phantom', ['ghost'], [100, 125, 90, 150, 130, 145], 'legendary', 'temple,cave', null, { id: 'flux-phantom', mythical: true, canElemental: false, desc: 'Bóng ma dao động giữa các chiều không gian, chỉ hiện ra khi量子 rung động.' }],
+    [8809, 'Crystal Phoenix', ['fire', 'fairy'], [120, 130, 100, 140, 125, 135], 'legendary', 'temple,volcano', null, { id: 'crystal-phoenix', canElemental: false, desc: 'Phượng hoàng pha lê, tro tàn của nó kết thành đá quý.' }],
+    [8810, 'Cosmic Golem', ['rock', 'psychic'], [150, 130, 150, 120, 120, 80], 'legendary', 'temple,cave', null, { id: 'cosmic-golem', canElemental: false, size: 'large', desc: 'Golem vũ trụ, mỗi mảnh đá trên người là một tiểu hành tinh.' }],
+    [8811, 'Dream Weaver', ['fairy', 'psychic'], [115, 90, 100, 150, 145, 115], 'legendary', 'temple,forest', null, { id: 'dream-weaver', mythical: true, canElemental: false, desc: 'Người dệt mộng, sợi tơ của nó kết nối giấc ngủ của muôn loài.' }],
+    [8812, 'Chronos', ['steel', 'psychic'], [130, 125, 130, 160, 140, 125], 'legendary', 'temple,city', null, { id: 'chronos', mythical: true, canElemental: false, desc: 'Người canh giữ thời gian, kim trên đồng hồ ngừng lại khi nó nhìn vào.' }],
+
+    /* ---------- DẠNG TIẾN HÓA MỚI (Mega / Gigantamax / Awakened...) ---------- */
+    [9101, 'Mega Charizard X', ['fire', 'dragon'], [100, 130, 111, 130, 85, 100], 'legendary', 'volcano', null, { id: 'mega-charizard-x', desc: 'Dạng Mega của Charizard với đôi cánh rồng xanh than, lửa trở nên xanh lam.' }],
+    [9102, 'Mega Charizard Y', ['fire', 'flying'], [100, 104, 78, 159, 115, 100], 'legendary', 'volcano', null, { id: 'mega-charizard-y', desc: 'Dạng Mega bay cao hơn, ngọn lửa nóng đến mức làm khô cả mây.' }],
+    [9103, 'Mega Venusaur', ['grass', 'poison'], [100, 100, 123, 122, 120, 80], 'legendary', 'forest', null, { id: 'mega-venusaur', desc: 'Bông hoa khổng lồ trên lưng trở thành vũ khí phòng thủ.' }],
+    [9104, 'Giganta Blastoise', ['water', 'steel'], [110, 105, 125, 115, 105, 90], 'legendary', 'beach', null, { id: 'giganta-blastoise', desc: 'Dạng khổng lồ, các pháo nước hợp thành một cây đại bác duy nhất.' }],
+    [9105, 'Mega Gengar', ['ghost', 'poison'], [60, 130, 80, 130, 75, 110], 'legendary', 'cave', null, { id: 'mega-gengar', desc: 'Dạng Mega với cười rictus đáng sợ, bóng tối đặc lại thành khối.' }],
+    [9106, 'Mega Tyranitar', ['rock', 'dark'], [100, 164, 150, 95, 120, 71], 'legendary', 'cave,desert', null, { id: 'mega-tyranitar', desc: 'Dạng Mega núi non, sức mạnh phòng thủ gần như không thể phá vỡ.' }],
+    [9107, 'Mega Scizor', ['bug', 'steel'], [70, 150, 140, 65, 100, 75], 'legendary', 'city,cave', null, { id: 'mega-scizor', desc: 'Càng kim loại sắc đến mức cắt đứt cả không khí.' }],
+    [9108, 'Mega Gardevoir', ['psychic', 'fairy'], [85, 85, 65, 165, 135, 100], 'legendary', 'city,temple', null, { id: 'mega-gardevoir', desc: 'Dạng Mega với năng lượng tâm linh dội ra như sóng ánh sáng.' }],
+    [9109, 'Mega Altaria', ['dragon', 'fairy'], [75, 110, 110, 110, 105, 80], 'legendary', 'forest,beach', null, { id: 'mega-altaria', desc: 'Dạng Mega bồng bềnh trong mây, hơi thở mang sắc cầu vồng.' }],
+    [9110, 'Mega Absol', ['dark'], [65, 150, 60, 115, 70, 115], 'legendary', 'cave,snow', null, { id: 'mega-absol', desc: 'Dạng Mega báo hiệu thảm họa bằng ánh mắt đỏ rực.' }],
+    [9111, 'Awakened Lucario', ['fighting', 'steel'], [80, 145, 88, 140, 90, 132], 'legendary', 'temple,cave', null, { id: 'awakened-lucario', desc: 'Lucario đánh thức toàn bộ aura, cơ thể phát quang như kim cương.' }],
+    [9112, 'Mega Garchomp', ['dragon', 'ground'], [108, 170, 115, 120, 95, 92], 'legendary', 'desert,cave', null, { id: 'mega-garchomp', desc: 'Dạng Mega với cánh lưỡi hái, tốc độ và sát thương đều vượt trội.' }],
+    [9113, 'Armored Mewtwo', ['psychic', 'fighting'], [106, 150, 125, 160, 100, 130], 'legendary', 'temple,city', null, { id: 'armored-mewtwo', desc: 'Mewtwo mặc bộ giáp sinh học, kiểm soát hoàn toàn sức mạnh.' }],
+    [9114, 'Sage Dragonite', ['dragon', 'psychic'], [100, 130, 110, 130, 120, 100], 'legendary', 'forest,temple', null, { id: 'sage-dragonite', desc: 'Dragonite đạt đến cảnh giới tu luyện, bay cùng dư âm của tâm trí.' }],
+    [9115, 'Giganta Snorlax', ['normal'], [180, 135, 110, 90, 115, 60], 'legendary', 'forest,city', null, { id: 'giganta-snorlax', desc: 'Snorlax phình to đến mức bụng trở thành một quả đồi.' }],
+    [9116, 'Armored Lapras', ['water', 'ice'], [120, 105, 130, 105, 125, 95], 'legendary', 'lake,snow', null, { id: 'armored-lapras', desc: 'Lapras khoác lớp giáp băng, chở cả đoàn người qua biển đóng băng.' }],
+    [9117, 'Oryx Milotic', ['water', 'fairy'], [95, 110, 100, 145, 130, 118], 'legendary', 'lake,beach', null, { id: 'oryx-milotic', desc: 'Milotic dạng sừng ngà, vảy phản chiếu ánh trăng.' }],
+    [9118, 'Omega Metagross', ['steel', 'psychic'], [100, 160, 160, 130, 110, 110], 'legendary', 'city,cave', null, { id: 'omega-metagross', desc: 'Metagross hợp nhất hoàn toàn bốn trí tuệ, trở thành một khối ý chí.' }],
+    [9119, 'Solar Volcarona', ['bug', 'fire'], [95, 105, 95, 155, 110, 130], 'legendary', 'volcano,forest', null, { id: 'solar-volcarona', desc: 'Volcarona hấp thụ năng lượng mặt trời, cánh phát sáng như vầng hào quang.' }],
+    [9120, 'Ultimate Rotom', ['electric', 'ghost'], [80, 105, 110, 145, 115, 130], 'legendary', 'city,temple', null, { id: 'ultimate-rotom', desc: 'Rotom chiếm quyền tất cả thiết bị cùng lúc, mang hình dạng ma điện.' }],
+    [9121, 'Primal Eevee', ['normal', 'dragon'], [105, 130, 105, 120, 115, 125], 'legendary', 'forest,temple', null, { id: 'primal-eevee', desc: 'Eevee trở về dạng nguyên thủy, có thể thay đổi hệ theo ý muốn.' }],
+    [9122, 'Rockstar Pikachu', ['electric', 'normal'], [70, 110, 60, 105, 80, 140], 'legendary', 'city', null, { id: 'rockstar-pikachu', desc: 'Pikachu cầm guitar điện, tiếng đàn phát ra những tia sét theo nhịp.' }]
+  ]);
+
+  /* ---------- 50 LOÀI ĐỜI MỚI (Gen 9: 906–955, artwork thật trên PokéAPI) ---------- */
+  PG.addSpecies([
+    [906, 'Sprigatito', ['grass'], [40, 61, 54, 45, 45, 65], 'common', 'forest,digi-forest', ['floragato', 25, 30], { id: 'sprigatito' }],
+    [907, 'Floragato', ['grass'], [61, 80, 63, 60, 63, 83], 'rare', 'forest,digi-forest', ['meowscarada', 100, 36], { id: 'floragato' }],
+    [908, 'Meowscarada', ['grass', 'dark'], [76, 110, 70, 81, 70, 123], 'rare', 'forest,digi-forest,city', null, { id: 'meowscarada' }],
+    [909, 'Fuecoco', ['fire'], [67, 45, 59, 63, 40, 36], 'common', 'volcano,pal-lava', ['crocalor', 25, 30], { id: 'fuecoco' }],
+    [910, 'Crocalor', ['fire'], [81, 55, 78, 90, 58, 49], 'rare', 'volcano,pal-lava', ['skeledirge', 100, 36], { id: 'crocalor' }],
+    [911, 'Skeledirge', ['fire', 'ghost'], [104, 75, 100, 110, 75, 66], 'rare', 'volcano,temple', null, { id: 'skeledirge' }],
+    [912, 'Quaxly', ['water'], [55, 65, 45, 50, 45, 50], 'common', 'lake,beach', ['quaxwell', 25, 30], { id: 'quaxly' }],
+    [913, 'Quaxwell', ['water'], [70, 85, 65, 65, 60, 65], 'rare', 'lake,beach', ['quaquaval', 100, 36], { id: 'quaxwell' }],
+    [914, 'Quaquaval', ['water', 'fighting'], [85, 120, 80, 85, 75, 85], 'rare', 'lake,city', null, { id: 'quaquaval' }],
+    [915, 'Lechonk', ['normal'], [54, 45, 40, 35, 45, 35], 'common', 'city,forest', ['oinkologne', 60, 28], { id: 'lechonk' }],
+    [916, 'Oinkologne', ['normal'], [110, 100, 75, 59, 80, 65], 'rare', 'city,forest', null, { id: 'oinkologne' }],
+    [917, 'Tarountula', ['bug'], [35, 41, 45, 29, 40, 20], 'common', 'forest,digi-forest', ['spidops', 50, 24], { id: 'tarountula' }],
+    [918, 'Spidops', ['bug'], [60, 79, 92, 52, 86, 35], 'rare', 'forest,digi-forest', null, { id: 'spidops' }],
+    [919, 'Nymble', ['bug'], [33, 46, 40, 21, 25, 45], 'common', 'forest,digi-forest', ['lokix', 50, 24], { id: 'nymble' }],
+    [920, 'Lokix', ['bug', 'dark'], [71, 102, 78, 52, 55, 92], 'rare', 'forest,city', null, { id: 'lokix' }],
+    [921, 'Pawmi', ['electric'], [45, 50, 20, 40, 25, 60], 'common', 'city,digi-city', ['pawmo', 50, 25], { id: 'pawmi' }],
+    [922, 'Pawmo', ['electric', 'fighting'], [60, 75, 40, 50, 40, 85], 'rare', 'city,volcano', ['pawmot', 100, 32], { id: 'pawmo' }],
+    [923, 'Pawmot', ['electric', 'fighting'], [70, 115, 70, 70, 60, 105], 'rare', 'city,volcano', null, { id: 'pawmot' }],
+    [924, 'Tandemaus', ['normal'], [50, 50, 45, 40, 45, 75], 'common', 'city,forest', ['maushold', 60, 26], { id: 'tandemaus' }],
+    [925, 'Maushold', ['normal'], [74, 75, 70, 65, 75, 111], 'rare', 'city,forest', null, { id: 'maushold' }],
+    [926, 'Fidough', ['fairy'], [37, 55, 70, 30, 55, 65], 'common', 'forest,pal-isles', ['dachsbun', 60, 26], { id: 'fidough' }],
+    [927, 'Dachsbun', ['fairy'], [57, 80, 115, 50, 80, 95], 'rare', 'forest,pal-isles', null, { id: 'dachsbun' }],
+    [928, 'Smoliv', ['grass', 'normal'], [41, 35, 45, 58, 51, 30], 'common', 'forest,city', ['dolliv', 50, 25], { id: 'smoliv' }],
+    [929, 'Dolliv', ['grass', 'normal'], [52, 53, 60, 78, 78, 33], 'rare', 'forest,city', ['arboliva', 100, 35], { id: 'dolliv' }],
+    [930, 'Arboliva', ['grass', 'normal'], [78, 69, 90, 125, 109, 39], 'rare', 'forest,city', null, { id: 'arboliva' }],
+    [931, 'Squawkabilly', ['normal', 'flying'], [82, 96, 51, 45, 51, 92], 'rare', 'city,beach', null, { id: 'squawkabilly' }],
+    [932, 'Nacli', ['rock'], [55, 55, 75, 35, 35, 25], 'common', 'cave,desert', ['naclstack', 50, 26], { id: 'nacli' }],
+    [933, 'Naclstack', ['rock'], [60, 60, 100, 35, 65, 35], 'rare', 'cave,desert', ['garganacl', 100, 38], { id: 'naclstack' }],
+    [934, 'Garganacl', ['rock'], [100, 100, 130, 45, 90, 35], 'rare', 'cave,desert', null, { id: 'garganacl' }],
+    [935, 'Charcadet', ['fire'], [40, 50, 40, 50, 40, 35], 'common', 'volcano,pal-lava', [['armarouge', 100, 36, 'fire-stone'], ['ceruledge', 100, 36, 'dusk-stone']], { id: 'charcadet' }],
+    [936, 'Armarouge', ['fire', 'psychic'], [85, 60, 100, 125, 80, 75], 'rare', 'volcano,temple', null, { id: 'armarouge' }],
+    [937, 'Ceruledge', ['fire', 'ghost'], [75, 125, 80, 60, 100, 85], 'rare', 'volcano,temple', null, { id: 'ceruledge' }],
+    [938, 'Tadbulb', ['electric'], [61, 31, 41, 59, 35, 45], 'common', 'city,digi-city', ['bellibolt', 60, 26], { id: 'tadbulb' }],
+    [939, 'Bellibolt', ['electric'], [109, 64, 91, 103, 83, 45], 'rare', 'city,digi-city', null, { id: 'bellibolt' }],
+    [940, 'Wattrel', ['electric', 'flying'], [40, 40, 35, 55, 40, 70], 'common', 'city,beach', ['kilowattrel', 60, 25], { id: 'wattrel' }],
+    [941, 'Kilowattrel', ['electric', 'flying'], [70, 70, 60, 105, 60, 125], 'rare', 'city,beach', null, { id: 'kilowattrel' }],
+    [942, 'Maschiff', ['dark'], [60, 78, 60, 40, 51, 51], 'common', 'city,temple', ['mabosstiff', 60, 28], { id: 'maschiff' }],
+    [943, 'Mabosstiff', ['dark'], [80, 120, 90, 60, 70, 85], 'rare', 'city,temple', null, { id: 'mabosstiff' }],
+    [944, 'Shroodle', ['poison', 'normal'], [40, 65, 35, 40, 35, 75], 'common', 'city,desert', ['grafaiai', 60, 26], { id: 'shroodle' }],
+    [945, 'Grafaiai', ['poison', 'normal'], [63, 95, 65, 80, 72, 110], 'rare', 'city,desert', null, { id: 'grafaiai' }],
+    [946, 'Bramblin', ['grass', 'ghost'], [40, 65, 30, 45, 35, 60], 'common', 'forest,temple', ['brambleghast', 60, 28], { id: 'bramblin' }],
+    [947, 'Brambleghast', ['grass', 'ghost'], [55, 115, 70, 80, 70, 90], 'rare', 'forest,temple', null, { id: 'brambleghast' }],
+    [948, 'Toedscool', ['ground', 'grass'], [40, 40, 35, 50, 100, 70], 'common', 'desert,forest', ['toedscruel', 60, 30], { id: 'toedscool' }],
+    [949, 'Toedscruel', ['ground', 'grass'], [80, 70, 65, 80, 120, 100], 'rare', 'desert,forest', null, { id: 'toedscruel' }],
+    [950, 'Klawf', ['rock'], [70, 100, 115, 35, 55, 75], 'rare', 'cave,desert', null, { id: 'klawf' }],
+    [951, 'Capsakid', ['grass'], [50, 62, 40, 62, 40, 50], 'common', 'forest,volcano', ['scovillain', 60, 28], { id: 'capsakid' }],
+    [952, 'Scovillain', ['grass', 'fire'], [65, 108, 65, 108, 65, 75], 'rare', 'forest,volcano', null, { id: 'scovillain' }],
+    [953, 'Rellor', ['bug'], [41, 50, 60, 31, 58, 30], 'common', 'digi-forest,desert', ['rabsca', 60, 30], { id: 'rellor' }],
+    [954, 'Rabsca', ['bug', 'psychic'], [75, 50, 85, 115, 100, 45], 'rare', 'digi-forest,temple', null, { id: 'rabsca' }],
+    [955, 'Flittle', ['psychic'], [30, 35, 30, 55, 30, 75], 'rare', 'temple,digi-city', ['espathra', 100, 35], { id: 'flittle' }]
+  ]);
+
+    /* ---------- THÊM 50 LOÀI ĐỜI MỚI KHÁC (dex 956–1006, bỏ 959 đã có) ---------- */
+  PG.addSpecies([
+[956, 'Espathra', ['psychic'], [95, 60, 60, 101, 60, 105], 'rare', 'temple,digi-city', null, { id: 'espathra' }],
+    [957, 'Tinkatink', ['fairy', 'steel'], [50, 45, 45, 35, 64, 58], 'common', 'city,cave', ['tinkatuff', 50, 26], { id: 'tinkatink' }],
+    [958, 'Tinkatuff', ['fairy', 'steel'], [65, 55, 55, 45, 82, 78], 'rare', 'city,cave', ['tinkaton', 100, 36], { id: 'tinkatuff' }],
+    [960, 'Wiglett', ['water'], [10, 55, 25, 35, 25, 95], 'common', 'lake,beach', ['wugtrio', 50, 26], { id: 'wiglett' }],
+    [961, 'Wugtrio', ['water'], [35, 100, 50, 50, 70, 120], 'rare', 'lake,beach', null, { id: 'wugtrio' }],
+    [962, 'Bombirdier', ['flying', 'dark'], [70, 103, 85, 60, 85, 82], 'rare', 'city,temple', null, { id: 'bombirdier' }],
+    [963, 'Finizen', ['water'], [70, 45, 40, 45, 40, 75], 'common', 'lake,beach', ['palafin', 100, 36], { id: 'finizen' }],
+    [964, 'Palafin', ['water'], [100, 70, 72, 53, 62, 100], 'rare', 'lake,beach', null, { id: 'palafin' }],
+    [965, 'Varoom', ['steel', 'poison'], [45, 70, 63, 30, 45, 47], 'common', 'desert,cave', ['revavroom', 50, 28], { id: 'varoom' }],
+    [966, 'Revavroom', ['steel', 'poison'], [80, 119, 90, 54, 67, 90], 'rare', 'desert,cave', null, { id: 'revavroom' }],
+    [967, 'Cyclizar', ['dragon', 'normal'], [70, 95, 65, 85, 65, 121], 'rare', 'temple,pal-isles', null, { id: 'cyclizar' }],
+    [968, 'Orthworm', ['steel'], [70, 85, 145, 60, 55, 65], 'rare', 'city,cave', null, { id: 'orthworm' }],
+    [969, 'Glimmet', ['rock', 'poison'], [48, 35, 42, 105, 60, 60], 'common', 'desert,cave', ['glimmora', 50, 28], { id: 'glimmet' }],
+    [970, 'Glimmora', ['rock', 'poison'], [83, 55, 90, 130, 81, 86], 'rare', 'desert,cave', null, { id: 'glimmora' }],
+    [971, 'Greavard', ['ghost'], [50, 61, 60, 30, 55, 34], 'common', 'temple,digi-temple', ['houndstone', 50, 28], { id: 'greavard' }],
+    [972, 'Houndstone', ['ghost'], [72, 101, 100, 50, 97, 68], 'rare', 'temple,digi-temple', null, { id: 'houndstone' }],
+    [973, 'Flamigo', ['flying', 'fighting'], [82, 115, 74, 75, 64, 90], 'rare', 'city,volcano', null, { id: 'flamigo' }],
+    [974, 'Cetoddle', ['ice'], [108, 68, 45, 30, 40, 43], 'common', 'snow,pal-tundra', ['cetitan', 50, 28], { id: 'cetoddle' }],
+    [975, 'Cetitan', ['ice'], [170, 113, 65, 45, 55, 73], 'rare', 'snow,pal-tundra', null, { id: 'cetitan' }],
+    [976, 'Veluza', ['water', 'psychic'], [90, 102, 73, 78, 65, 70], 'rare', 'temple,digi-city', null, { id: 'veluza' }],
+    [977, 'Dondozo', ['water'], [150, 100, 115, 65, 65, 35], 'rare', 'lake,beach', null, { id: 'dondozo' }],
+    [978, 'Tatsugiri', ['dragon', 'water'], [68, 50, 60, 120, 95, 82], 'rare', 'lake,beach,pal-isles', null, { id: 'tatsugiri' }],
+    [979, 'Annihilape', ['fighting', 'ghost'], [110, 115, 80, 50, 90, 90], 'rare', 'temple,digi-temple', null, { id: 'annihilape' }],
+    [980, 'Clodsire', ['poison', 'ground'], [130, 75, 60, 45, 100, 20], 'rare', 'desert,cave', null, { id: 'clodsire' }],
+    [981, 'Farigiraf', ['normal', 'psychic'], [120, 90, 70, 110, 70, 60], 'rare', 'temple,digi-city', null, { id: 'farigiraf' }],
+    [982, 'Dudunsparce', ['normal'], [125, 100, 80, 85, 75, 55], 'rare', 'city,forest', null, { id: 'dudunsparce' }],
+    [983, 'Kingambit', ['dark', 'steel'], [100, 135, 120, 60, 85, 50], 'rare', 'city,cave', null, { id: 'kingambit' }],
+    [984, 'Great Tusk', ['ground', 'fighting'], [115, 131, 131, 53, 53, 87], 'rare', 'city,volcano', null, { id: 'great-tusk' }],
+    [985, 'Scream Tail', ['fairy', 'psychic'], [115, 65, 99, 65, 115, 111], 'rare', 'temple,digi-city', null, { id: 'scream-tail' }],
+    [986, 'Brute Bonnet', ['grass', 'dark'], [111, 127, 99, 79, 99, 55], 'rare', 'city,temple', null, { id: 'brute-bonnet' }],
+    [987, 'Flutter Mane', ['ghost', 'fairy'], [55, 55, 55, 135, 135, 135], 'rare', 'temple,digi-temple', null, { id: 'flutter-mane' }],
+    [988, 'Slither Wing', ['bug', 'fighting'], [85, 135, 79, 85, 105, 81], 'rare', 'city,volcano', null, { id: 'slither-wing' }],
+    [989, 'Sandy Shocks', ['electric', 'ground'], [85, 81, 97, 121, 85, 101], 'rare', 'desert,cave', null, { id: 'sandy-shocks' }],
+    [990, 'Iron Treads', ['ground', 'steel'], [90, 112, 120, 72, 70, 106], 'rare', 'city,cave', null, { id: 'iron-treads' }],
+    [991, 'Iron Bundle', ['ice', 'water'], [56, 80, 114, 124, 60, 136], 'rare', 'lake,beach,pal-isles', null, { id: 'iron-bundle' }],
+    [992, 'Iron Hands', ['fighting', 'electric'], [154, 140, 108, 50, 68, 50], 'rare', 'city,volcano', null, { id: 'iron-hands' }],
+    [993, 'Iron Jugulis', ['dark', 'flying'], [94, 80, 86, 122, 80, 108], 'rare', 'city,temple', null, { id: 'iron-jugulis' }],
+    [994, 'Iron Moth', ['fire', 'poison'], [80, 70, 60, 140, 110, 110], 'rare', 'desert,cave', null, { id: 'iron-moth' }],
+    [995, 'Iron Thorns', ['rock', 'electric'], [100, 134, 110, 70, 84, 72], 'rare', 'cave,volcano', null, { id: 'iron-thorns' }],
+    [996, 'Frigibax', ['dragon', 'ice'], [65, 75, 45, 35, 45, 55], 'common', 'snow,pal-tundra', ['arctibax', 50, 28], { id: 'frigibax' }],
+    [997, 'Arctibax', ['dragon', 'ice'], [90, 95, 66, 45, 65, 62], 'rare', 'snow,pal-tundra', ['baxcalibur', 100, 36], { id: 'arctibax' }],
+    [998, 'Baxcalibur', ['dragon', 'ice'], [115, 145, 92, 75, 86, 87], 'rare', 'snow,pal-tundra', null, { id: 'baxcalibur' }],
+    [999, 'Gimmighoul', ['ghost'], [45, 30, 70, 75, 70, 10], 'common', 'temple,digi-temple', ['gholdengo', 100, 36], { id: 'gimmighoul' }],
+    [1000, 'Gholdengo', ['steel', 'ghost'], [87, 60, 95, 133, 91, 84], 'rare', 'temple,digi-temple', null, { id: 'gholdengo' }],
+    [1001, 'Wo Chien', ['dark', 'grass'], [85, 85, 100, 95, 135, 70], 'legendary', 'city,temple', null, { id: 'wo-chien' }],
+    [1002, 'Chien Pao', ['dark', 'ice'], [80, 120, 80, 90, 65, 135], 'legendary', 'snow,pal-tundra', null, { id: 'chien-pao' }],
+    [1003, 'Ting Lu', ['dark', 'ground'], [155, 110, 125, 55, 80, 45], 'legendary', 'desert,cave', null, { id: 'ting-lu' }],
+    [1004, 'Chi Yu', ['dark', 'fire'], [55, 80, 80, 135, 120, 100], 'legendary', 'city,temple', null, { id: 'chi-yu' }],
+    [1005, 'Roaring Moon', ['dragon', 'dark'], [105, 139, 71, 55, 101, 119], 'legendary', 'city,temple', null, { id: 'roaring-moon' }],
+    [1006, 'Iron Valiant', ['fairy', 'fighting'], [74, 130, 90, 120, 60, 116], 'rare', 'city,volcano', null, { id: 'iron-valiant' }]
+  ]);
+
+  /* ---------- GẮN NHÁNH TIẾN HÓA MỚI VÀO LOÀI CŨ ---------- */
+  function addBranch(parentId, targetId, candy, condition) {
+    const sp = PG.SPECIES[parentId];
+    if (!sp || !PG.SPECIES[targetId]) return;
+    const opt = [targetId, candy || 60, null, condition || null];
+    if (!sp.evo) sp.evo = [opt];
+    else if (Array.isArray(sp.evo[0])) sp.evo.push(opt);
+    else sp.evo = [sp.evo, opt];
+  }
+  addBranch('charizard', 'mega-charizard-x', 80, 'mega-stone-x');
+  addBranch('charizard', 'mega-charizard-y', 80, 'mega-stone-y');
+  addBranch('venusaur', 'mega-venusaur', 80, 'mega-stone-v');
+  addBranch('blastoise', 'giganta-blastoise', 80, 'giganta-core');
+  addBranch('gengar', 'mega-gengar', 80, 'mega-stone-g');
+  addBranch('tyranitar', 'mega-tyranitar', 80, 'mega-stone-t');
+  addBranch('scizor', 'mega-scizor', 80, 'metal-coat');
+  addBranch('gardevoir', 'mega-gardevoir', 80, 'mega-stone-g');
+  addBranch('altaria', 'mega-altaria', 80, 'mega-stone-a');
+  addBranch('absol', 'mega-absol', 80, 'mega-stone-a');
+  addBranch('lucario', 'awakened-lucario', 80, 'aura-core');
+  addBranch('garchomp', 'mega-garchomp', 80, 'mega-stone-g');
+  addBranch('mewtwo', 'armored-mewtwo', 120, 'armor-shard');
+  addBranch('dragonite', 'sage-dragonite', 100, 'dragon-scale');
+  addBranch('snorlax', 'giganta-snorlax', 100, 'giganta-core');
+  addBranch('lapras', 'armored-lapras', 100, 'armor-shard');
+  addBranch('milotic', 'oryx-milotic', 100, 'prism-scale');
+  addBranch('metagross', 'omega-metagross', 100, 'metal-coat');
+  addBranch('volcarona', 'solar-volcarona', 100, 'sun-stone');
+  addBranch('rotom', 'ultimate-rotom', 100, 'ultra-ring');
+  addBranch('eevee', 'primal-eevee', 120, 'origin-shard');
+  addBranch('pikachu', 'rockstar-pikachu', 100, 'star-badge');
+
+  /* Danh sách loài thần thoại để UI/Pokedex ghi nhãn riêng. */
+  PG.MYTHICALS = Object.keys(PG.SPECIES).filter(id => PG.SPECIES[id].mythical);
+})();

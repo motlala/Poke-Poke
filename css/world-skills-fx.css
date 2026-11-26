@@ -1,0 +1,379 @@
+/* ============================================================
+   WORLD SKILLS FX — chiêu riêng từ Palworld / Digimon / điện ảnh /
+   Nexus Anima + sóng năng lượng trên nền sân đấu.
+   Lớp load cuối, chỉ trang trí: không đổi luật trận đấu.
+   ============================================================ */
+
+/* ---------- Hồ sơ: danh sách mã quà ---------- */
+.profile-redeem__codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 6px 0 10px;
+}
+
+/* ---------- Màu riêng từng thế giới ---------- */
+.move-btn--world,
+.move-pill--world,
+.move-banner[data-world] { --world-accent: #a78bfa; }
+[data-world="palworld"] { --world-accent: #38bdf8; }
+[data-world="digimon"] { --world-accent: #f472b6; }
+[data-world="movie"] { --world-accent: #fbbf24; }
+[data-world="anima"] { --world-accent: #34d399; }
+
+/* Nút chiêu thế giới: viền phát quang + lõi chuyển sắc theo hệ. */
+.move-btn--world {
+  border-color: color-mix(in srgb, var(--world-accent) 72%, var(--mt, #94a3b8)) !important;
+  background:
+    radial-gradient(110% 100% at 100% 0%, color-mix(in srgb, var(--world-accent) 26%, transparent), transparent 62%),
+    radial-gradient(120% 120% at 0% 100%, color-mix(in srgb, var(--mt, #94a3b8) 26%, transparent), transparent 64%),
+    linear-gradient(160deg, rgba(16, 22, 38, .97), rgba(7, 12, 22, .97)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 12px 26px -16px var(--world-accent) !important;
+}
+.move-btn--world::before {
+  width: 4px;
+  background: linear-gradient(180deg, var(--world-accent), var(--mt, #94a3b8));
+  box-shadow: 0 0 14px var(--world-accent);
+}
+.move-btn--world .move-btn__badge {
+  border-color: color-mix(in srgb, var(--world-accent) 70%, transparent);
+  background: color-mix(in srgb, var(--world-accent) 16%, rgba(2, 6, 23, .8));
+  color: #f8fafc;
+  text-shadow: 0 0 8px var(--world-accent);
+}
+.move-btn--world:not(.is-disabled):not(:disabled)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 26%,
+    color-mix(in srgb, var(--world-accent) 36%, transparent) 44%,
+    rgba(255, 255, 255, .22) 50%,
+    color-mix(in srgb, var(--mt, #94a3b8) 28%, transparent) 56%, transparent 76%);
+  background-size: 220% 100%;
+  opacity: .55;
+  animation: worldSheen 2.2s ease-in-out infinite;
+}
+.move-btn--world > span { position: relative; z-index: 1; }
+@keyframes worldSheen {
+  0%, 12% { background-position: 120% 0; }
+  62%, 100% { background-position: -120% 0; }
+}
+
+/* Pill trong Pokédex. */
+.move-pill--world {
+  border-color: color-mix(in srgb, var(--world-accent) 68%, var(--mt, #94a3b8)) !important;
+  background: linear-gradient(120deg,
+    color-mix(in srgb, var(--world-accent) 18%, transparent),
+    color-mix(in srgb, var(--mt, #94a3b8) 16%, transparent)) !important;
+  box-shadow: 0 0 16px -10px var(--world-accent);
+}
+.move-pill--world .move-pill__tag { color: var(--world-accent); }
+
+/* Banner tên chiêu thế giới. */
+.move-banner.is-world {
+  border-color: color-mix(in srgb, var(--world-accent) 80%, #fff);
+  background: linear-gradient(100deg,
+    rgba(6, 10, 20, .88),
+    color-mix(in srgb, var(--world-accent) 30%, rgba(6, 10, 20, .88)) 46%,
+    color-mix(in srgb, var(--mt, #94a3b8) 22%, rgba(6, 10, 20, .88)));
+  background-size: 220% 100%;
+  box-shadow: 0 0 28px -10px var(--world-accent), inset 0 0 16px -8px var(--world-accent);
+  animation: bannerPop .65s var(--ease), worldBannerFlow .65s linear both;
+}
+.move-banner.is-world::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--world-accent) 80%, transparent);
+  box-shadow: 0 0 22px -6px var(--world-accent), inset 0 0 16px -8px var(--world-accent);
+  animation: worldHalo .62s ease-out both;
+}
+.move-banner[data-world]::before {
+  border-color: color-mix(in srgb, var(--world-accent) 65%, transparent);
+  background: color-mix(in srgb, var(--world-accent) 18%, rgba(2, 6, 23, .7));
+  color: #fff;
+  text-shadow: 0 0 8px var(--world-accent);
+}
+@keyframes worldBannerFlow {
+  from { background-position: 120% 0; filter: brightness(1.4); }
+  to { background-position: -120% 0; filter: brightness(1); }
+}
+@keyframes worldHalo {
+  0% { opacity: 0; transform: scale(.86) rotate(-1.5deg); }
+  38% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.16) rotate(1.5deg); }
+}
+
+/* Đạn của chiêu thế giới: vệt sáng + vòng xung kép. */
+#battle-fx[data-flair="world"] .fx-projectile {
+  box-shadow: 0 0 16px 6px var(--world-accent), 0 0 40px 16px color-mix(in srgb, var(--world-accent) 62%, transparent);
+}
+#battle-fx[data-flair="world"] .fx-projectile::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--world-accent) 85%, transparent);
+  box-shadow: inset 0 0 14px -4px var(--world-accent);
+  animation: worldRingSpin .5s linear infinite;
+}
+@keyframes worldRingSpin {
+  from { transform: rotate(0deg) scale(.82); opacity: .9; }
+  to { transform: rotate(180deg) scale(1.18); opacity: .3; }
+}
+
+/* ---------- NỀN SÂN ĐẤU SỐNG ĐỘNG HƠN ---------- */
+.battle-scene__sky::before {
+  content: '';
+  position: absolute;
+  inset: -20% -30% auto;
+  height: 72%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 45% 60% at 22% 40%, color-mix(in srgb, var(--wx, #7dd3fc) 26%, transparent), transparent 70%),
+    radial-gradient(ellipse 38% 54% at 78% 55%, color-mix(in srgb, var(--fx-color, #a78bfa) 24%, transparent), transparent 70%);
+  filter: blur(14px);
+  opacity: .7;
+  animation: arenaAurora 8s ease-in-out infinite alternate;
+}
+.battle-scene__sky::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(70% 46% at 50% 0%, rgba(255, 255, 255, .12), transparent 72%);
+  animation: arenaBreath 5.5s ease-in-out infinite alternate;
+}
+@keyframes arenaAurora {
+  from { transform: translate3d(-4%, -2%, 0) scale(1); opacity: .45; }
+  to { transform: translate3d(5%, 3%, 0) scale(1.12); opacity: .85; }
+}
+@keyframes arenaBreath {
+  from { opacity: .35; }
+  to { opacity: .8; }
+}
+
+/* Bụi sáng lơ lửng: đủ nhẹ để không che combatant. */
+.battle-scene__ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.battle-scene__ambient span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--wx, #bae6fd);
+  box-shadow: 0 0 12px 3px color-mix(in srgb, var(--wx, #7dd3fc) 55%, transparent);
+  opacity: 0;
+  animation: arenaMote 7s ease-in-out infinite;
+}
+.battle-scene__ambient span:nth-child(1) { left: 12%; top: 58%; animation-delay: 0s; }
+.battle-scene__ambient span:nth-child(2) { left: 38%; top: 74%; animation-delay: -2.1s; width: 4px; height: 4px; }
+.battle-scene__ambient span:nth-child(3) { left: 66%; top: 62%; animation-delay: -4.3s; }
+.battle-scene__ambient span:nth-child(4) { left: 88%; top: 78%; animation-delay: -5.7s; width: 3px; height: 3px; }
+@keyframes arenaMote {
+  0%, 100% { opacity: 0; transform: translate3d(0, 8px, 0) scale(.6); }
+  30% { opacity: .85; }
+  70% { opacity: .5; transform: translate3d(10px, -42px, 0) scale(1.15); }
+}
+
+/* Góc sân đấu theo chế độ: gym/raid/tournament rực hơn. */
+.arena-mode--raid .battle-scene,
+.arena-mode--gym .battle-scene { box-shadow: var(--shadow-lg), inset 0 0 60px -30px rgba(251, 191, 36, .6); }
+.arena-mode--tournament .battle-scene { box-shadow: var(--shadow-lg), inset 0 0 60px -30px rgba(167, 139, 250, .6); }
+
+/* Sóng năng lượng lan khắp nền khi tung chiêu có nhãn. */
+.battle-scene__ambient::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 60vmin;
+  height: 60vmin;
+  max-width: 620px;
+  max-height: 620px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.2);
+  background: radial-gradient(circle,
+    color-mix(in srgb, var(--world-accent, var(--fx-color, #a78bfa)) 34%, transparent) 0%,
+    transparent 62%);
+  border: 2px solid color-mix(in srgb, var(--world-accent, #a78bfa) 60%, transparent);
+}
+.battle-scene.is-skill-flash .battle-scene__ambient::after {
+  animation: arenaSkillWave .6s ease-out both;
+}
+.battle-scene.is-skill-flash[data-skill-flair="ultimate"] .battle-scene__ambient::after {
+  --world-accent: #fde68a;
+  animation-duration: .62s;
+}
+.battle-scene.is-skill-flash[data-skill-flair="evolution"] .battle-scene__ambient::after {
+  --world-accent: #7dd3fc;
+}
+@keyframes arenaSkillWave {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.18); }
+  28% { opacity: .85; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.35); }
+}
+
+/* ---------- BẮT POKÉMON: nâng cấp hiệu ứng ---------- */
+/* Vệt quỹ đạo cong khi ném bóng. */
+.catch-fx--throw .catch-fx__arc {
+  position: absolute;
+  left: 8%;
+  top: 26%;
+  width: 78%;
+  height: 52%;
+  border-top: 2px solid rgba(255, 236, 170, .9);
+  border-radius: 50% 50% 0 0;
+  filter: drop-shadow(0 0 8px rgba(255, 226, 130, .9));
+  transform: rotate(-8deg) scaleX(.5);
+  opacity: 0;
+  animation: catchArc 620ms ease-out both;
+}
+@keyframes catchArc {
+  0% { opacity: 0; transform: rotate(-8deg) scaleX(.35); }
+  35% { opacity: .95; }
+  100% { opacity: 0; transform: rotate(-8deg) scaleX(1.1); }
+}
+
+/* Lõi sáng và chùm tia khi bóng đóng lại / bắt thành công. */
+.catch-fx__core,
+.catch-fx__ray,
+.catch-fx__ring,
+.catch-fx__shock {
+  position: absolute;
+  left: var(--fx-x, 50%);
+  top: var(--fx-y, 54%);
+  pointer-events: none;
+}
+.catch-fx__core {
+  width: 90px;
+  height: 90px;
+  margin: -45px 0 0 -45px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 8%, rgba(167, 243, 208, .9) 22%, rgba(74, 222, 128, .28) 52%, transparent 72%);
+  animation: catchCore 620ms ease-out both;
+}
+@keyframes catchCore {
+  0% { opacity: 0; transform: scale(.3); }
+  30% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.8); }
+}
+.catch-fx__ray {
+  width: 3px;
+  height: 92px;
+  margin-left: -1.5px;
+  transform-origin: 50% 100%;
+  border-radius: 999px;
+  background: linear-gradient(to top, rgba(255, 255, 255, .95), rgba(167, 243, 208, .55) 55%, transparent);
+  filter: drop-shadow(0 0 6px rgba(134, 239, 172, .9));
+  animation: catchRay 680ms cubic-bezier(.2, .8, .2, 1) both;
+  animation-delay: var(--fx-delay, 0ms);
+}
+@keyframes catchRay {
+  0% { opacity: 0; transform: rotate(var(--fx-angle, 0deg)) scaleY(.1); }
+  30% { opacity: 1; transform: rotate(var(--fx-angle, 0deg)) scaleY(1); }
+  100% { opacity: 0; transform: rotate(var(--fx-angle, 0deg)) scaleY(1.35) translateY(-14px); }
+}
+.catch-fx--caught .catch-fx__ring,
+.catch-fx--shake .catch-fx__ring {
+  left: 50%;
+  top: 56%;
+  width: 132px;
+  height: 132px;
+  border: 2px solid rgba(190, 242, 208, .95);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(134, 239, 172, .6), inset 0 0 24px rgba(167, 243, 208, .35);
+  transform: translate(-50%, -50%) scale(.32);
+  opacity: 0;
+  animation: catchFxRing 640ms ease-out both;
+  animation-delay: var(--fx-delay, 0ms);
+}
+.catch-fx__shock {
+  width: 180px;
+  height: 180px;
+  margin: -90px 0 0 -90px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, .8);
+  box-shadow: 0 0 34px 8px rgba(74, 222, 128, .45);
+  animation: catchShock 700ms ease-out both;
+}
+@keyframes catchShock {
+  0% { opacity: 0; transform: scale(.35); }
+  24% { opacity: .9; }
+  100% { opacity: 0; transform: scale(1.55); }
+}
+.catch-fx--caught .catch-fx__spark { --fx-c: #a7f3d0; }
+
+/* Bóng vừa chạm đất: vòng xung quanh bóng trước các lần lắc. */
+.catch-fx--shake .catch-fx__shock {
+  --fx-c: #fff7d6;
+  border-color: rgba(255, 236, 170, .8);
+  box-shadow: 0 0 26px 6px rgba(255, 226, 130, .5);
+}
+.catch-fx--break .catch-fx__shock {
+  border-color: rgba(252, 165, 165, .85);
+  box-shadow: 0 0 30px 8px rgba(248, 113, 113, .45);
+}
+.catch-fx--break .catch-fx__ray {
+  background: linear-gradient(to top, rgba(255, 255, 255, .95), rgba(252, 165, 165, .7) 52%, transparent);
+}
+
+/* ---------- Giảm chuyển động: giữ màu/nhãn, bỏ chuyển động ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .battle-scene__sky::before,
+  .battle-scene__sky::after,
+  .battle-scene__ambient span,
+  .battle-scene__ambient::after,
+  .battle-scene__scenery span,
+  .arena-mode--raid .battle-scene,
+  .move-btn--world::after,
+  .move-banner.is-world::after,
+  .move-banner.is-world,
+  #battle-fx[data-flair="world"] .fx-projectile::after {
+    animation: none !important;
+  }
+  .battle-scene__sky::before { opacity: .5; }
+  .battle-scene__ambient span { opacity: .45; }
+  .move-btn--world,
+  .move-pill--world { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 0 18px -10px var(--world-accent); }
+  .move-banner.is-world { background-position: 0 0; }
+  .catch-fx__arc,
+  .catch-fx__core,
+  .catch-fx__ray,
+  .catch-fx__shock { animation: none !important; opacity: .55; }
+}
+
+/* Cài đặt trong game (🛡️ Giảm chuyển động / ✨ Hiệu ứng hạt) có hiệu lực
+   ngay cả khi hệ điều hành không báo prefers-reduced-motion. */
+body.motion-reduced .battle-scene__sky::before,
+body.motion-reduced .battle-scene__sky::after,
+body.motion-reduced .battle-scene__ambient span,
+body.motion-reduced .battle-scene__ambient::after,
+body.motion-reduced .battle-scene__scenery span,
+body.motion-reduced .arena-mode--raid .battle-scene,
+body.motion-reduced .move-btn--world::after,
+body.motion-reduced .move-banner.is-world::after,
+body.motion-reduced .move-banner.is-world,
+body.motion-reduced #battle-fx[data-flair="world"] .fx-projectile::after {
+  animation: none !important;
+}
+body.motion-reduced .battle-scene__sky::before { opacity: .5; }
+body.motion-reduced .battle-scene__ambient span { opacity: .45; }
+body.motion-reduced .move-btn--world,
+body.motion-reduced .move-pill--world { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 0 18px -10px var(--world-accent); }
+body.motion-reduced .move-banner.is-world { background-position: 0 0; }
+body.motion-reduced .catch-fx__arc,
+body.motion-reduced .catch-fx__core,
+body.motion-reduced .catch-fx__ray,
+body.motion-reduced .catch-fx__shock { animation: none !important; opacity: .55; }
